@@ -1,0 +1,17 @@
+<html>
+
+{{ partial "head/head.html" . }}
+
+<body>
+
+    {{ partial "header/header.html" . }}
+
+    {{ block "main" . }}
+
+    {{ end }}
+
+    {{ partial "footer/footer.html" . }}
+
+</body>
+
+</html>

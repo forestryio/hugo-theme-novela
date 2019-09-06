@@ -1,0 +1,6 @@
+<head>
+    <meta charset="utf-8">
+    <title>{{ .Site.Title }}</title>
+    {{ $style := resources.Get "scss/main.scss" | toCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+</head>
