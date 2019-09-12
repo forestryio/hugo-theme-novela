@@ -4,13 +4,17 @@
 
 <body>
 
-    {{ partial "header/header.html" . }}
+    <div class="layout-styled">
 
-    {{ block "main" . }}
+        {{ partial "header/header.html" . }}
+        
+        {{ block "main" . }}
+        
+        {{ end }}
+        
+        {{ partial "footer/footer.html" . }}
 
-    {{ end }}
-
-    {{ partial "footer/footer.html" . }}
+    </div>
 
 </body>
 

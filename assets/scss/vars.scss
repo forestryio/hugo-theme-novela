@@ -1,7 +1,84 @@
-$phone-small: 320;
-$phone: 376;
-$phablet: 540;
-$tablet: 735;
-$desktop: 1070;
-$desktop_medium: 1280;
-$desktop_large: 1440;
+body{
+    /*BREAKPOINTS*/
+    --phone_small: 320px;
+    --phone: 376px;
+    --phablet: 540px;
+    --tablet: 735px;
+    --desktop: 1070px;
+    --desktop_medium: 1280px;
+    --desktop_large: 1440px;
+
+    /*FONTS*/
+    --serif: "Merriweather", Georgia, Serif;
+    --sanserif: "SF Pro Display", "-apple-system", "BlinkMacSystemFont", "San Francisco", "Helvetica Neue", "Helvetica", "Ubuntu", "Roboto", "Noto", "Segoe UI", "Arial", sans-serif;
+    --monospace: "Operator Mono", Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
+
+    /*COLOR MODE TRANSITION*/
+    --color-mode-transition: background 0.25s var(--ease-in-out-quad), color 0.25s var(--ease-in-out-quad);
+
+    /*PRIMARY COLORS*/
+    --primary: #000;
+    --secondary: #73737D;
+    --grey: #73737D;
+    --background-color: #fafafa;
+    --accent: #6166DC;
+    --hover: rgba(0, 0, 0, 0.07);
+    --gradient: linear-gradient(180deg, rgba(217, 219, 224, 0) 0%, #D9DBE0 100%);
+    --articleText: #08080B;
+    --track: rgba(8, 8, 11, 0.3);
+    --progress: #000;
+    --card: #fff;
+    --error: #EE565B;
+    --success: #46B17B;
+    --errorBackground: rgba(238, 86, 91, 0.1);
+    --horizontalRule: rgba(8, 8, 11, 0.15);
+    --inputBackground: rgba(0, 0, 0, 0.05);
+
+    /*DARK COLORS*/
+    --dark-grey: #73737D;
+    --dark-primary: #fff;
+    --dark-secondary: #fff;
+    --dark-accent: #E9DAAC;
+    --dark-background: #111216;
+    --dark-hover: rgba(255, 255, 255, 0.07);
+    --dark-gradient: linear-gradient(180deg, #111216 0%, rgba(66, 81, 98, 0.36) 100%);
+    --dark-articleText: #fff;
+    --dark-track: rgba(255, 255, 255, 0.3);
+    --dark-progress: #fff;
+    --dark-card: #1D2128;
+    --dark-error: #EE565B;
+    --dark-success: #46B17B;
+    --dark-errorBackground: rgba(238, 86, 91, 0.1);
+    --dark-horizontalRule: rgba(255, 255, 255, 0.15);
+    --dark-inputBackground: rgba(255, 255, 255, 0.07);
+
+    /*PRISM*/
+    --token: #fff;
+    --languageJavascript: #e8696b;
+    --javascript: #e8696b;
+    --background: #292c34;
+    --comment: #5e6a76;
+    --string: #a8e2a8;
+    --var: #b3bac5;
+    --number: #e4854d;
+    --constant: #b3bac5;
+    --plain: #fff;
+    --doctype: #e8696b;
+    --tag: #e8696b;
+    --keyword: #d49fd4;
+    --boolean: #ff5874;
+    --function: #5F8DC3;
+    --parameter: #F9965D;
+    --className: #ffcf74;
+    --attrName: #bf87ba;
+    --attrValue: #a8e2a8;
+    --interpolation: #fff;
+    --punctuation: #5FA8AA;
+    --property: #80cbc4;
+    --propertyAccess: #fff;
+    --namespace: #b2ccd6;
+    --highlight: rgba(255,255,255,0.07);
+    --highlightBorder: #e1bde2;
+    --dom: #5F8DC3;
+    --operator: #5FA8AA;
+}

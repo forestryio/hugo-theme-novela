@@ -1,0 +1,9 @@
+<a
+  className="social-icon-container"
+  href="{{.Params.url}}"
+>
+    {{ range $component := .Site.Params.social }}
+        {{ $path := print "icons/social/" $component.title }}
+        {{ partial $path $ }}
+    {{ end }}
+</a>

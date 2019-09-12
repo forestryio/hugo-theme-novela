@@ -1,0 +1,38 @@
+.social-icon-container{
+    position: relative;
+    margin-left: 3.2rem;
+    text-decoration: none;
+    max-width: 16px;
+}
+
+.social-icon-container:hover > svg {
+    fill: var (--primary);
+  }
+
+.social-icon-container:hover > * {
+    transition: fill 0.25s var(--ease-in-out-quad);
+}
+
+.social-icon-container:first-of-type {
+    margin-left: 0;
+}
+
+.social-icon-container:last-child {
+    margin-right: 0;
+}
+
+/*TABLET*/
+@media screen and (max-width: 735px){
+    .social-icon-container{
+        margin: 0 2.2rem;
+    }
+}
+
+.hidden{
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+    display: inline-block;
+}

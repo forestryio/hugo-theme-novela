@@ -1,0 +1,26 @@
+.progress-container{
+    position: relative;
+    outline: none;
+    user-select: none;
+}
+
+.track-line{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: calc(88vh - 40px);
+    max-height: 425px;
+    width: 1px;
+    background-color: var(--track);
+    opacity: 0.6;
+    overflow: hidden;
+}
+
+.progress-line{
+    position: absolute;
+    height: 100%;
+    top: -100%;
+    width: 1px;
+    background-color: var(--progress);
+    left: 0;
+}

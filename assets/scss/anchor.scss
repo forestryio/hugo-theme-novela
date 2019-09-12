@@ -1,0 +1,14 @@
+a{
+    transition: var(--color-mode-transition);
+    color: var(--accent);
+}
+
+a:visited {
+  color: var(--accent);
+  opacity: 0.85;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}

@@ -1,0 +1,12 @@
+.Logo__Mobile {
+    display: none;
+}
+
+@media screen and (max-width: 735px){
+    .Logo__Desktop {
+        display: none;
+    }
+    .Logo__Mobile{
+        display: block;
+    }
+}
