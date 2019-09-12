@@ -19,7 +19,7 @@ params:
     primary: "#000"
     secondary: "#73737D"
     grey: "#73737D"
-    background-color: "#fafaf"
+    backgroundColor: "#fafaf"
     accent: "#6166DC"
     hover: "rgba(0, 0, 0, 0.07)"
     articleText: "#08080B"
