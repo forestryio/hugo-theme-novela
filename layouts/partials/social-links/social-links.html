@@ -1,9 +1,10 @@
-<a
+<div
   className="social-icon-container"
   href="{{.Params.url}}"
 >
     {{ range $component := .Site.Params.social }}
         {{ $path := print "icons/social/" $component.title }}
-        {{ partial $path $ }}
+        <a href="{{ $component.url }}">{{ partial $path $ }}</a>
+        <span class="hidden">{{ $component.url }}</span>
     {{ end }}
-</a>
+</div>

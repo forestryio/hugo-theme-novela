@@ -1,0 +1,12 @@
+
+
+    <div class="bio-container">
+            {{ range $author := .Site.Data.authors }}
+        <div class="bio-avatar">
+            <div class="bio-avatar-inner">
+              <img src="{{ $author.avatar }}" />
+            </div>
+        </div>
+        <p class="bio-text">{{ $author.bio }}</p>
+        {{ end }}
+    </div>

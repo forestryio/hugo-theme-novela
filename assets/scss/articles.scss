@@ -1,0 +1,103 @@
+.subheading-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 100px;
+  
+    /*DESKTOP*/
+    @media screen and (max-width: $desktop){
+      margin-bottom: 80px;
+    }
+  
+    /*TABLET*/
+    @media screen and (max-width: $tablet){
+      margin-bottom: 60px;
+    }
+  
+    /*PHABLET*/
+    @media screen and (max-width: $phablet){
+      display: none;
+    }
+}
+
+.grid-controls-container{
+    display: flex;
+    align-items: center;
+  
+    /*TABLET*/
+    @media screen and (max-width: $tablet){
+      display: none;
+    }
+}
+
+.heading-container{
+    margin: 100px 0;
+
+    /*DESKTOP*/
+    @media screen and (max-width: $desktop){
+      width: 80%;
+    }
+  
+    /*TABLET*/
+    @media screen and (max-width: $tablet){
+      width: 100%;
+    }
+}
+
+.hero-heading{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 52px;
+    line-height: 1.15;
+    color: var(--primary);
+  
+    /*DESKTOP*/
+    @media screen and (max-width: $desktop){
+      font-size: 38px
+    }
+  
+    /*PHABLET*/
+    @media screen and (max-width: $phablet){
+      font-size: 32px;
+    }
+}
+
+.grid-button{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    background: transparent;
+    transition: background 0.25s;
+  
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  
+    &:hover {
+      background: var(--hover);
+    }
+  
+    &[data-a11y="true"]:focus::after {
+      content: "";
+      position: absolute;
+      left: -10%;
+      top: -10%;
+      width: 120%;
+      height: 120%;
+      border: 2px solid var(--accent);
+      background: rgba(255, 255, 255, 0.01);
+      border-radius: 50%;
+    }
+  
+    svg {
+      transition: opacity 0.2s;
+  
+      path {
+        fill: var(--primary);
+      }
+    }
+}
