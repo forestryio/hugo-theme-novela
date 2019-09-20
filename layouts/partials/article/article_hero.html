@@ -1,0 +1,15 @@
+<section class="section narrow">
+    <div class="article-hero">
+        <header classs="article-header">
+            <h1 class="article-hero-heading">{{ .Page.Params.Title }}</h1>
+            <div class="article-hero-subtitle">
+                <div class="article-meta">
+                    {{ .Page.Date | dateFormat "January 1, 2019" }}{{ with .Page.Params.timeToRead }} · {{ .Page.Params.timeToRead }} min read{{ end }}
+                </div>
+            </div>
+        </header>
+        <div class="article-hero-image" id="ArticleImage__Hero">
+          <img src="{{ .Page.Params.hero }}">
+          </div>
+    </div>
+</section>

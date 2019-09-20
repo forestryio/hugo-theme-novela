@@ -1,0 +1,11 @@
+{{ define "main" }}
+
+<section class="section narrow">
+    {{ partial "article/article_hero.html" . }}
+
+    <article>
+        {{ .Content | markdownify }}
+    </article>
+</section>
+
+{{ end }}

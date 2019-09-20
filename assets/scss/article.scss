@@ -1,0 +1,139 @@
+.article-hero{
+    @media screen and (max-width: $phablet){
+        &::before {
+          content: "";
+          width: 100%;
+          height: 20px;
+          background: var(--primary);
+          position: absolute;
+          left: 0;
+          top: 0;
+          transition: var(--color-mode-transition);
+        }
+    
+        &::after {
+          content: "";
+          width: 100%;
+          height: 10px;
+          background: var(--background-color);
+          position: absolute;
+          left: 0;
+          top: 10px;
+          border-top-left-radius: 25px;
+          border-top-right-radius: 25px;
+          transition: var(--color-mode-transition);
+        }
+      }
+}
+
+.article-meta{
+    margin-left: 10px;
+
+    @media screen and (max-width: $phablet){
+        margin-left: 0;
+    }
+}
+
+.article-header{
+    position: relative;
+    z-index: 10;
+    margin:100px auto 120px;
+    padding-left: 68px;
+    max-width: 749px;
+  
+    @media screen and (max-width: $desktop){
+        padding-left: 53px;
+        max-width: calc(507px + 53px);
+        margin: 100px auto 70px;
+    }
+
+    @media screen and (max-width: $tablet){
+        padding-left: 0;
+        margin: 100px auto 70px;
+        max-width: 480px;
+    }
+
+    @media screen and (max-width: $phablet){
+        margin: 170px auto 180px;
+        padding: 0 40px;
+    }
+  
+    @media screen and (max-height: 700px) {
+      margin: 100px auto;
+    }
+}
+
+.article-hero-heading{
+    font-size: 48px;
+    font-family: var(--serif);
+    margin-bottom: 25px;
+    font-weight: bold;
+    line-height: 1.32;
+  
+    @media screen and (max-width: $tablet){
+        margin-bottom: 20px;
+        font-size: 36px;
+    }
+
+    @media screen and (max-width: $phablet){
+        font-size: 32px;
+    }
+}
+
+.article-hero-subtitle{
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display: flex;
+    font-size: 18px;
+    color: var(--grey);
+  
+    @media screen and(max-width: $phablet){
+        font-size: 14px;
+        flex-direction: column;
+
+        &.has-coauthors::before{
+            content: '';
+            position: absolute;
+            left: -20px;
+            right: -20px;
+            top: -10px;
+            bottom: -10px;
+            border: 1px solid var(--horizontalRule);
+            opacity: 0.5;
+            border-radius: 5px;
+        }
+
+        strong {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.article-hero-image{
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 944px;
+    overflow: hidden;
+    margin: 0 auto;
+    box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.2),
+      0 18px 36px -18px rgba(0, 0, 0, 0.22);
+  
+    @media screen and (max-width: $tablet){
+        max-width: 100%;
+    }
+
+    @media screen and (max-width: phablet){
+        margin: 0 auto;
+        width: calc(100vw - 40px);
+        height: 220px;
+    
+        & > div {
+          height: 220px;
+        }
+    }
+}
