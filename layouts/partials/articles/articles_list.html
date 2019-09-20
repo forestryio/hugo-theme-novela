@@ -1,0 +1,34 @@
+<section class="section nartrow">
+    <div class="articles-list-container show-details">
+        {{ range $index, $article := .Pages }}
+            {{ $counter := mod $index 2 }}
+            {{ if eq $counter 0 }}
+                <div class="post-row">
+            {{ end }}
+            <a href="{{ $article.URL }}" class="article-link">
+              <div>
+                <div class="image-container">
+                  <img src="{{ $article.Params.hero }}" class="article-image" /> 
+                </div>
+                <div>
+                  <h2 class="article-title">
+                    {{ $article.Params.title }}
+                  </h2>
+                  <p class="article-excerpt">
+                    {{ $article.Params.excerpt }}
+                  </p>
+                  <div class="article-metadata">
+                    {{ $article.Date | dateFormat "January 1, 2019" }}{{ with $article.Params.timeToRead }} · {{ $article.Params.timeToRead }} min read{{ end }}
+                  </div>
+                </div>
+              </div>
+            </a>
+            {{ $counter := mod (add $index 1) 2 }}
+            {{ $len := (where .Pages "Type" "posts") }}
+            {{ if or (eq $counter 0) (eq (add $index 1) $len) }}
+                </div>
+            {{ end }}
+        {{ end }}
+    </div>
+</section>
+
