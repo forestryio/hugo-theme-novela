@@ -6,6 +6,8 @@
     <article class="post-content">
         {{ .Content | markdownify }}
     </article>
+
+    {{ partial "article/article_next.html" . }}
 </section>
 
 {{ end }}

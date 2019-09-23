@@ -1,0 +1,40 @@
+<section class="section nartrow">
+    <h3 class="footer-next-heading">More articles from {{ .Site.Title }}</h3>
+    <div class="footer-spacer"></div>
+    <div class="next-articles-grid" numberOfArticles={numberOfArticles}>
+        <div class="post-row">
+            {{ $scratch := newScratch }}
+            {{ $scratch.Set "counter" 0 }}
+            {{ $pageTitle := .Params.title }}
+            {{ $scratch.Set "pt" $pageTitle }}
+            {{ range $index, $article := .Site.RegularPages }}
+                {{ if or (eq ($scratch.Get "counter") 1) (eq ($scratch.Get "counter") 2) }}
+                    <a href="{{ $article.Permalink }}" class="article-link">
+                        <div>
+                            <div class="image-container">
+                                <img src="{{ $article.Params.hero }}" class="article-image" /> 
+                            </div>
+                            <div>
+                                <h2 class="article-title">
+                                    {{ $article.Params.title }}
+                                </h2>
+                                <p class="article-excerpt">
+                                    {{ $article.Params.excerpt }}
+                                </p>
+                                <div class="article-metadata">
+                                    {{ $article.Date | dateFormat "January 1, 2019" }}{{ with $article.Params.timeToRead }} · {{ $article.Params.timeToRead }} min read{{ end }}
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    {{ $scratch.Set "counter" (add ($scratch.Get "counter") 1) }}
+                {{ end }}
+                {{ if eq .Params.title ($scratch.Get "pt") }}
+                    {{ if .Params.title }}
+                        {{ $scratch.Set "counter" 1 }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</section>

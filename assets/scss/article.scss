@@ -1,3 +1,5 @@
+/**************************************ARTICLE HEAD**************************************/
+
 .article-hero{
     @media screen and (max-width: $phablet){
         &::before {
@@ -142,6 +144,59 @@
     }
 }
 
+
+/**************************************ARTICLE BODY**************************************/
+
 .post-content{
     padding: 160px 0 35px;
+}
+
+/**************************************ARTICLE NEXT**************************************/
+
+.footer-next-heading{
+    display: block;
+    font-size: 1.6rem;
+    position: relative;
+    opacity: 0.25;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 100px;
+    min-width: 100%;
+    font-weight: 400;
+    color: var(--primary);
+  
+    /*TABLET*/
+    @media screen and (max-width: $tablet){
+        margin-bottom: 60px;
+    }
+  
+    &::after {
+        content: '';
+        position: absolute;
+        background: var(--grey);
+        width: 62%;
+        max-width: 100%;
+        height: 1px;
+        right: 0;
+        top: 50%;
+
+        /*TABLET*/
+        @media screen and (max-width: $tablet){
+          width: 41.7%;
+        }
+
+        /*PHABLET*/
+        @media screen and (max-width: $phablet){
+            width: 27.8%;
+        }
+
+        /*PHONE*/
+        @media screen and (max-width: $phone){
+            width: 90px;
+        }
+    }
+}
+
+.footer-spacer{
+    margin-bottom: 65px;
 }
