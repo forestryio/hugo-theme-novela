@@ -49,6 +49,7 @@
 }
 
 .subscription-heading{
+    font-family: var(--serif);
     margin-bottom: 20px;
 }
 
@@ -78,6 +79,7 @@
 }
 
 .subscription-form::after {
+    color: var(--accent);
     content: ">";
     position: absolute;
     left: 21px;
@@ -99,6 +101,7 @@
     padding: 13px 21px 13px 35px;
     width: 471px;
     color: var(--primary);
+    background-color: var(--inputBackground);
 }
 
 .subscription-input::placeholder {
@@ -125,6 +128,8 @@
 }
 
 .submit-button{
+    border: 1px solid var(--accent);
+    color: var(--accent);
     position: absolute;
     left: 306px;
     top: 3px;
