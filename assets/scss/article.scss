@@ -122,6 +122,10 @@
     margin: 0 auto;
     box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.2),
       0 18px 36px -18px rgba(0, 0, 0, 0.22);
+
+    img{
+        width: 100%;
+    }
   
     @media screen and (max-width: $tablet){
         max-width: 100%;
@@ -136,4 +140,8 @@
           height: 220px;
         }
     }
+}
+
+.post-content{
+    padding: 160px 0 35px;
 }

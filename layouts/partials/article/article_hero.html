@@ -1,6 +1,6 @@
 <section class="section narrow">
     <div class="article-hero">
-        <header classs="article-header">
+        <header class="article-header">
             <h1 class="article-hero-heading">{{ .Page.Params.Title }}</h1>
             <div class="article-hero-subtitle">
                 <div class="article-meta">
@@ -8,8 +8,10 @@
                 </div>
             </div>
         </header>
+        {{ if .Page.Params.hero }}
         <div class="article-hero-image" id="ArticleImage__Hero">
-          <img src="{{ .Page.Params.hero }}">
-          </div>
+            <img src="{{ .Page.Params.hero }}">
+        </div>
+        {{ end }}
     </div>
 </section>
