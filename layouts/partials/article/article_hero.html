@@ -4,6 +4,7 @@
             <h1 class="article-hero-heading">{{ .Page.Params.Title }}</h1>
             <div class="article-hero-subtitle">
                 <div class="article-meta">
+                    {{ partial "article/article_authors.html" . }}
                     {{ .Page.Date | dateFormat "January 1, 2019" }}
                 </div>
             </div>

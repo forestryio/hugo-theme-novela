@@ -1,0 +1,68 @@
+
+{{ $scratch := newScratch }}
+{{ $scratch.Set "numAuthors" 0 }}
+{{ range .Params.authors }}
+    {{ $scratch.Set "numAuthors" (add ($scratch.Get "numAuthors") 1) }}
+{{ end }}
+
+{{ if eq ($scratch.Get "numAuthors") 1 }}
+
+    {{ range $author := where .Site.RegularPages "Type" "author" }}
+        {{ $firstAuthor := index $.Params.authors 0 }}
+        {{ if eq $author.Params.name $firstAuthor.name }}
+            <a href="{{ $author.Permalink }}" class="article-author-link">
+                {{ if $author.Params.avatar }}
+                    <div class="article-author-avatar">
+                        <img src="{{ $author.Params.avatar }}" />
+                    </div>
+                {{ end }}
+                <strong>{{ $author.Params.name }}</strong>
+                <span class="hide-on-mobile">,&nbsp;</span>
+                </a>
+        {{ end }}
+    {{ end }}
+
+{{ else if gt ($scratch.Get "numAuthors") 1 }}
+    <div class="article-coauthors-container">
+        {{ $avatarsWidth:= mul ($scratch.Get "numAuthors") 15 }}
+        <div class="article-coauthors-list" style="width: {{ $avatarsWidth }}px;">
+
+            {{ $scratch := newScratch }}
+            {{ $scratch.Set "matches" false }}
+            {{ $scratch.Set "authors" .Params.authors }}
+            {{ range $index, $author := where .Site.RegularPages "Type" "author" }}
+                {{ $scratch.Set "nameHold" $author.Params.name }}
+                {{ range $authoeCompare := $scratch.Get "authors" }}
+                    {{ if eq $authoeCompare.name ($scratch.Get "nameHold") }}
+                        {{ $scratch.Set "matches" true }}
+                    {{ end }}
+                {{ end }}
+                {{ if eq ($scratch.Get "matches") true }}
+                    {{ if $author.Params.avatar }}
+                        <div class="article-coauthors-avatar" style="left: {{ mul $index 15 }}px;">
+                            <img src="{{ $author.Params.avatar }}" />
+                        </div>
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+        </div>
+        <strong class="article-coauthors-name-container">
+            {{ $scratch.Set "matches" false }}
+            {{ $scratch.Set "authors" .Params.authors }}
+            {{ range $index, $author := where .Site.RegularPages "Type" "author" }}
+                {{ $scratch.Set "nameHold" $author.Params.name }}
+                {{ range $authoeCompare := $scratch.Get "authors" }}
+                    {{ if eq $authoeCompare.name ($scratch.Get "nameHold") }}
+                        {{ $scratch.Set "matches" true }}
+                    {{ end }}
+                {{ end }}
+                {{ if eq ($scratch.Get "matches") true }}
+                    {{ $author.Params.name }}{{ if ne (add $index 1) (len ($scratch.Get "authors")) }},{{ end }}
+                {{ end }}
+            {{ end }}
+        </strong>
+        <div class="article-coauthors-icon-container">
+            {{ partial "icons/ui/toggle-open.html" . }}
+        </div>
+    </div>
+{{ end }}
