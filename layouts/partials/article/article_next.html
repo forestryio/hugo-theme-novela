@@ -7,7 +7,7 @@
             {{ $scratch.Set "counter" 0 }}
             {{ $pageTitle := .Params.title }}
             {{ $scratch.Set "pt" $pageTitle }}
-            {{ range $index, $article := .Site.RegularPages }}
+            {{ range $index, $article := where .Site.RegularPages "Type" "post" }}
                 {{ if or (eq ($scratch.Get "counter") 1) (eq ($scratch.Get "counter") 2) }}
                     <a href="{{ $article.Permalink }}" class="article-link">
                         <div>

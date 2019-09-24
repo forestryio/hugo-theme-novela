@@ -1,6 +1,6 @@
 <section class="section nartrow">
     <div class="articles-list-container show-details">
-        {{ range $index, $article := .Pages }}
+        {{ range $index, $article := where .Site.RegularPages "Type" "post" }}
             {{ $counter := mod $index 2 }}
             {{ if eq $counter 0 }}
                 <div class="post-row">

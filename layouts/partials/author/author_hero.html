@@ -1,0 +1,14 @@
+<section class="section narrow">
+    <div class="author-hero">
+        {{ if .Params.avatar }}
+            <div class="author-hero-image">
+                <img src="{{ .Params.avatar }}" />
+            </div>
+        {{ end }}
+        <h1 class="author-heading">{{ .Params.name }}</h1>
+        <p class="author-subheading">{{ .Params.bio }}</p>
+        <div class="author-social">
+            {{ partial "author/author_social_links.html" . }}
+        </div>
+    </div>
+</section>

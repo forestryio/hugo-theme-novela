@@ -5,6 +5,8 @@
 <body>
 
     <div class="layout-styled">
+        {{ $scratch := newScratch }}
+        {{ $scratch.Set "test" "hello!" }}
 
         {{ partial "header/header.html" . }}
         
