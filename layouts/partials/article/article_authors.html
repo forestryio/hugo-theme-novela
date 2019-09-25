@@ -25,6 +25,7 @@
 {{ else if gt ($scratch.Get "numAuthors") 1 }}
     <div class="article-coauthors-container">
         {{ $avatarsWidth:= mul ($scratch.Get "numAuthors") 15 }}
+        <span id="collapsedCoauthors" class="article-coauthors-collapsed">
         <div class="article-coauthors-list" style="width: {{ $avatarsWidth }}px;">
 
             {{ $scratch := newScratch }}
@@ -64,5 +65,38 @@
         <div class="article-coauthors-icon-container">
             {{ partial "icons/ui/toggle-open.html" . }}
         </div>
+        </span>
+
+        <ul id="uncollapsedCoauthors" class="article-coauthors-list-open hidden">
+            <div id="uncollapsedAction" class="article-icon-open-container">
+                {{ partial "icons/ui/toggle-closed.html" . }}
+            </div>
+            {{ $scratch.Set "matches" false }}
+            {{ $scratch.Set "authors" .Params.authors }}
+            {{ range $index, $author := where .Site.RegularPages "Type" "author" }}
+                {{ $scratch.Set "nameHold" $author.Params.name }}
+                {{ range $authoeCompare := $scratch.Get "authors" }}
+                    {{ if eq $authoeCompare.name ($scratch.Get "nameHold") }}
+                        {{ $scratch.Set "matches" true }}
+                    {{ end }}
+                {{ end }}
+                {{ if eq ($scratch.Get "matches") true }}
+                    <li class="article-coauthors-list-item-open">
+                        <a href="{{ $author.Permalink }}" class="article-author-link">
+                            {{ if $author.Params.avatar }}
+                                <div class="article-coauthor-avatar-open">
+                                    <img src="{{ $author.Params.avatar }}" />
+                                </div>
+                            {{ end }}
+                            <strong class="article-author-name-open">{{ $author.Params.name }}</strong>
+                        </a>
+                    </li>
+                {{ end }}
+            {{ end }}
+        </ul>
+
     </div>
 {{ end }}
+
+{{ $script := resources.Get "js/collapseAuthors.js" }}
+<script src="{{ $script.Permalink }}"></script>

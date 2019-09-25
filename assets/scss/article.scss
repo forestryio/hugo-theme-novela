@@ -207,8 +207,8 @@
     &::before {
       content: "";
       position: absolute;
-      left: -20px;
-      right: -20px;
+      left: 0;
+      right: 0;
       top: -16px;
       bottom: -16px;
       background: var(--card);
@@ -242,6 +242,10 @@
           margin-bottom: 5px;
         }
     }
+}
+
+.article-coauthors-collapsed{
+    display: flex;
 }
 
 .article-coauthors-list{
@@ -311,6 +315,69 @@
         height: 100%;
     }
 
+}
+
+.article-coauthors-list-open{
+    position: absolute;
+    z-index: 2;
+    left: -21px;
+    right: -21px;
+    top: -19px;
+    padding: 21px;
+    background: var(--card);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    cursor: pointer;
+    list-style-type: none;
+    transform: translateY(-2px);
+
+
+    li::before{
+        display: none;
+    }
+}
+
+.article-icon-open-container{
+    position: absolute;
+    cursor: pointer;
+    top: 25px;
+    right: 0;
+}
+
+.article-coauthors-list-item-open{
+    a {
+        width: 100%;
+    }
+    
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+}
+
+.article-coauthor-avatar-open{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    margin-right: 15px;
+    background: var(--grey);
+    overflow: hidden;
+    pointer-events: none;
+
+    img{
+        width: 100%;
+    }
+  
+    .gatsby-image-wrapper > div {
+      padding-bottom: 100% !important;
+      overflow: hidden;
+    }
+}
+
+.article-author-name-open{
+    position: relative;
+    cursor: pointer;
+    color: var(--secondary);
+    font-weight: 600;
 }
 
 /**************************************ARTICLE BODY**************************************/
