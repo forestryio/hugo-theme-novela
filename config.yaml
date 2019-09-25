@@ -3,7 +3,9 @@ languageCode: "en-us"
 title: "Narative"
 PygmentsCodeFences: true
 pygmentsstyle: 'monokai'
+paginate: 2
 params:
+  postsPerPage: 2
   social:
     - title: twitter
       url: "#"

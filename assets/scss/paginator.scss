@@ -1,0 +1,44 @@
+.pagination{
+    z-index: 100;
+    margin: 0;
+    margin-top: 95px;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+
+    &:hover{
+        cursor: pointer;
+    }
+
+    a:hover{
+        color: var(--primary);
+    }
+    
+    .page-item{
+        display: block;
+        width: auto;
+        height: auto;
+        padding: 0;
+
+        .page-link{
+            display: block;
+            color: var(--grey);
+            min-width: 6rem;
+        }
+
+        .page-next, .page-prev{
+            color: var(--primary);
+        }
+
+
+        &::before{
+            display: none;
+        }
+    }
+
+    .active{
+        .page-link{
+            color: var(--primary);
+        }
+    }
+}
