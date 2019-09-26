@@ -4,6 +4,10 @@ title: "Narative"
 PygmentsCodeFences: true
 pygmentsstyle: 'monokai'
 paginate: 2
+taxonomies:
+  tag: tags
+  category: categories
+  author: authors
 params:
   postsPerPage: 2
   social:
