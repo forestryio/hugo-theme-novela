@@ -1,7 +1,7 @@
 <section class="section nartrow">
     <div class="articles-list-container show-details">
-        {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
-        {{ range $index, $article := where $paginator.Pages "Type" "post" }}
+        {{ $paginator := .Paginate (where .Site.RegularPages "Type" "post") }}
+        {{ range $index, $article := $paginator.Pages }}
             {{ $counter := mod $index 2 }}
             {{ if eq $counter 0 }}
                 <div class="post-row">

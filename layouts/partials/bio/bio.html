@@ -1,8 +1,5 @@
     <div class="bio-container">
-        {{ range $taxonomy := .Site.Taxonomies.Series }}
-            {{ $taxonomy }}<hr />
-        {{ end }}
-        {{ range $author := where .Site.RegularPages "Type" "authors" }}
+        {{ range $author := where .Site.RegularPages "Type" "author" }}
         {{ if eq $author.Params.featured true }}
             <a href="{{ $author.Permalink }}" class="bio-link">
                 {{ if $author.Params.avatar }}

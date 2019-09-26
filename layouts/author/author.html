@@ -1,9 +1,4 @@
 {{ define "main" }}
-{{ $paginator := .Paginate (where $.Site.Pages "Type" "post") }}
-{{ $paginator }}
-{{ range where .Pages "File.Dir" "in" "/" }}
-hi<br/>
-{{ end }}
 <section class="section narrow">
     <section>
         {{ partial "author/author_hero.html" . }}

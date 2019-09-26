@@ -1,9 +1,0 @@
-{{ define "main" }}
-
-<section class="section narrow">
-    {{ range .Data.Terms.Alphabetical }}
-        <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a><br/>
-    {{ end }}
-</section>
-
-{{ end }}

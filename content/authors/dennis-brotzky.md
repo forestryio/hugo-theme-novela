@@ -16,4 +16,6 @@ social:
     url: https://github.com
   - title: github
     url: https://github.com
+type: author
+layout: author
 ---
