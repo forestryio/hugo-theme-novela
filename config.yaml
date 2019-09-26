@@ -4,9 +4,6 @@ title: "Narative"
 PygmentsCodeFences: true
 pygmentsstyle: 'monokai'
 paginate: 2
-authors:
-  - "authors/dennis-brotzky"
-  - "authors/thiago-costa"
 params:
   postsPerPage: 2
   social:

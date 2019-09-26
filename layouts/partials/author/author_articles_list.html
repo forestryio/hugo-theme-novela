@@ -1,4 +1,5 @@
 <section class="section nartrow">
 {{ $paginator := .Paginate (where .Site.RegularPages "Type" "post") }}
-{{ $paginator }}
+{{ $test := .Site.GetPage "authors/dennis-brotzky" }}
+{{ $test.Params }}
 </section>

@@ -1,15 +1,18 @@
 
 {{ $scratch := newScratch }}
 {{ $scratch.Set "numAuthors" 0 }}
-{{ range .Params.authors }}
-    {{ $scratch.Set "numAuthors" (add ($scratch.Get "numAuthors") 1) }}
-{{ end }}
+
+{{ $authors := .Params.authors }}
+
+{{ $scratch.Set "numAuthors" (len $authors) }}
+{{ $scratch.Set "authors" $authors }}
 
 {{ if eq ($scratch.Get "numAuthors") 1 }}
 
     {{ range $author := where .Site.RegularPages "Type" "author" }}
-        {{ $firstAuthor := index $.Params.authors 0 }}
-        {{ if eq $author.Params.name $firstAuthor.name }}
+        {{ $authorPath := index ($scratch.Get "authors") 0 }}
+        {{ $firstAuthor := .Site.GetPage $authorPath }}
+        {{ if eq $author.Params.name $firstAuthor.Params.name }}
             <a href="{{ $author.Permalink }}" class="article-author-link">
                 {{ if $author.Params.avatar }}
                     <div class="article-author-avatar">
@@ -33,8 +36,9 @@
             {{ $scratch.Set "authors" .Params.authors }}
             {{ range $index, $author := where .Site.RegularPages "Type" "author" }}
                 {{ $scratch.Set "nameHold" $author.Params.name }}
-                {{ range $authorCompare := $scratch.Get "authors" }}
-                    {{ if eq $authorCompare.name ($scratch.Get "nameHold") }}
+                {{ range $authorPath := $scratch.Get "authors" }}
+                    {{ $authorCompare := $.Site.GetPage $authorPath }}
+                    {{ if eq $authorCompare.Params.name ($scratch.Get "nameHold") }}
                         {{ $scratch.Set "matches" true }}
                     {{ end }}
                 {{ end }}
@@ -52,8 +56,9 @@
             {{ $scratch.Set "authors" .Params.authors }}
             {{ range $index, $author := where .Site.RegularPages "Type" "author" }}
                 {{ $scratch.Set "nameHold" $author.Params.name }}
-                {{ range $authorCompare := $scratch.Get "authors" }}
-                    {{ if eq $authorCompare.name ($scratch.Get "nameHold") }}
+                {{ range $authorPath := $scratch.Get "authors" }}
+                    {{ $authorCompare := $.Site.GetPage $authorPath }}
+                    {{ if eq $authorCompare.Params.name ($scratch.Get "nameHold") }}
                         {{ $scratch.Set "matches" true }}
                     {{ end }}
                 {{ end }}
@@ -75,8 +80,9 @@
             {{ $scratch.Set "authors" .Params.authors }}
             {{ range $index, $author := where .Site.RegularPages "Type" "author" }}
                 {{ $scratch.Set "nameHold" $author.Params.name }}
-                {{ range $authorCompare := $scratch.Get "authors" }}
-                    {{ if eq $authorCompare.name ($scratch.Get "nameHold") }}
+                {{ range $authorPath := $scratch.Get "authors" }}
+                    {{ $authorCompare := $.Site.GetPage $authorPath }}
+                    {{ if eq $authorCompare.Params.name ($scratch.Get "nameHold") }}
                         {{ $scratch.Set "matches" true }}
                     {{ end }}
                 {{ end }}
