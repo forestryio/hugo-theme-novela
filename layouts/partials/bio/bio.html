@@ -1,16 +1,16 @@
     <div class="bio-container">
         {{ range $author := where .Site.RegularPages "Type" "author" }}
-        {{ if eq $author.Params.featured true }}
-            <a href="{{ $author.Permalink }}" class="bio-link">
-                {{ if $author.Params.avatar }}
-                    <div class="bio-avatar">
-                        <div class="bio-avatar-inner">
-                          <img class="author-avatar" src="{{ $author.Params.avatar }}" />
+            {{ if eq $author.Params.featured true }}
+                <a href="{{ $author.Permalink }}" class="bio-link">
+                    {{ if $author.Params.avatar }}
+                        <div class="bio-avatar">
+                            <div class="bio-avatar-inner">
+                              <img class="author-avatar" src="{{ $author.Params.avatar }}" />
+                            </div>
                         </div>
-                    </div>
-                {{ end }}
-                <p class="bio-text">{{ $author.Params.bio }}</p>
-            </a>
-        {{ end }}
+                    {{ end }}
+                    <p class="bio-text">{{ $author.Params.bio }}</p>
+                </a>
+            {{ end }}
         {{ end }}
     </div>

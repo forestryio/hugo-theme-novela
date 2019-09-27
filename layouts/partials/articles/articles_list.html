@@ -1,12 +1,26 @@
 <section class="section nartrow">
     <div class="articles-list-container show-details">
         {{ $paginator := .Paginate (where .Site.RegularPages "Type" "post") }}
+        {{ $scratch :=newScratch }}
+        {{ $scratch.Set "biggerFirst" true }}
+        {{ $scratch.Set "biggerPlaced" false }}
         {{ range $index, $article := $paginator.Pages }}
             {{ $counter := mod $index 2 }}
             {{ if eq $counter 0 }}
                 <div class="post-row">
             {{ end }}
-            <a href="{{ $article.Permalink }}" class="article-link">
+            <a href="{{ $article.Permalink }}" class="article-link" 
+            {{ if and (eq ($scratch.Get "biggerFirst") true) (eq ($scratch.Get "biggerPlaced") false) }}
+              {{ if eq $counter 0 }}
+                id="article-link-bigger"
+                {{ $scratch.Set "biggerPlaced" true }}
+              {{ end }}
+            {{ else if and (eq ($scratch.Get "biggerFirst") false) (eq ($scratch.Get "biggerPlaced") false) }}
+              {{ if ne $counter 0 }}
+                id="article-link-bigger"
+                {{ $scratch.Set "biggerPlaced" true }}
+              {{ end }}
+            {{ end }}>
               <div>
                 <div class="image-container">
                   <img src="{{ $article.Params.hero }}" class="article-image" /> 
@@ -28,6 +42,12 @@
             {{ $len := (where .Pages "Type" "posts") }}
             {{ if or (eq $counter 0) (eq (add $index 1) $len) }}
                 </div>
+                {{ $scratch.Set "biggerPlaced" false }}
+                {{ if eq ($scratch.Get "biggerFirst") true }}
+                  {{ $scratch.Set "biggerFirst" false }}
+                {{ else }}
+                  {{ $scratch.Set "biggerFirst" true }}
+                {{ end }}
             {{ end }}
         {{ end }}
     </div>
