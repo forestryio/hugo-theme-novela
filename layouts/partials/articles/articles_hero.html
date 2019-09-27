@@ -5,12 +5,15 @@
     <div class="subheading-container">
         {{ partial "bio/bio.html" . }}
         <div class="grid-controls-container">
-            <button class="grid-button">
+            <button id="btnGrid" class="grid-button">
                 {{ partial "icons/ui/tiles.html" . }}
             </button>
-            <button class="grid-button">
+            <button id="btnRows" class="grid-button">
                 {{ partial "icons/ui/rows.html" . }}
             </button>
         </div>
     </div>
 </Section>
+
+{{ $script := resources.Get "js/toggleLayout.js" }}
+<script src="{{ $script.Permalink }}"></script>

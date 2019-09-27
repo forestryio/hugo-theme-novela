@@ -1,5 +1,5 @@
 <section class="section nartrow">
-    <div class="articles-list-container show-details">
+    <div id="articlesList" class="articles-list-container show-details">
         {{ $paginator := .Paginate (where .Site.RegularPages "Type" "post") }}
         {{ $scratch :=newScratch }}
         {{ $scratch.Set "biggerFirst" true }}
@@ -21,11 +21,11 @@
                 {{ $scratch.Set "biggerPlaced" true }}
               {{ end }}
             {{ end }}>
-              <div>
+              <div class="article-data-outer">
                 <div class="image-container">
                   <img src="{{ $article.Params.hero }}" class="article-image" /> 
                 </div>
-                <div>
+                <div class="article-data">
                   <h2 class="article-title">
                     {{ $article.Params.title }}
                   </h2>

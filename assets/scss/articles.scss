@@ -432,3 +432,35 @@
     max-width: 48.5% !important;
   }
 }
+
+.articles-list-container-alt{
+
+  .post-row{
+    flex-wrap: wrap !important;
+    margin-bottom: 0;
+
+    .article-link{
+      display: flex !important;
+      min-width: 100% !important;
+      flex-direction: row;
+      flex-wrap: none;
+
+      .article-data-outer{
+        display: flex !important;
+        min-width: 100% !important;
+        flex-direction: row;
+        flex-wrap: none;
+        justify-content: space-between;
+
+        .image-container{
+          max-width: 46%;
+        }
+      
+        .article-data{
+          max-width: 46%;
+        }
+      }
+    }
+  
+  }
+}

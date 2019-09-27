@@ -3,7 +3,7 @@ languageCode: "en-us"
 title: "Narative"
 PygmentsCodeFences: true
 pygmentsstyle: 'monokai'
-paginate: 4
+paginate: 3
 params:
   postsPerPage: 2
   social:
