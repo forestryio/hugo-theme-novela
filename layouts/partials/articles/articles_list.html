@@ -33,7 +33,7 @@
                     {{ $article.Params.excerpt }}
                   </p>
                   <div class="article-metadata">
-                    {{ $article.Date | dateFormat "January 1, 2019" }}{{ with $article.Params.timeToRead }} · {{ $article.Params.timeToRead }} min read{{ end }}
+                    {{ $article.Date.Format "January 1, 2019" }}{{ if $article.Params.timetoread }} • {{ $article.Params.timetoread }} min read{{ end }}
                   </div>
                 </div>
               </div>

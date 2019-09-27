@@ -1,7 +1,7 @@
 ---
 title: test
 author: Thiago Costa, Dennis Brotzky, Brad Tiller, Mack Mansouri
-date: 2019-04-31
+Date: 2019-03-30
 hero: /images/heros/hero-2.jpg
 excerpt: With the growing community interest in Gatsby, we hope to create more resources that make it easier for anyone to grasp the power of this incredible tool.
 timeToRead: 6
