@@ -1,11 +1,21 @@
 <Section class="section">
   <div class="nav-container">
     <a class="logo-link" href="/">
-        {{ partial "icons/ui/logo.html" . }}
-        <span class="header-hidden">Navigate back to the homepage</span>
+      {{ partial "icons/ui/logo.html" . }}
+      <span class="header-hidden">Navigate back to the homepage</span>
     </a>
     <div class="nav-controls">
-      
+      <button class="icon-wrapper">
+        {{ partial "icons/ui/link.html" . }}
+        <div class="tool-tip hidden">
+          Copied
+        </div>
+      </button>
+
+      <button class="icon-wrapper"> 
+        <div class="moon-or-sun"></div>
+        <div class="moon-mask"></div>
+      </button>
     </div>
 </div>
 </Section>
