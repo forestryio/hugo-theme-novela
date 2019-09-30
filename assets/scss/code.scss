@@ -1,16 +1,25 @@
-.highlight{
-    max-width: 680px;
+.code-toolbar{
+    max-width: 750px;
     margin: 0 auto 35px;
-    overflow-x: scroll;
+    overflow: auto;
+    font-size: 12px;
 
     pre{
-      padding: 30px;
-      display: inline-block;
-    }
+      padding-top: 2.5em !important;
+      padding-bottom: 2.5em !important;
+      padding-left: 5em !important;
+      padding-right: 5em !important;
+      border-radius: 5px !important;
+      background-color: #292c34 !important;
 
-    code{
+      code{
         color: white;
+      }
     }
 
-
+    .toolbar-item{
+      position: absolute;
+      top: 1em;
+      right: 1em;
+    }
 }

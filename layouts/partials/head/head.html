@@ -3,4 +3,6 @@
     <title>{{ .Site.Title }}</title>
     {{ $style := resources.Get "scss/global.scss" | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
+    {{ $prism := resources.Get "css/prism.css" }}
+    <link rel="stylesheet" href="{{ $prism.Permalink }}" />
 </head>

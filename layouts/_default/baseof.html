@@ -2,7 +2,7 @@
 
 {{ partial "head/head.html" . }}
 
-<body>
+<body class="line-numbers">
 
     <div class="layout-styled">
 
@@ -16,6 +16,8 @@
 
     </div>
 
+    {{ $script := resources.Get "js/prism.js" }}
+    <script src="{{ $script.Permalink }}"></script>
 </body>
 
 </html>

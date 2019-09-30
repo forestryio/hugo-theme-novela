@@ -1,7 +1,6 @@
 baseURL: "/"
 languageCode: "en-us"
 title: "Narative"
-PygmentsCodeFences: true
 pygmentsstyle: 'monokai'
 paginate: 6
 params:
