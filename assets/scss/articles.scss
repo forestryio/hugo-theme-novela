@@ -347,6 +347,24 @@
     }
 }
 
+.post-row-alt{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 100px;
+    flex-wrap: wrap;
+
+    .article-link{
+        margin-top: 75px;
+        max-width: 48.3%;
+
+        /*TABLET*/
+        @media screen and (max-width: $tablet){
+            max-width: 100%;
+        }
+    }
+}
+
 .article-link{
     max-width: 39.5%;
     position: relative;

@@ -1,5 +1,55 @@
 <section class="section nartrow">
-{{ $paginator := .Paginate (where .Site.RegularPages "Type" "post") }}
-{{ $test := .Site.GetPage "authors/dennis-brotzky" }}
-{{ $test.Params }}
+    <div id="articlesList" class="articles-list-container show-details">
+        {{ $scratch :=newScratch }}
+        {{ $scratch.Set "authorName" .Page.Params.name }}
+        {{ $scratch.Set "biggerFirst" true }}
+        {{ $scratch.Set "biggerPlaced" false }}
+        <div class="post-row-alt">
+            {{ range $index, $article := where .Site.RegularPages "Type" "post" }}
+
+                {{ $scratch.Set "authorMatch" false }}
+                {{ range $author := $article.Params.authors }}
+                    {{ $authorPage := $.Site.GetPage $author }}
+
+                    {{ if eq $authorPage.Params.name ($scratch.Get "authorName") }}
+                        {{ $scratch.Set "authorMatch" true }}
+                    {{ end }}
+                {{ end }}
+
+                {{ $counter := mod $index 2 }}
+                {{ if eq ($scratch.Get "authorMatch") true }}
+                    <a href="{{ $article.Permalink }}" class="article-link">
+                      <div class="article-data-outer">
+                        <div class="image-container">
+                          <img src="{{ $article.Params.hero }}" class="article-image" /> 
+                        </div>
+                        <div class="article-data">
+                          <h2 class="article-title">
+                            {{ $article.Params.title }}
+                          </h2>
+                          <p class="article-excerpt">
+                            {{ $article.Params.excerpt }}
+                          </p>
+                          <div class="article-metadata">
+                            {{ $article.Date.Format "January 2, 2006" }}{{ if $article.Params.timetoread }} • {{ $article.Params.timetoread }} min read{{ end }}
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                    {{ $counter := mod (add $index 1) 2 }}
+                    {{ $len := (where .Pages "Type" "posts") }}
+                {{ end }}
+            {{ end }}
+        </div>
+    </div>
+    
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            <li class="page-item active"><a href="/" class="page-link">1</a></li>
+            <li class="page-item"><a href="/page/2/" class="page-link">2</a></li>
+            <li class="page-item"><a href="/page/3/" class="page-link">3</a></li>
+            <li class="page-item"><a href="/page/2/" rel="next" class="page-link page-next">Next</a></li>
+        </ul>
+    </nav>
+
 </section>
