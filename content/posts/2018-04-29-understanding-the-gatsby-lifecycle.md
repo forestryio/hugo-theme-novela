@@ -1,57 +1,26 @@
 ---
-title: test
-author: Thiago Costa, Dennis Brotzky, Brad Tiller, Mack Mansouri
-Date: 2019-03-30
+title: Understanding the Gatsby lifecycle and how it impacts yout developer experience
+date: 2018-04-29
 hero: /images/heros/hero-2.jpg
 excerpt: With the growing community interest in Gatsby, we hope to create more resources that make it easier for anyone to grasp the power of this incredible tool.
-timeToRead: 6
+timeToRead: 4
 authors:
   - "authors/dennis-brotzky"
-  - "authors/thiago-costa"
 type: post
 layout: post
 ---
 
 Hello, world! This is a demo post for `gatsby-theme-novela`. Novela is built by the team at [Narative](https://narative.co), and built for everyone that loves the web.
 
-In my experience, the challenges that growing companies struggle with rarely stem from a lack of good ideas. Good ideas are everywhere. In my experience, the challenges that growing companies struggle with rarely stem from a lack of good ideas. Good ideas are everywhere. In my experience, the challenges that growing companies struggle with rarely stem from a lack of good ideas. Good ideas are everywhere.
+At Narative, we’ve been fans of Gatsby from day one, using it to build performant and flexible products for both clients and ourselves. With the growing community interest in Gatsby, we hope to create more resources that make it easier for anyone to grasp the power of this incredible tool.
+At Narative, we’ve been fans of Gatsby from day one, using it to build performant and flexible products for both clients and ourselves. With the growing community interest in Gatsby, we hope to create more resources that make it easier for anyone to grasp the power of this incredible tool.
 
-But it takes more than good ideas to build and grow a business. It takes people to bring them into reality. Are those people collaborating and sharing their expertise, or are they in conflict and keeping it to themselves? Do they have the resources necessary to execute on their ideas? Or are they constantly under pressure to pluck only the lowest-hanging fruit through bare minimum means, while putting their greatest ambitions on the back-burner?
-
-<div class="Image__Small">
-  <img src="./images/small.jpg" alt="alt text for small image" />
-</div>
-
-These are the circumstances that suffocate creativity and destroy value in an organization. That’s why I knew that if I was going to start a company, our first product would have to be the company itself.
-
-But it takes more than good ideas to build and grow a business. It takes people to bring them into reality. Are those people collaborating and sharing their expertise, or are they in conflict and keeping it to themselves?
-
-> There is also the ability to define blockquotes that look like this and can span multiple lines
-
-But it takes more than good ideas to build and grow a business. It takes people to bring them into reality. Are those people collaborating and sharing their expertise, or are they in conflict and keeping it to themselves?
-
-<div class="Image__Medium">
-  <img src="./images/medium.jpg" alt="alt text for medium image" />
-</div>
-
-But it takes more than good ideas to build and grow a business. It takes people to bring them into reality. Are those people collaborating and sharing their expertise, or are they in conflict and keeping it to themselves? But it takes more than good ideas to build and grow a business. It takes people to bring them into reality. Are those people collaborating and sharing their expertise, or are they in conflict and keeping it to themselves? But it takes more than good ideas to build and grow a business. It takes people to bring them into reality. Are those people collaborating and sharing their expertise, or are they in conflict and keeping it to themselves? But it takes more than good ideas to build and grow a business. It takes people to bring them into reality. Are those people collaborating and sharing their expertise, or are they in conflict and keeping it to themselves?
-
-<div class="Image__Large">
-  <img src="./images/large.jpg" alt="alt text for large image" />
-</div>
-
-But it takes more than good ideas to build and grow a business. It takes people to bring them into reality. Are those people collaborating and sharing their expertise, or are they in conflict and keeping it to themselves?
-
-## This is a secondary heading
-
-But it takes more than good ideas to build and grow a business. It takes people to bring them into reality. Are those people collaborating and sharing their expertise, or are they in conflict and keeping it to themselves?
-
-```js {5-6}
+```js
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import styled from "@emotion/styled";
 
-import SocialIcons from "@icons";
+import * as SocialIcons from "../../icons/social";
 import mediaqueries from "@styles/media";
 
 const icons = {
@@ -60,8 +29,25 @@ const icons = {
   twitter: SocialIcons.TwitterIcon,
   facebook: SocialIcons.FacebookIcon,
   instagram: SocialIcons.InstagramIcon,
-  github: SocialIcons.GithubIcon
+  github: SocialIcons.GithubIcon,
 };
+
+const socialQuery = graphql`
+  {
+    allSite {
+      edges {
+        node {
+          siteMetadata {
+            social {
+              name
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
 function SocialLinks({ fill = "#73737D" }: { fill: string }) {
   const result = useStaticQuery(socialQuery);
@@ -90,37 +76,27 @@ function SocialLinks({ fill = "#73737D" }: { fill: string }) {
 }
 ```
 
-At Narative, we’ve been fans of Gatsby from day one, using it to build performant and flexible products for both clients and ourselves. With the growing community interest in Gatsby, we hope to create more resources that make it easier for anyone to grasp the power of this incredible tool.
+This is another paragraph after the code block.
 
-```js live
-const Wrapper = ({ children }) => (
-  <div
-    style={{
-      background: "papayawhip",
-      width: "100%",
-      padding: "2rem"
-    }}
-  >
-    {children}
-  </div>
-);
+## This is a secondary heading
 
-const Title = () => (
-  <h2 style={{ color: "palevioletred", textAlign: "center" }}>
-    Hello World!
-    <br />
-    Try Novela Gatsby Theme.
-  </h2>
-);
+```jsx
+import React from "react";
+import { ThemeProvider } from "theme-ui";
+import theme from "./theme";
 
-render(
-  <Wrapper>
-    <Title />
-  </Wrapper>
+export default props => (
+  <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
 );
 ```
 
+At Narative, we’ve been fans of Gatsby from day one, using it to build performant and flexible products for both clients and ourselves. With the growing community interest in Gatsby, we hope to create more resources that make it easier for anyone to grasp the power of this incredible tool.
+
+In this article I’ll explain how Gatsby’s lifecycle works and what the Gatsby specific files are for.
+
 One of the challenges I had when learning Gatsby was trying to understand the Gatsby lifecycle. React introduced me to the concept of a Component Lifecycle, but when I started learning Gatsby I felt at a loss again. I remember looking through example repositories and seeing Gatsby specific files in every project and thinking to myself, “What are these files for? Why are gatsby-node.js, gatsby-browser.js, and gatsby-ssr.js generated in the default starter kit? Can I really delete these files?”
+
+In this article I’ll explain the how Gatsby’s lifecycle works and what the Gatsby specific files are for.
 
 ## How does Gatsby work?
 
@@ -147,34 +123,18 @@ What’s important to remember is that Gatsby’s lifecycle can be aggregated in
 - Browser
 - These three sequences makeup the Gatsby lifecycle.
 
----
+Parts of the lifecycle are visible when running $ gatsby develop
+A peak into the Gatsby lifecycle when running $ gatsby develop
+A peak into the Gatsby lifecycle when running \$ gatsby develop
+If you’re familiar with React and the component lifecycle, Gatsby’s lifecycle is almost the same concept. Just like React’s lifecycle, Gatsby exposes hooks for developers to build on top of. Those lifecycle hooks are accessed through Gatsby specific files such as gatsby-node.js, gatsby-browser.js and gatsby-ssr.js.
 
-## What are the Gatsby specific files for?
-
+What are the Gatsby specific files for?
 gatsby-config.js
 A place to put all your site configurations such as plugins, metadata, and polyfills. This file is the blueprint of your application and is where Gatsby really shines with its plugin system. When you run $ gatsby develop or $ gatsby build gatsby-config.js is the first file to be read and validated.
 
 Most of your time spent in gatsby-config.js will likely revolve around source plugins, image plugins, offline support, styling options, and site metadata.
 
-```jsx
-function MDX({ content, children, ...props }) {
-  const [colorMode] = useColorMode();
-
-  return (
-    <MDXProvider components={components}>
-      <MDXBody>
-        <MDXRenderer isDark={colorMode === "dark"} {...props}>
-          {content}
-        </MDXRenderer>
-        {children}
-      </MDXBody>
-    </MDXProvider>
-  );
-}
-```
-
-### gatsby-node.js
-
+gatsby-node.js
 Gatsby runs a Node process when you develop or build your website and uses Webpack under the hood to spin up a development server with hot reloading. During the Node process Gatsby will load plugins, check the cache, bootstrap the website, build the data schema, create pages, and deal with some configuration and data management.
 
 Everything that occurs during the Bootstrap and Build sequences occurs in gatsby-node.js. This means it’s the perfect place to create pages dynamically based off data from a source plugin or modify Gatsby’s Webpack or Babel configs.
@@ -183,7 +143,7 @@ For example, if you want to move some files manually, such as a Netlify \_redire
 
 From experience, most of my time has revolved around handling data and building pages in gatsby-node.js. This file quickly becomes the piping of your entire website.
 
-### Examples of gatsby-node.js hooks:
+## Examples of gatsby-node.js hooks:
 
 - createPages
 - onCreateBabelConfig
@@ -195,7 +155,7 @@ When you think Server Side Rendering you think of a server that takes in request
 
 Naturally, gatsby-ssr.js allows developers to hook into that lifecycle. In my experience, most use cases revolve around injecting CSS, HTML, or Redux state information into the generated output. For example, if you need to insert third party scripts such as Analytics Tracking or a Pixel it can be done on the onRenderBody gatsby-ssr.js hook.
 
-### Examples of gatsby-ssr.js hooks:
+## Examples of gatsby-ssr.js hooks:
 
 - onPreRenderHTML
 - onRenderBody
@@ -206,7 +166,7 @@ Gatsby is a static site that loads a dynamic application after initial load, whi
 
 Everything that occurs after your static site has loaded can be hooked in gatsby-browser.js. For apps that I’ve built, gatsby-browser.js was mostly used for keeping track of routes, scroll positioning, and sending analytics events.
 
-### Examples of gatsby-browser.js hooks:
+## Examples of gatsby-browser.js hooks:
 
 - onClientEntry
 - onRouteUpdate

@@ -1,10 +1,9 @@
 ---
-name: Thiago Costa
+name: Brad Tiller
 bio: |
   Written by You. This is where your author bio lives. Share your work, your
   joys and of course, your Twitter handle.
-avatar: /images/avatars/thiago-costa.jpg
-featured: false
+avatar: /images/avatars/brad-tiller.jpg
 social:
   - title: github
     url: https://github.com

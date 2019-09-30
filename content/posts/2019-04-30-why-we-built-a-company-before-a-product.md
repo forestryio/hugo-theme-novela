@@ -1,6 +1,5 @@
 ---
 title: Why we built a company before building a product
-author: Thiago Costa
 date: 2019-04-30
 hero: /images/heros/hero-6.jpg
 excerpt: this is my excerpt
