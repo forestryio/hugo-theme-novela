@@ -252,6 +252,7 @@
     position: relative;
     height: 25px;
     margin-right: 15px;
+    margin-left: 15px;
 
     /*PHABLET*/
     @media screen and (max-width: $phablet){
@@ -302,9 +303,12 @@
 }
 
 .article-coauthors-icon-container{
+    display: flex;
+    align-items: center;
     position: relative;
     cursor: pointer;
     margin-left: 10px;
+    margin-right: 10px;
   
     /*PHABLET*/
     @media screen and (max-width: $phablet){
@@ -341,7 +345,8 @@
     position: absolute;
     cursor: pointer;
     top: 25px;
-    right: 0;
+    right: 10px;
+
 }
 
 .article-coauthors-list-item-open{
