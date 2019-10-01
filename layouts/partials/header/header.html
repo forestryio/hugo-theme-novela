@@ -19,3 +19,6 @@
     </div>
 </div>
 </Section>
+
+{{ $script := resources.Get "js/toggleLogos.js" }}
+<script src="{{ $script.Permalink }}"></script>

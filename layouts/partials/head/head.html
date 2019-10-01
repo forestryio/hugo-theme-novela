@@ -2,7 +2,7 @@
     <meta charset="utf-8">
     <title>{{ .Site.Title }}</title>
 
-    <link rel="icon" href="/images/misc/favicon.png">
+    <link rel="icon" href="/images/misc/favicon.svg">
 
     {{ $style := resources.Get "scss/global.scss" | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
