@@ -1,10 +1,9 @@
-<div
-  className="social-icon-container"
-  href="{{.Params.url}}"
->
-    {{ range $component := .Params.social }}
-        {{ $path := print "icons/social/" $component.title }}
-        <a href="{{ $component.url }}">{{ partial $path $ }}</a>
-        <span class="hidden">{{ $component.url }}</span>
-    {{ end }}
+<div class="social-icon-outer authors-sio">
+    <div class="social-icon-container">
+        {{ range $component := .Params.social }}
+            {{ $path := print "icons/social/" $component.title }}
+            <a href="{{ $component.url }}">{{ partial $path $ }}</a>
+            <span class="hidden">{{ $component.url }}</span>
+        {{ end }}
+    </div>
 </div>

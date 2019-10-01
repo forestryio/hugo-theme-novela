@@ -1,8 +1,28 @@
+.social-icon-outer{
+    width: 20%;
+    min-width: 220px;
+}
+
+/*TABLET*/
+@media screen and (max-width: $tablet){
+    .authors-sio{
+        width: 60%;
+    }
+}
+
 .social-icon-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-width: 100%;
     position: relative;
     margin-left: 3.2rem;
     text-decoration: none;
     max-width: 16px;
+
+    a{
+        margin-right: 25px;
+    }
 }
 
 .social-icon-container:hover > svg {

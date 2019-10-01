@@ -65,7 +65,9 @@
 .author-social{
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-top: 35px;
+    width: 100%;
   
     /*PHABLET*/
     @media screen and (max-width: $phablet){

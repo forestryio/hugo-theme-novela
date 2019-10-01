@@ -12,6 +12,7 @@
     /*PHABLET*/
     @media screen and (max-width: 540px){
         max-width: 100%;
+        padding: 2rem;;
     }
 
     p{
@@ -21,6 +22,8 @@
             max-width: 567px;
         }
     }
+
+    
 }
 
 .narrow{
@@ -31,4 +34,5 @@
             max-width: 527px;
         }
     }
+    
 }

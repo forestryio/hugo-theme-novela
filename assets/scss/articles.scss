@@ -139,6 +139,18 @@
     transition: opacity 0.25s;
 }
 
+.author-alc{
+    background-image: linear-gradient(var(--card), transparent);
+
+    .post-row-alt{
+        justify-content: center;
+        .article-link{
+            max-width: 40%!important;
+            margin: 15px;
+        }
+    }
+}
+
 /*LIST TITLE*/
 .list-title{
     position: relative;
