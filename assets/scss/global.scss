@@ -159,3 +159,37 @@
   img.Image__Zoom ~ div {
     background: transparent !important;
   }
+
+  .Image__Small{
+    width: 100%;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 35px;
+    img{
+      width: 100%;
+    }
+  }
+
+  .Image__medium{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 35px;
+    img{
+      width: 100%;
+    }
+  }
+
+  .Image__large{
+    width: 100%;
+    margin-bottom: 35px;
+    img{
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+    }
+  }

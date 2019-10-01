@@ -20,7 +20,7 @@ In my experience, the challenges that growing companies struggle with rarely ste
 But it takes more than good ideas to build and grow a business. It takes people to bring them into reality. Are those people collaborating and sharing their expertise, or are they in conflict and keeping it to themselves? Do they have the resources necessary to execute on their ideas? Or are they constantly under pressure to pluck only the lowest-hanging fruit through bare minimum means, while putting their greatest ambitions on the back-burner?
 
 <div class="Image__Small">
-  <img src="./images/small.jpg" alt="alt text for small image" />
+  <img src="/images/misc/small.jpg" alt="alt text for small image" />
 </div>
 
 These are the circumstances that suffocate creativity and destroy value in an organization. That’s why I knew that if I was going to start a company, our first product would have to be the company itself.
@@ -32,13 +32,13 @@ But it takes more than good ideas to build and grow a business. It takes people 
 But it takes more than good ideas to build and grow a business. It takes people to bring them into reality. Are those people collaborating and sharing their expertise, or are they in conflict and keeping it to themselves?
 
 <div class="Image__Medium">
-  <img src="./images/medium.jpg" alt="alt text for medium image" />
+  <img src="/images/misc/medium.jpg" alt="alt text for medium image" />
 </div>
 
 But it takes more than good ideas to build and grow a business. It takes people to bring them into reality. Are those people collaborating and sharing their expertise, or are they in conflict and keeping it to themselves? But it takes more than good ideas to build and grow a business. It takes people to bring them into reality. Are those people collaborating and sharing their expertise, or are they in conflict and keeping it to themselves? But it takes more than good ideas to build and grow a business. It takes people to bring them into reality. Are those people collaborating and sharing their expertise, or are they in conflict and keeping it to themselves? But it takes more than good ideas to build and grow a business. It takes people to bring them into reality. Are those people collaborating and sharing their expertise, or are they in conflict and keeping it to themselves?
 
 <div class="Image__Large">
-  <img src="./images/large.jpg" alt="alt text for large image" />
+  <img src="/images/misc/large.jpg" alt="alt text for large image" />
 </div>
 
 But it takes more than good ideas to build and grow a business. It takes people to bring them into reality. Are those people collaborating and sharing their expertise, or are they in conflict and keeping it to themselves?
