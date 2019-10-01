@@ -1,8 +1,13 @@
 <head>
     <meta charset="utf-8">
     <title>{{ .Site.Title }}</title>
+
+    <link rel="icon" href="/images/misc/favicon.png">
+
     {{ $style := resources.Get "scss/global.scss" | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
     {{ $prism := resources.Get "css/prism.css" }}
     <link rel="stylesheet" href="{{ $prism.Permalink }}" />
+
+    <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
 </head>

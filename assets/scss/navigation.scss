@@ -127,6 +127,10 @@
     transform: translateX(-3px);
 }
 
+.logo-link:hover{
+    text-decoration: none;
+}
+
 /*DESKTOP MEDIUM*/
 @media screen and (max-width: 1280px){
     .logo-link{
