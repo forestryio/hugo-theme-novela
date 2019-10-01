@@ -9,7 +9,8 @@
             {{ $scratch.Set "pt" $pageTitle }}
             {{ range $index, $article := where .Site.RegularPages "Type" "post" }}
                 {{ if or (eq ($scratch.Get "counter") 1) (eq ($scratch.Get "counter") 2) }}
-                    <a href="{{ $article.Permalink }}" class="article-link">
+                    <a href="{{ $article.Permalink }}" class="article-link"
+                    {{ if eq ($scratch.Get "counter") 1 }} id="article-link-bigger"{{ end }}>
                         <div>
                             <div class="image-container">
                                 <img src="{{ $article.Params.hero }}" class="article-image" /> 
