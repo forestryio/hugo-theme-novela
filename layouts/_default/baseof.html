@@ -4,6 +4,9 @@
 
 <body class="line-numbers">
 
+    {{ $script := resources.Get "js/initColors.js" }}
+    <script src="{{ $script.Permalink }}"></script>
+
     <div class="layout-styled">
 
         {{ partial "header/header.html" . }}

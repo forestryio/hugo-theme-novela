@@ -1,20 +1,6 @@
 document.getElementById("themeColorButton").addEventListener("click", toggleColors);
-window.addEventListener('load', initColors);
 
 let bodyElement = document.getElementsByTagName("BODY")[0];
-
-function initColors(){
-    if (localStorage.getItem("isLight") === null) {
-        localStorage.setItem("isLight", 'true');
-    }
-
-    if (localStorage.getItem("isLight") === 'false'){
-        makeDark();
-    }
-    else{
-        makeLight();
-    }
-}
 
 function toggleColors(){
     if (localStorage.getItem("isLight") === 'true'){
