@@ -1,5 +1,13 @@
-.Logo__Mobile {
-    display: none;
+#logo-desktop{
+    .change-fill{
+        fill: var(--primary);
+    }
+}
+
+#logo-mobile{
+    path{
+        fill: var(--primary);
+    }
 }
 
 @media screen and (max-width: 735px){
