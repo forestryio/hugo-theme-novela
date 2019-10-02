@@ -1,106 +1,59 @@
 
-{{ $scratch := newScratch }}
-{{ $scratch.Set "numAuthors" 0 }}
-
-{{ $authors := .Params.authors }}
-
-{{ $scratch.Set "numAuthors" (len $authors) }}
-{{ $scratch.Set "authors" $authors }}
-
-{{ if eq ($scratch.Get "numAuthors") 1 }}
-
-    {{ range $author := where .Site.RegularPages "Type" "author" }}
-        {{ $authorPath := index ($scratch.Get "authors") 0 }}
-        {{ $firstAuthor := .Site.GetPage $authorPath }}
-        {{ if eq $author.Params.name $firstAuthor.Params.name }}
-            <a href="{{ $author.Permalink }}" class="article-author-link">
-                {{ if $author.Params.avatar }}
+{{ $authors := partialCached "func/GetAuthors" . .File.UniqueID }}
+{{ if eq (len $authors) 1 }}
+    {{ with $author := index $authors 0 }}
+            <a href="{{ .URL }}" class="article-author-link">
+                {{ with .avatar }}
                     <div class="article-author-avatar">
-                        <img src="{{ $author.Params.avatar }}" />
+                        <img src="{{ . }}" />
                     </div>
                 {{ end }}
-                <strong>{{ $author.Params.name }}</strong>
-                <span class="hide-on-mobile">,&nbsp;</span>
-                </a>
-        {{ end }}
-    {{ end }}
-
-{{ else if gt ($scratch.Get "numAuthors") 1 }}
-    <div class="article-coauthors-container">
-        {{ $avatarsWidth:= mul ($scratch.Get "numAuthors") 15 }}
-        <span id="collapsedCoauthors" class="article-coauthors-collapsed">
-        <div class="article-coauthors-list" style="width: {{ $avatarsWidth }}px;">
-
-            {{ $scratch := newScratch }}
-            {{ $scratch.Set "matches" false }}
-            {{ $scratch.Set "authors" .Params.authors }}
-            {{ range $index, $author := where .Site.RegularPages "Type" "author" }}
-                {{ $scratch.Set "nameHold" $author.Params.name }}
-                {{ range $authorPath := $scratch.Get "authors" }}
-                    {{ $authorCompare := $.Site.GetPage $authorPath }}
-                    {{ if eq $authorCompare.Params.name ($scratch.Get "nameHold") }}
-                        {{ $scratch.Set "matches" true }}
-                    {{ end }}
+                {{ with .name }}
+                <strong>{{ . }}</strong>
                 {{ end }}
-                {{ if eq ($scratch.Get "matches") true }}
-                    {{ if $author.Params.avatar }}
+                <span class="hide-on-mobile">,&nbsp;</span>
+            </a>
+    {{ end }}
+{{ else }}
+    <div class="article-coauthors-container">
+        {{ $avatarsWidth:= mul (len $authors) 15 }}
+        <span id="collapsedCoauthors" class="article-coauthors-collapsed">
+            <div class="article-coauthors-list" style="width: {{ $avatarsWidth }}px;">
+                {{ range $index, $author := $authors }}
+                    {{ with .avatar }}
                         <div class="article-coauthors-avatar" style="left: {{ mul $index 15 }}px;">
-                            <img src="{{ $author.Params.avatar }}" />
+                            <img src="{{ . }}" />
                         </div>
                     {{ end }}
                 {{ end }}
-            {{ end }}
-        </div>
-        <strong class="article-coauthors-name-container">
-            {{ $scratch.Set "matches" false }}
-            {{ $scratch.Set "authors" .Params.authors }}
-            {{ range $index, $author := where .Site.RegularPages "Type" "author" }}
-                {{ $scratch.Set "nameHold" $author.Params.name }}
-                {{ range $authorPath := $scratch.Get "authors" }}
-                    {{ $authorCompare := $.Site.GetPage $authorPath }}
-                    {{ if eq $authorCompare.Params.name ($scratch.Get "nameHold") }}
-                        {{ $scratch.Set "matches" true }}
-                    {{ end }}
+            </div>
+            <strong class="article-coauthors-name-container">
+                {{ range $index, $author := $authors }}
+                    {{ .firstname }}{{ if ne (add $index 1) (len $authors) }},{{ end }}
                 {{ end }}
-                {{ if eq ($scratch.Get "matches") true }}
-                    {{ $author.Params.name }}{{ if ne (add $index 1) (len ($scratch.Get "authors")) }},{{ end }}
-                {{ end }}
-            {{ end }}
-        </strong>
-        <div class="article-coauthors-icon-container">
-            {{ partial "icons/ui/toggle-open.html" . }}
-        </div>
+            </strong>
+            <div class="article-coauthors-icon-container">
+                {{ partial "icons/ui/toggle-open.html" . }}
+            </div>
         </span>
 
         <ul id="uncollapsedCoauthors" class="article-coauthors-list-open hidden">
             <div id="uncollapsedAction" class="article-icon-open-container">
                 {{ partial "icons/ui/toggle-closed.html" . }}
             </div>
-            {{ $scratch.Set "matches" false }}
-            {{ $scratch.Set "authors" .Params.authors }}
-            {{ range $index, $author := where .Site.RegularPages "Type" "author" }}
-                {{ $scratch.Set "nameHold" $author.Params.name }}
-                {{ range $authorPath := $scratch.Get "authors" }}
-                    {{ $authorCompare := $.Site.GetPage $authorPath }}
-                    {{ if eq $authorCompare.Params.name ($scratch.Get "nameHold") }}
-                        {{ $scratch.Set "matches" true }}
-                    {{ end }}
-                {{ end }}
-                {{ if eq ($scratch.Get "matches") true }}
-                    <li class="article-coauthors-list-item-open">
-                        <a href="{{ $author.Permalink }}" class="article-author-link">
-                            {{ if $author.Params.avatar }}
-                                <div class="article-coauthor-avatar-open">
-                                    <img src="{{ $author.Params.avatar }}" />
-                                </div>
-                            {{ end }}
-                            <strong class="article-author-name-open">{{ $author.Params.name }}</strong>
-                        </a>
-                    </li>
-                {{ end }}
+            {{ range $index, $author := $authors }}
+                <li class="article-coauthors-list-item-open">
+                    <a href="{{ .URL }}" class="article-author-link">
+                        {{ with $author.avatar }}
+                            <div class="article-coauthor-avatar-open">
+                                <img src="{{ . }}" />
+                            </div>
+                        {{ end }}
+                        <strong class="article-author-name-open">{{ .name }}</strong>
+                    </a>
+                </li>
             {{ end }}
         </ul>
-
     </div>
 {{ end }}
 
