@@ -204,3 +204,13 @@
       fill: var(--primary);
     }
   }
+
+  img{
+    animation-name: image-load-in;
+    animation-duration: 0.8s;
+  }
+
+  @keyframes image-load-in {
+    0% {filter: blur(8px); opacity: 0;}
+    100% {filter: blur(0); opacity: 1;}
+  }
