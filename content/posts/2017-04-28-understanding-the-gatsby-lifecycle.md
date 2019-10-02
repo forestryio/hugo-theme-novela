@@ -5,7 +5,7 @@ hero: /images/heros/hero-2.jpg
 excerpt: With the growing community interest in Gatsby, we hope to create more resources that make it easier for anyone to grasp the power of this incredible tool.
 timeToRead: 4
 authors:
-  - "authors/dennis-brotzky"
+  - "authors/dennis-brotzky.md"
 type: post
 layout: post
 ---

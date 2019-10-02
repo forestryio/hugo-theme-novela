@@ -5,7 +5,7 @@ hero: /images/heros/hero-6.jpg
 excerpt: this is my excerpt
 timeToRead: 3
 authors:
-  - "authors/thiago-costa"
+  - "authors/thiago-costa.md"
 type: post
 layout: post
 ---

@@ -5,7 +5,7 @@ hero: /images/heros/hero-5.jpg
 excerpt: To understand why Figma is the best design tool for our company, you have to understand what we do. As a designer.
 timeToRead: 8
 authors:
-  - "authors/thiago-costa"
+  - "authors/thiago-costa.md"
 type: post
 layout: post
 ---
