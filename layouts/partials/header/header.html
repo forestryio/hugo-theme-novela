@@ -5,14 +5,14 @@
       <span class="header-hidden">Navigate back to the homepage</span>
     </a>
     <div class="nav-controls">
-      <button class="icon-wrapper">
+      <button id="copyButton" class="icon-wrapper">
         {{ partial "icons/ui/link.html" . }}
         <div class="tool-tip hidden">
           Copied
         </div>
       </button>
 
-      <button class="icon-wrapper"> 
+      <button id="themeColorButton" class="icon-wrapper"> 
         <div class="moon-or-sun"></div>
         <div class="moon-mask"></div>
       </button>
@@ -21,4 +21,7 @@
 </Section>
 
 {{ $script := resources.Get "js/toggleLogos.js" }}
+<script src="{{ $script.Permalink }}"></script>
+
+{{ $script := resources.Get "js/toggleColors.js" }}
 <script src="{{ $script.Permalink }}"></script>
