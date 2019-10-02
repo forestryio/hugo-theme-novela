@@ -7,9 +7,10 @@
     <div class="nav-controls">
       <button id="copyButton" class="icon-wrapper">
         {{ partial "icons/ui/link.html" . }}
-        <div class="tool-tip hidden">
-          Copied
+        <div id="toolTip" class="tool-tip " >
+            copied
         </div>
+        <input id="copyText" style="opacity: 0;" type="text" class="tool-tip " />
       </button>
 
       <button id="themeColorButton" class="icon-wrapper"> 
@@ -25,3 +26,24 @@
 
 {{ $script := resources.Get "js/toggleColors.js" }}
 <script src="{{ $script.Permalink }}"></script>
+
+<script>
+    document.getElementById("copyButton").addEventListener("click", copyToClipboard);
+    
+    let currentUrl = window.location;
+    let copyTextContainer = document.getElementById("copyText");
+    let toolTip = document.getElementById("toolTip");
+
+    function copyToClipboard(){
+        copyTextContainer.value = currentUrl
+        copyTextContainer.focus();
+        copyTextContainer.select();
+        document.execCommand("copy");
+
+        toolTip.style.animationName = "pan-toolbar";
+
+        setTimeout(function(){
+             toolTip.style.removeProperty('animation-name');
+        }, 2000);
+    }
+</script>

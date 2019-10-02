@@ -17,7 +17,6 @@ function initColors(){
 }
 
 function toggleColors(){
-    console.log(localStorage.getItem("isLight"));
     if (localStorage.getItem("isLight") === 'true'){
         makeDark();
 
@@ -47,6 +46,7 @@ function makeDark(){
     bodyElement.style.setProperty('--errorBackground', "rgba(238, 86, 91, 0.1)");
     bodyElement.style.setProperty('--horizontalRule', "rgba(255, 255, 255, 0.15)");
     bodyElement.style.setProperty('--inputBackground', "rgba(255, 255, 255, 0.07)");
+    bodyElement.style.setProperty('--tooltip', "#000");
 }
 
 function makeLight(){
@@ -66,4 +66,5 @@ function makeLight(){
     bodyElement.style.setProperty('--errorBackground', "");
     bodyElement.style.setProperty('--horizontalRule', "");
     bodyElement.style.setProperty('--inputBackground', "");
+    bodyElement.style.setProperty('--tooltip', "lightgrey");
 }

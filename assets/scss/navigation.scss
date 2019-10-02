@@ -152,25 +152,23 @@
 }
 
 .tool-tip{
+    opacity: 0;
+    transform: translateY(6px);
     position: absolute;
     padding: 4px 13px;
     border-radius: 5px;
     font-size: 14px;
     top: -35px;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    color: var(--primary);
+    background-color: var(--tooltip);
+    animation-duration: 2s;
 }
 
-.tooltip::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -6px;
-    margin: 0 auto;
-    width: 0;
-    height: 0;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
+@keyframes pan-toolbar {
+    0% {opacity: 0; transform: translateY(6px);}
+    30% {opacity: 1; transform: translateY(0);}
+    70% {opacity: 1; transform: translateY(0);}
+    100% {opacity: 0; transform: translateY(6px);}
 }
 
 .icon-wrapper{
