@@ -5,7 +5,7 @@ hero: /images/heros/hero-2.jpg
 excerpt: Creating a new website for Hopper, one of the top 4 most downloaded travel apps in the U.S, along with Uber, Lyft.
 timeToRead: 4
 authors:
-  - "authors/dennis-brotzky"
+  - "authors/dennis-brotzky.md"
 type: post
 layout: post
 ---

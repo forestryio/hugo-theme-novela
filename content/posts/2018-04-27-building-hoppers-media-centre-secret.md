@@ -6,7 +6,7 @@ excerpt: Creating a new website for Hopper, one of the top 4 most downloaded tra
 secret: true
 timeToRead: 8
 authors:
-  - "authors/dennis-brotzky"
+  - "authors/dennis-brotzky.md"
 type: post
 layout: post
 ---

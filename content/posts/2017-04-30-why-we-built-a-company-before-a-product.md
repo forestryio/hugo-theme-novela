@@ -5,7 +5,7 @@ hero: /images/heros/hero-6.jpg
 excerpt: Creating a new website for Hopper, one of the top 4 most downloaded travel apps in the U.S, along with Uber, Lyft.
 timeToRead: 3
 authors:
-  - "authors/thiago-costa"
+  - "authors/thiago-costa.md"
 type: post
 layout: post
 ---

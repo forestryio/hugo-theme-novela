@@ -5,10 +5,10 @@ hero: /images/heros/hero-2.jpg
 excerpt: With the growing community interest in Gatsby, we hope to create more resources that make it easier for anyone to grasp the power of this incredible tool.
 timeToRead: 6
 authors:
-  - "authors/thiago-costa"
-  - "authors/dennis-brotzky"
-  - "authors/brad-tiller"
-  - "authors/mack-mansouri"
+  - "authors/thiago-costa.md"
+  - "authors/dennis-brotzky.md"
+  - "authors/brad-tiller.md"
+  - "authors/mack-mansouri.md"
 type: post
 layout: post
 ---
