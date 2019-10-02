@@ -1,40 +1,57 @@
+{{/*
+    Prints the next 2 articles in the same section or, if less or 2 found, the first (and potentially second) of the section.
+
+    @author @regisphilibert @mountainbug95
+
+    @context Type Page (.)
+
+    @access public
+
+*/}}
+
+{{/* declaring next empty slice */}}
+{{ $next := slice }}
+{{/* Checking if current article has a PrevInSection (Prev as we are ordering dsc here.) */}}
+{{ with .PrevInSection }}
+    {{ $next = $next | append . }}
+    {{/* Checking for that "next" article own "next" to fill the "second next" */}}
+    {{ with .PrevInSection }}
+        {{ $next = $next | append . }}
+    {{ end }}
+{{ end }}
+{{/* If the number of found "next article" is less than two we need to find the first and potentially second article
+of the whole section and append them to our $next slice. */}}
+{{ $diff := sub 2 (len $next) }}
+{{ if $diff }}
+    {{/* We use that diff number (if > 0) to grab the first x number of articles */}}
+    {{ $articles := partialCached "func/GetArticles" . "articles"}}
+    {{ $next = $next | append (first $diff $articles) }}
+{{ end }}
 <section class="section nartrow">
     <h3 class="footer-next-heading">More articles from {{ .Site.Title }}</h3>
     <div class="footer-spacer"></div>
     <div class="next-articles-grid" numberOfArticles={numberOfArticles}>
         <div class="post-row">
-            {{ $scratch := newScratch }}
-            {{ $scratch.Set "counter" 0 }}
-            {{ $pageTitle := .Params.title }}
-            {{ $scratch.Set "pt" $pageTitle }}
-            {{ range $index, $article := where .Site.RegularPages "Type" "post" }}
-                {{ if or (eq ($scratch.Get "counter") 1) (eq ($scratch.Get "counter") 2) }}
-                    <a href="{{ $article.Permalink }}" class="article-link"
-                    {{ if eq ($scratch.Get "counter") 1 }} id="article-link-bigger"{{ end }}>
+            {{ range $index, $article := $next }}
+                <a href="{{ $article.Permalink }}" class="article-link"
+                {{ if not $index}} id="article-link-bigger"{{ end }}>
+                    <div>
+                        <div class="image-container">
+                            <img src="{{ $article.Params.hero }}" class="article-image" /> 
+                        </div>
                         <div>
-                            <div class="image-container">
-                                <img src="{{ $article.Params.hero }}" class="article-image" /> 
-                            </div>
-                            <div>
-                                <h2 class="article-title">
-                                    {{ $article.Params.title }}
-                                </h2>
-                                <p class="article-excerpt">
-                                    {{ $article.Params.excerpt }}
-                                </p>
-                                <div class="article-metadata">
-                                    {{ $article.Date | dateFormat "January 1, 2019" }}{{ with $article.Params.timeToRead }} · {{ $article.Params.timeToRead }} min read{{ end }}
-                                </div>
+                            <h2 class="article-title">
+                                {{ $article.Params.title }}
+                            </h2>
+                            <p class="article-excerpt">
+                                {{ $article.Params.excerpt }}
+                            </p>
+                            <div class="article-metadata">
+                                {{ $article.Date | dateFormat "January 1, 2019" }}{{ with $article.Params.timeToRead }} · {{ $article.Params.timeToRead }} min read{{ end }}
                             </div>
                         </div>
-                    </a>
-                    {{ $scratch.Set "counter" (add ($scratch.Get "counter") 1) }}
-                {{ end }}
-                {{ if eq .Params.title ($scratch.Get "pt") }}
-                    {{ if .Params.title }}
-                        {{ $scratch.Set "counter" 1 }}
-                    {{ end }}
-                {{ end }}
+                    </div>
+                </a>
             {{ end }}
         </div>
     </div>

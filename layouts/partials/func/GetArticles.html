@@ -1,0 +1,5 @@
+{{ $articles := slice }}
+{{ with  where site.RegularPages "Type" "post" }}
+  {{ $articles = . }}
+{{ end }}
+{{ return $articles }}
