@@ -3,7 +3,6 @@ title: Building the new Hopper.com
 date: 2019-04-29
 hero: /images/heros/hero-11.jpg
 excerpt: Creating a new website for Hopper, one of the top 4 most downloaded travel apps in the U.S, along with Uber, Lyft.
-show_subscription: true
 timeToRead: 4
 authors:
   - "authors/dennis-brotzky.md"
@@ -182,3 +181,5 @@ Gatsby is built with React at its core and shares a common API pattern, the life
 Without the Gatsby lifecycle, it would be impossible to customize and modify your project beyond the base configuration, leaving developers with a rigid and poor developer experience. This power and flexibility has helped us build amazing web projects for clients like Hopper!
 
 Gatsby is a staple within our engineering process at Narative, helping us help our clients build the products they’ve always dreamed of, and the ones they’re yet to dream up.
+
+{{< subscribe email="something@good.com" >}}

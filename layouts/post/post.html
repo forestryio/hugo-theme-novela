@@ -7,10 +7,7 @@
         {{ .Content | markdownify }}
     </article>
 
-    {{ if eq .Params.show_subscription true }}
-        {{ partial "subscription/subscription.html" }}
-    {{ end }}
-
+    
     {{ partial "article/article_next.html" . }}
 </section>
 
