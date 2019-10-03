@@ -1,3 +1,40 @@
+/*************************ASIDE*************************/
+.aside-container{
+    display: flex;
+    margin: 0 auto;
+    max-width: 1140px;
+    z-index: 100;
+    position: sticky;
+    top: 30%;
+  
+    /*DESKTOP MEDIUM*/
+    @media screen and (max-width: $desktop_medium){
+        display: none;
+    }
+}
+
+.aside-align{
+    position: fixed;
+    display: flex;
+    transform: translateY(0px);
+    top: 0;
+    align-items: center;
+    height: 100vh;
+    z-index: 3;
+  
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.4s linear, visibility 0.4s linear;
+}
+
+.overlap-container{
+    user-select: none;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+/*************************PROGRESS*************************/
 .progress-container{
     position: relative;
     outline: none;

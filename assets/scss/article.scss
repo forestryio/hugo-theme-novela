@@ -116,7 +116,7 @@
 }
 
 .article-hero-image{
-    position: relative;
+    position: absolute;
     z-index: 1;
     width: 100%;
     max-width: 944px;
@@ -128,11 +128,18 @@
     img{
         width: 100%;
     }
+
+    /*DESKTOP MEDIUM*/
+    @media screen and (max-width: $desktop_medium){
+        position: relative;
+    }
   
+    /*TABLET*/
     @media screen and (max-width: $tablet){
         max-width: 100%;
     }
 
+    /*PHABLET*/
     @media screen and (max-width: phablet){
         margin: 0 auto;
         width: calc(100vw - 40px);

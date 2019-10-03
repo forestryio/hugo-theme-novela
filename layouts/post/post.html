@@ -3,6 +3,8 @@
 <section class="section narrow">
     {{ partial "article/article_hero.html" . }}
 
+    {{ partial "article/article_progress" . }}
+
     <article class="post-content">
         {{ .Content | markdownify }}
     </article>
