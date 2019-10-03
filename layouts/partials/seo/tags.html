@@ -1,0 +1,44 @@
+{{/* 
+	Print SEO meta tags 
+	
+	@author The New Dynamic
+	
+	@access private
+
+	@context map [page (Page), seo (Map)] */}}
+
+{{/*------------------------------
+	WRITING TAGS
+	------------------------------ */}}
+{{- $seo := .seo -}}
+
+<title>{{ $seo.title }}</title>
+<meta name="description" content="{{ $seo.description }}">
+<meta property="og:title" content="{{ $seo.title }}">
+<meta property="og:site_name" content="{{ $seo.site_name }}">
+<meta property="og:description" content="{{ $seo.description }}">
+<meta property="og:url" content="{{ .page.Permalink }}">
+<meta property="og:type" content="{{ $seo.type }}">
+<meta property="og:locale" content="{{ $seo.locale }}">
+<meta property="og:image" content='{{ $seo.image }}'>
+{{- with ($seo.image_width) -}}
+	<meta property="og:image:width" content="{{ . }}">
+{{- end -}}
+{{- with ($seo.image_height) -}}
+	<meta property="og:image:height" content="{{ . }}">
+{{- end -}}
+<meta name="twitter:card" content="{{ $seo.twitter_card }}">
+<meta name="twitter:title" content="{{- $seo.title }}">
+{{ with $seo.canonical }}
+	<link rel="canonical" href="{{ . }}">
+{{ end }}
+{{ with $seo.twitter_handle }}
+	<meta name="twitter:site" content="{{- . }}">
+	<meta name="twitter:creator" content="{{- . }}">
+{{ end }}
+	<meta name="twitter:description" content="{{- $seo.description }}">
+<meta name="twitter:image" content="{{- $seo.image }}">
+<meta property="article:published_time" content="{{- $seo.published_time }}">
+{{- with $seo.updated_time }}
+	<meta property="article:updated_time" content="{{- $seo.updated_time }}">
+{{- end }}

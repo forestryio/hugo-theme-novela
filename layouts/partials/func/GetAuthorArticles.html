@@ -1,4 +1,0 @@
-{{ $articles := slice }}
-{{ $articles = where .Site.RegularPages "Type" "post" }}
-{{ $articles = where $articles "Params.authors" "intersect" (slice .File.Path) }}
-{{ return $articles }}

@@ -5,7 +5,7 @@
 <body class="line-numbers">
 
     {{ $script := resources.Get "js/initColors.js" }}
-    <script src="{{ $script.Permalink }}"></script>
+    <script src="{{ $script.RelPermalink }}"></script>
 
     <div class="layout-styled">
 
@@ -20,7 +20,7 @@
     </div>
 
     {{ $script := resources.Get "js/prism.js" }}
-    <script src="{{ $script.Permalink }}"></script>
+    <script src="{{ $script.RelPermalink }}"></script>
 </body>
 
 </html>

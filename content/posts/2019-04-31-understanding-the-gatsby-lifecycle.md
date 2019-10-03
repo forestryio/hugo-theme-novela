@@ -5,12 +5,11 @@ hero: /images/heros/hero-2.jpg
 excerpt: With the growing community interest in Gatsby, we hope to create more resources that make it easier for anyone to grasp the power of this incredible tool.
 timeToRead: 6
 authors:
-  - "authors/thiago-costa.md"
-  - "authors/dennis-brotzky.md"
-  - "authors/brad-tiller.md"
-  - "authors/mack-mansouri.md"
-type: post
-layout: post
+  - Thiago Costa
+  - Dennis Brotzky
+  - Brad Tiller
+  - Mack Mansouri
+
 ---
 
 Hello, world! This is a demo post for `gatsby-theme-novela`. Novela is built by the team at [Narative](https://narative.co), and built for everyone that loves the web.

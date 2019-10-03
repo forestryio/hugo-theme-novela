@@ -1,6 +1,7 @@
 <section class="section nartrow">
     <div id="articlesList" class="articles-list-container show-details">
-        {{ $paginator := .Paginate (where .Site.RegularPages "Type" "post") }}
+        {{ $posts := partialCached "func/GetArticles" . "articles" }}
+        {{ $paginator := .Paginate $posts }}
         {{ $biggerFirst := true }}
         {{ $biggerPlaced := false }}
         {{ range $index, $article := $paginator.Pages }}
@@ -8,7 +9,7 @@
             {{ if not $counter }}
                 <div class="post-row">
             {{ end }}
-            <a href="{{ $article.Permalink }}" class="article-link" 
+            <a href="{{ $article.RelPermalink }}" class="article-link" 
             {{ if and (eq ($biggerFirst) true) (eq ($biggerPlaced) false) }}
               {{ if eq $counter 0 }}
                 id="article-link-bigger"

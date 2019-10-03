@@ -1,0 +1,51 @@
+{{/* 
+	Print JSONLd script tag
+	
+	@author The New Dynamic
+	
+	@access private
+
+	@context map [page (Page), seo (Map)] 
+
+	Result to achieve:
+	{ 
+		[x] "@context": "http://schema.org",
+		[x] "@type": "Article",
+		[x] "headline": "Extra! Extra! Read alla bout it",
+		[ ] "alternativeHeadline": "This article is also about robots and stuff",
+		[x] "image": "http://example.com/image.jpg",
+		[ ] "author": "Patrick Coombe", 
+		[ ] "award": "Best article ever written",
+		[ ] "editor": "Craig Mount", 
+		[ ] "genre": "search engine optimization", 
+		[ ] "keywords": "seo sales b2b", 
+		[x] "wordcount": "1120",
+		[ ] "publisher": "Book Publisher Inc",
+		[x] "url": "http://www.example.com",
+		[x] "datePublished": "2015-09-20",
+		[ ] "dateCreated": "2015-09-20",
+		[x] "dateModified": "2015-09-20",
+		[x] "description": "We love to do stuff to help people and stuff",
+		[ ] "articleBody": "You can paste your entire post in here, and yes it can get really really long."
+	}
+*/}}
+
+{{- $s := newScratch -}}
+{{- $s.Set "seo" dict -}}
+{{- $s.SetInMap "seo" "@context"  "https://schema.org" -}}
+{{- $s.SetInMap "seo" "@type"  .seo.type -}}
+{{- $s.SetInMap "seo" "headline" .page.Title -}}
+{{- $s.SetInMap "seo" "image" .seo.image -}}
+{{- $s.SetInMap "seo" "wordcount"  (.page.WordCount | string) -}}
+{{- $s.SetInMap "seo" "url"  .page.Permalink -}}
+{{- $s.SetInMap "seo" "datePublished" .seo.published_time -}}
+{{- $s.SetInMap "seo" "dateModified" .seo.updated_time -}}
+{{- $s.SetInMap "seo" "description" .seo.description -}}
+
+{{ with .author -}}
+	{{ $s.SetInMap "seo" "author"  . -}}
+{{ end -}}
+
+<script type="application/ld+json">
+{{ $s.Get "seo" | jsonify | safeJS }}
+</script>

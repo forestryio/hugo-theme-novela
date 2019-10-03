@@ -3,6 +3,8 @@ languageCode: "en-us"
 title: "Narative"
 pygmentsstyle: 'monokai'
 paginate: 6
+taxonomies:
+  author: authors
 params:
   postsPerPage: 2
   social:

@@ -1,11 +1,12 @@
 {{ define "main" }}
 
 <section class="section narrow">
+
     {{ partial "article/article_hero.html" . }}
 
     {{ partial "article/article_progress" . }}
 
-    <article id="articleContent" class="post-content">
+    <article  id="articleContent" class="post-content">
         {{ .Content | markdownify }}
     </article>
 
@@ -14,6 +15,5 @@
 </section>
 
 {{ $script := resources.Get "js/progressBar.js" }}
-<script src="{{ $script.Permalink }}"></script>
-
+ <script src="{{ $script.RelPermalink }}"></script>
 {{ end }}
