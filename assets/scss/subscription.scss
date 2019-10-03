@@ -104,6 +104,39 @@
     background-color: var(--inputBackground);
 }
 
+.subscription-input.submitted-input:invalid{
+    position: relative;
+    background: var(--theme-ui-colors-errorBackground,rgba(238,86,91,0.1)) !important;
+    border-radius: 35px;
+    border: none;
+    padding: 13px 21px 13px 35px;
+    width: 471px;
+    color: var(--theme-ui-colors-primary,#000);
+    outline: none !important;
+}
+
+.subscription-input.submitted-input:invalid ~ .subscription-error-message{
+    opacity: 1;
+}
+
+.subscription-input.submitted-input:invalid ~ .submit-button{
+    color: var(--error);
+    border: 1px solid var(--error);
+}
+
+.submitted-form:after{
+    color: var(--error);
+}
+
+.subscription-error-message{
+    position: absolute;
+    left: 35px;
+    bottom: -20px;
+    color: var(--theme-ui-colors-error,#EE565B);
+    font-size: 12px;
+    opacity: 0;
+}
+
 .subscription-input::placeholder {
     color: var(--track);
     opacity: 1;
