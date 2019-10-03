@@ -5,12 +5,15 @@
 
     {{ partial "article/article_progress" . }}
 
-    <article class="post-content">
+    <article id="articleContent" class="post-content">
         {{ .Content | markdownify }}
     </article>
 
     
     {{ partial "article/article_next.html" . }}
 </section>
+
+{{ $script := resources.Get "js/progressBar.js" }}
+<script src="{{ $script.Permalink }}"></script>
 
 {{ end }}

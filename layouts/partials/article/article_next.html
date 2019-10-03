@@ -27,7 +27,7 @@ of the whole section and append them to our $next slice. */}}
     {{ $articles := partialCached "func/GetArticles" . "articles"}}
     {{ $next = $next | append (first $diff $articles) }}
 {{ end }}
-<section class="section nartrow">
+<section id="articleNext" class="section nartrow">
     <h3 class="footer-next-heading">More articles from {{ .Site.Title }}</h3>
     <div class="footer-spacer"></div>
     <div class="next-articles-grid" numberOfArticles={numberOfArticles}>
