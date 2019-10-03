@@ -32,12 +32,12 @@ function updateProgress(){
         progressBar.style.animationName = "progress-fade-out";
         setTimeout(function(){
             progressBar.style.opacity = "0";
-        }, 900);
+        }, 500);
     }
     else{
         progressBar.style.animationName = "progress-fade-in";
         setTimeout(function(){
             progressBar.style.opacity = "1";
-        }, 900);
+        }, 500);
     }
 }
