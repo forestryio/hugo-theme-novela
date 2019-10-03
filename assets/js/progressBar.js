@@ -18,15 +18,18 @@ else{
     articleNext = 0;
 }
 
-bottomOffset = articleSubscription + articleNext;
+footerSection = 150;
+
+bottomOffset = ((articleSubscription + articleNext + footerSection + 250) / document.body.scrollHeight) * 100 ;
+bottomOffset += bottomOffset * 1.1;
 
 
 function updateProgress(){
-    let percentScrolled = (window.pageYOffset / (document.body.scrollHeight - (bottomOffset * 3.5))) * 100;
+    let percentScrolled = ((window.pageYOffset / document.body.scrollHeight) * (100 + bottomOffset));
 
     let transformation = "translateY(" + percentScrolled + "%)";
     scrollProgress.style.webkitTransform = (transformation);
-    console.log(percentScrolled);
+
 
     if (percentScrolled > 100){
         progressBar.style.animationName = "progress-fade-out";
