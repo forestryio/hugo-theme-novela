@@ -1,0 +1,34 @@
+{{ define "main" }}
+
+<section class="section narrow">
+    {{ $authors := slice }}
+    {{ with .Params.authors  }}
+        {{ range $name := . }}
+            {{ with site.GetPage (printf "/%s/%s" "authors" ($name | urlize)) }}
+            {{ $firstname := "" }}
+            {{ $name := "" }}
+            {{ $avatar := false }}
+            {{ with .Params.Title }}
+                {{ $name = . }}
+                {{ $firstname = index (split . " ") 0 }}
+            {{ end }}
+            {{ with .Params.avatar }}
+                {{ $avatar = . }}
+            {{ end }}
+            {{ $authors = $authors | append (dict "URL" .RelPermalink "name" $name "firstname" $firstname "avatar" $avatar) }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+    {{ partial "article/article_hero.html" . }}
+
+    {{ partial "article/article_progress" . }}
+
+    <article class="post-content">
+        {{ .Content | markdownify }}
+    </article>
+
+    
+    {{ partial "article/article_next.html" . }}
+</section>
+
+{{ end }}

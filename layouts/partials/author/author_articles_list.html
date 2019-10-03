@@ -1,31 +1,33 @@
 <section class="section nartrow author-alc-section">
-    <div id="articlesList" class="articles-list-container show-details author-alc">
-      {{ $articles := partial "func/GetAuthorArticles" . }}
-        <div class="post-row-alt">
-          {{ range $index, $article := $articles }}
-            {{ $counter := mod $index 2 }}
-              <a href="{{ $article.Permalink }}" class="article-link">
-                <div class="article-data-outer">
-                  <div class="image-container">
-                    <img src="{{ $article.Params.hero }}" class="article-image" /> 
-                  </div>
-                  <div class="article-data">
-                    <h2 class="article-title">
-                      {{ $article.Params.title }}
-                    </h2>
-                    <p class="article-excerpt">
-                      {{ $article.Params.excerpt }}
-                    </p>
-                    <div class="article-metadata">
-                      {{ $article.Date.Format "January 2, 2006" }}{{ if $article.Params.timetoread }} • {{ $article.Params.timetoread }} min read{{ end }}
-                    </div>
+  <div id="articlesList" class="articles-list-container show-details author-alc">
+    {{ $articles := .Pages }}
+    {{ $paginator := .Paginate .Pages }}
+      <div class="post-row-alt">
+        {{ range $index, $article := $paginator.Pages }}
+          {{ $counter := mod $index 2 }}
+            <a href="{{ .RelPermalink }}" class="article-link">
+              <div class="article-data-outer">
+                <div class="image-container">
+                  <img src="{{ .Params.hero }}" class="article-image" /> 
+                </div>
+                <div class="article-data">
+                  <h2 class="article-title">
+                    {{ .Params.title }}
+                  </h2>
+                  <p class="article-excerpt">
+                    {{ .Params.excerpt }}
+                  </p>
+                  <div class="article-metadata">
+                    {{ .Date.Format "January 2, 2006" }}{{ if .Params.timetoread }} • {{ .Params.timetoread }} min read{{ end }}
                   </div>
                 </div>
-              </a>
-          {{ end }}
-        </div>
-    </div>
+              </div>
+            </a>
+        {{ end }}
+      </div>
+  </div>
+  {{ partial "paginator/paginator.html" . }}
 </section>
 
 {{ $script := resources.Get "js/toggleBorder.js" }}
-<script src="{{ $script.Permalink }}"></script>
+<script src="{{ $script.RelPermalink }}"></script>

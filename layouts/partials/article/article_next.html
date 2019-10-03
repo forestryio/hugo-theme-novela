@@ -33,7 +33,7 @@ of the whole section and append them to our $next slice. */}}
     <div class="next-articles-grid" numberOfArticles={numberOfArticles}>
         <div class="post-row">
             {{ range $index, $article := $next }}
-                <a href="{{ $article.Permalink }}" class="article-link"
+                <a href="{{ $article.RelPermalink }}" class="article-link"
                 {{ if not $index}} id="article-link-bigger"{{ end }}>
                     <div>
                         <div class="image-container">

@@ -19,12 +19,12 @@
 */}}
 {{ $authors := slice }}
 {{ with .Params.authors  }}
-  {{ range . }}
-    {{ with site.GetPage . }}
+  {{ range $name := . }}
+    {{ with site.GetPage (printf "/%s/%s" "authors" ($name | urlize)) }}
       {{ $firstname := "" }}
       {{ $name := "" }}
       {{ $avatar := false }}
-      {{ with .Params.name }}
+      {{ with .Title }}
         {{ $name = . }}
         {{ $firstname = index (split . " ") 0 }}
       {{ end }}

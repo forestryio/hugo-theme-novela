@@ -1,9 +1,9 @@
 ---
-name: Mack Mansouri
+title: Brad Tiller
 bio: |
   Written by You. This is where your author bio lives. Share your work, your
   joys and of course, your Twitter handle.
-avatar: /images/avatars/mack-mansouri.jpg
+avatar: /images/avatars/brad-tiller.jpg
 social:
   - title: github
     url: https://github.com
@@ -15,6 +15,4 @@ social:
     url: https://github.com
   - title: github
     url: https://github.com
-type: author
-layout: author
 ---
