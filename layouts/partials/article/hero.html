@@ -4,15 +4,15 @@
             <h1 class="article-hero-heading">{{ .Page.Params.Title }}</h1>
             <div class="article-hero-subtitle">
                 <div class="article-meta">
-                    {{ partial "article/article_authors.html" . }}
+                    {{ partial "article/authors.html" . }}
                     {{ .Page.Date.Format "January 2, 2006" }}
                     {{ with .Page.Params.timetoread }} • {{ . }} min read{{ end }}
                 </div>
             </div>
         </header>
-        {{ if .Page.Params.hero }}
+        {{ with .Page.Params.hero }}
         <div class="article-hero-image" id="ArticleImage__Hero">
-            <img src="{{ .Page.Params.hero }}">
+            <img src="{{ . }}">
         </div>
         {{ end }}
     </div>

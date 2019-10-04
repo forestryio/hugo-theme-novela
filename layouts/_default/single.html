@@ -1,0 +1,13 @@
+{{ define "main" }}
+
+<section class="section narrow">
+
+    {{ partial "page/hero.html" . }}
+
+    <article  id="articleContent" class="post-content">
+        {{ .Content }}
+    </article>
+    
+</section>
+
+{{ end }}

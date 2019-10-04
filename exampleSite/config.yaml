@@ -1,6 +1,6 @@
 baseURL: "https://example.com"
 languageCode: "en-us"
-
+# contentDir: exampleSite/content
 title: "Narative"
 pygmentsstyle: 'monokai'
 paginate: 6
@@ -13,5 +13,3 @@ social:
   youtube: "#"
 taxonomies:
   author: authors
-
-# contentDir: exampleSite/content
