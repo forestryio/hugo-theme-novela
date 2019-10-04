@@ -111,8 +111,21 @@
     border: none;
     padding: 13px 21px 13px 35px;
     width: 471px;
-    color: var(--theme-ui-colors-primary,#000);
+    color: var(--primary,#000);
     outline: none !important;
+}
+
+
+
+input:invalid {
+    box-shadow:0 0 2px 1px transparent;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
 }
 
 .subscription-input.submitted-input:invalid ~ .subscription-error-message{
