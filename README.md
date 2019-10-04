@@ -2,9 +2,16 @@
 
 Add to your projects 
 
-### Formspree
+### Authors
 
-### Creating authors
+You should register authors as a taxonomy in your project's `config.yaml``
+
+```yaml
+taxonomies:
+  author: authors
+```
+
+#### Creating authors
 
 ```
 ### /content/authors/firstname-lastname/_index.md
@@ -28,3 +35,6 @@ social:
     url: https://github.com
 ---
 ```
+
+### Formspree
+

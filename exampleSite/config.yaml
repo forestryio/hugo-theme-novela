@@ -1,7 +1,6 @@
 baseURL: "https://example.com"
 languageCode: "en-us"
-# contentDir: exampleSite/content
-title: "Narative"
+title: "Hugo Novela"
 pygmentsstyle: 'monokai'
 paginate: 6
 social:
