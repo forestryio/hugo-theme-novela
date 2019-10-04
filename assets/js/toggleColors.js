@@ -10,7 +10,7 @@ initAnimation();
 function initAnimation(){
     if (localStorage.getItem("isLight") === 'true'){
         moonMask.style.top = "-8px";
-        moonMask.style.right = "-1px";
+        moonMask.style.right = "-5px";
         moonOrSun.style.transform = "scale(1)"
         sunRays.style.transform = "scale(0.1)"
     }

@@ -213,7 +213,8 @@
 }
 
 .sun-rays{
-    position: fixed;
+    position: relative;
+    right: -16px;
     width: 9px;
     height: 9px;
     border-radius: 50%;
@@ -292,13 +293,13 @@
 }
 
 @keyframes mask-to-sun {
-    from {top: -8px; right: -1px; transform: scale(1);}
+    from {top: -8px; right: -5px; transform: scale(1);}
     to {top: -25px; right: -15px; transform: scale(0.5);}
 }
 
 @keyframes mask-to-moon {
     from {top: -25px; right: -15px; transform: scale(0.5);}
-    to {top: -8px; right: -1px; transform: scale(1);}
+    to {top: -8px; right: -5px; transform: scale(1);}
 }
 
 @keyframes to-sun {
