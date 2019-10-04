@@ -1,0 +1,17 @@
+name = "Hugo Novela"
+license = "MIT"
+licenselink = "Link to theme's license"
+description = "A Hugo port of the Novela theme by Narrative"
+homepage = "Website of your theme"
+tags = ["blog"]
+min_version = "0.55.0"
+
+[author]
+    name = "The New Dynamic"
+    homepage = "www.thenewdynamic.com"
+
+# If porting an existing theme
+[original]
+    author = "Name of original author"
+    homepage = "His/Her website"
+    repo = "Link to source code of original theme"

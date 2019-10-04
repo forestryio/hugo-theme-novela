@@ -2,16 +2,16 @@
 
 <section class="section narrow">
 
-    {{ partial "article/article_hero.html" . }}
+    {{ partial "article/hero.html" . }}
 
-    {{ partial "article/article_progress" . }}
+    {{ partial "article/progress" . }}
 
     <article  id="articleContent" class="post-content">
-        {{ .Content | markdownify }}
+        {{ .Content }}
     </article>
 
     
-    {{ partial "article/article_next.html" . }}
+    {{ partial "article/next.html" . }}
 </section>
 
 {{ $script := resources.Get "js/progressBar.js" }}
