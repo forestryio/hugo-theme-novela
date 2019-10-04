@@ -1,4 +1,41 @@
 ---
 label: Author
 hide_body: false
-fields: []
+fields:
+- name: name
+  type: text
+  config:
+    required: false
+  label: Name
+- name: bio
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Bio
+- name: avatar
+  type: file
+  config:
+    maxSize: 250
+  label: Avatar Image
+- name: social
+  type: field_group_list
+  fields:
+  - name: title
+    type: text
+    config:
+      required: false
+    label: Title
+  - name: url
+    type: text
+    config:
+      required: false
+    label: URL
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Social Media
