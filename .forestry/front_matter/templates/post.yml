@@ -21,6 +21,16 @@ fields:
     date_format: 
     time_format: 
     display_utc: false
+- name: timeToRead
+  type: number
+  label: Read Time
+  description: The time it takes to read the post (in minutes)
+  default: 0
+  required: true
+  config:
+    min: 
+    max: 
+    step: 
 - name: hero
   type: file
   config:
