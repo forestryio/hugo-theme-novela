@@ -1,4 +1,9 @@
 ---
 label: Home
 hide_body: true
-fields: []
+fields:
+- name: hero
+  type: include
+  config: {}
+  template: home-hero
+  label: Hero
