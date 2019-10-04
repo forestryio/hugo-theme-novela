@@ -17,7 +17,7 @@ sections:
   create: all
   match: "**/_index.md"
 upload_dir: static/uploads
-public_path: "/uploads"
+public_path: "/static/images"
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
