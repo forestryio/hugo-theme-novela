@@ -16,6 +16,8 @@ sections:
   label: Authors
   create: all
   match: "**/_index.md"
+  templates:
+  - author
 upload_dir: static/uploads
 public_path: "/static/images"
 front_matter_path: ''
