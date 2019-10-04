@@ -1,6 +1,6 @@
 <head>
     <meta charset="utf-8">
-    <link rel="icon" href="/images/misc/favicon.svg">
+    <link rel="icon" href="/images/favicon.svg">
     {{ $style := resources.Get "scss/global.scss" | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}">
     {{ $prism := resources.Get "css/prism.css" }}

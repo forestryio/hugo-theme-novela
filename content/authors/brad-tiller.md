@@ -1,5 +1,5 @@
 ---
-title: Brad Tiller
+name: Brad Tiller
 bio: |
   Written by You. This is where your author bio lives. Share your work, your
   joys and of course, your Twitter handle.
@@ -15,4 +15,6 @@ social:
     url: https://github.com
   - title: github
     url: https://github.com
+type: author
+layout: author
 ---

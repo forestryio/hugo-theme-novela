@@ -1,7 +1,7 @@
 ---
 title: Getting started wtih Novela
 date: 2019-04-27
-hero: /images/heros/hero-4.jpg
+hero: /images/hero-4.jpg
 excerpt: To understand why Figma is the best design tool for our company, you have to understand what we do. As a designer.
 timeToRead: 8
 authors:

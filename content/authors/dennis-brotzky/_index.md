@@ -3,7 +3,7 @@ title: Dennis Brotzky
 bio: |
   Written by You. This is where your author bio lives. Share your work, your
   joys and of course, your Twitter handle.
-avatar: /images/avatars/dennis-brotzky.jpg
+avatar: /images/dennis-brotzky.jpg
 featured: true
 social:
   - title: unsplash

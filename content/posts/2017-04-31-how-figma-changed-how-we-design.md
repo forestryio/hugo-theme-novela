@@ -1,7 +1,7 @@
 ---
 title: Why Narative loves Gatsby and Next.js
 date: 2017-04-31
-hero: /images/heros/hero-4.jpg
+hero: /images/hero-4.jpg
 excerpt: To understand why Figma is the best design tool for our company, you have to understand what we do. As a designer.
 timeToRead: 8
 authors:
