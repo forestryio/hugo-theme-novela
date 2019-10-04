@@ -1,4 +1,20 @@
 ---
 label: Home Hero
 hide_body: true
-fields: []
+fields:
+- name: heading
+  type: text
+  config:
+    required: false
+  label: Heading
+  description: The text displayed in the hero
+- name: maxWidthPX
+  type: number
+  label: Max Width
+  description: The maximum possible width of the hero (in pixels)
+  default: '652'
+  required: true
+  config:
+    min: 
+    max: 
+    step: 
