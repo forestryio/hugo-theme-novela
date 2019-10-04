@@ -1,4 +1,27 @@
 ---
 label: Post
 hide_body: false
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title
+- name: date
+  type: datetime
+  label: Date
+  description: ''
+  config:
+    required: false
+    date_format: 
+    time_format: 
+    display_utc: false
+- name: hero
+  type: file
+  config:
+    maxSize: 250
+  label: Hero Image
+- name: authors
+  type: tag_list
+  default: []
+  label: Authors
