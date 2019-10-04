@@ -1,6 +1,6 @@
 ---
 label: Author
-hide_body: false
+hide_body: true
 fields:
 - name: title
   type: text
