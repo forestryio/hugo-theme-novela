@@ -5,20 +5,17 @@ admin_path:
 webhook_url: 
 sections:
 - type: directory
-  path: content
-  label: Pages
-  create: all
-  match: "*"
-- type: directory
   path: content/authors
   label: Authors
   create: all
-  match: "**/*"
+  match: "**/_index.md"
 - type: directory
   path: content/posts
   label: Posts
   create: all
   match: "**/*"
+  templates:
+  - post
 upload_dir: static/uploads
 public_path: "/uploads"
 front_matter_path: ''
