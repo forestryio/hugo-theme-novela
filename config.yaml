@@ -3,36 +3,12 @@ languageCode: "en-us"
 title: "Narative"
 pygmentsstyle: 'monokai'
 paginate: 6
+social:
+  twitter: "#"
+  github: "#"
+  instagram: "#"
+  linkedin: "#"
+  dribbble: "#"
+  youtube: "#"
 taxonomies:
   author: authors
-params:
-  postsPerPage: 2
-  social:
-    - title: twitter
-      url: "#"
-    - title: github
-      url: "#"
-    - title: instagram
-      url: "#"
-    - title: linkedin
-      url: "#"
-    - title: dribbble
-      url: "#"
-    - title: youtube
-      url: "#"
-  colors:
-    primary: "#000"
-    secondary: "#73737D"
-    grey: "#73737D"
-    backgroundColor: "#fafaf"
-    accent: "#6166DC"
-    hover: "rgba(0, 0, 0, 0.07)"
-    articleText: "#08080B"
-    track: "rgba(8, 8, 11, 0.3)"
-    progress: "#000"
-    card: "#fff"
-    error: "#EE565B"
-    success: "#46B17B"
-    errorBackground: "rgba(238, 86, 91, 0.1)"
-    horizontalRule: "rgba(8, 8, 11, 0.15)"
-    inputBackground: "rgba(0, 0, 0, 0.05)"
