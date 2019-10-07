@@ -163,9 +163,9 @@
 }
 
 .author-alc{
-    background-image: -webkit-gradient(linear, left top, left bottom, from(var(--card)), to(transparent));
-    background-image: -o-linear-gradient(var(--card), transparent);
-    background-image: linear-gradient(var(--card), transparent);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(var(--card)), to(var(--background-color)));
+    background-image: -o-linear-gradient(var(--card), var(--background-color));
+    background-image: linear-gradient(var(--card), var(--background-color));
     padding-top: 90px;
 
     .post-row-alt{
@@ -443,6 +443,7 @@
 
     /*TABLET*/
     @media screen and (max-width: $tablet){
+        margin: 0;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
       -webkit-box-pack: center;
@@ -479,7 +480,6 @@
     position: relative;
     display: block;
     width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
     border-radius: 5px;
