@@ -2,10 +2,19 @@
 .author-hero{
     position: relative;
     z-index: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin: 35px auto 110px;
 }
 
@@ -18,7 +27,8 @@
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid var(background-color);
-    box-shadow: 0px 15.619px 31.2381px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0px 15.619px 31.2381px rgba(0, 0, 0, 0.15);
+            box-shadow: 0px 15.619px 31.2381px rgba(0, 0, 0, 0.15);
     border: 2px solid var(--card);
 
     img{
@@ -64,9 +74,15 @@
 }
 
 .author-social{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin-top: 35px;
     width: 100%;
   
@@ -86,5 +102,7 @@
     z-index: 0;
     pointer-events: none;
     background: var(--gradient);
+    -webkit-transition: var(--color-mode-transition);
+    -o-transition: var(--color-mode-transition);
     transition: var(--color-mode-transition);
 }

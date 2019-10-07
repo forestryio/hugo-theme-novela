@@ -1,216 +1,226 @@
-  @import "vars.scss";
-  @import "anchor.scss";
-  @import "bio.scss";
-  @import "blockquote.scss";
-  @import "headings.scss";
-  @import "horizontal-rule.scss";
-  @import "image.scss";
-  @import "layout.scss";
-  @import "lists.scss";
-  @import "logo.scss";
-  @import "mdx.scss";
-  @import "navigation.scss";
-  @import "paragraph.scss";
-  @import "progress.scss";
-  @import "social-links.scss";
-  @import "subscription.scss";
-  @import "tables.scss";
-  @import "section.scss";
-  @import "articles.scss";
-  @import "home-articles.scss";
-  @import "code.scss";
-  @import "article.scss";
-  @import "authors.scss";
-  @import "paginator.scss";
+@import "vars.scss";
+@import "anchor.scss";
+@import "bio.scss";
+@import "blockquote.scss";
+@import "headings.scss";
+@import "horizontal-rule.scss";
+@import "image.scss";
+@import "layout.scss";
+@import "lists.scss";
+@import "logo.scss";
+@import "navigation.scss";
+@import "paragraph.scss";
+@import "progress.scss";
+@import "social-links.scss";
+@import "subscription.scss";
+@import "tables.scss";
+@import "section.scss";
+@import "articles.scss";
+@import "home-articles.scss";
+@import "code.scss";
+@import "article.scss";
+@import "authors.scss";
+@import "paginator.scss";
 
-  
-  /**
-   * Thanks to Benjamin De Cock
-   * https://gist.github.com/bendc/ac03faac0bf2aee25b49e5fd260a727d
-   */
-   :root {
-    --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
-    --ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
-    --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
-    --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
-    --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
-  }
 
-  @font-face {
-    font-family: "-apple-system", "BlinkMacSystemFont", "San Francisco",
-      "Helvetica Neue", "Helvetica", "Ubuntu", "Roboto", "Noto", "Segoe UI",
-      "Arial", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
+/**
+ * Thanks to Benjamin De Cock
+ * https://gist.github.com/bendc/ac03faac0bf2aee25b49e5fd260a727d
+ */
+ :root {
+  --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  --ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+}
 
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
-    font-size: inherit;
-  }
+@font-face {
+  font-family: "-apple-system", "BlinkMacSystemFont", "San Francisco",
+    "Helvetica Neue", "Helvetica", "Ubuntu", "Roboto", "Noto", "Segoe UI",
+    "Arial", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
-  :root {
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-    cursor: default;
-    font-size: 0.625rem;
-    line-height: 1.4;
-  }
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+}
 
-  body {
-    font-family: "-apple-system", "BlinkMacSystemFont", "San Francisco",
-      "Helvetica Neue", "Helvetica", "Ubuntu", "Roboto", "Noto", "Segoe UI",
-      "Arial", sans-serif;
-    font-size: 1.6rem;
-    margin: 0;
-    font-weight: 400;
-    height: 100%;
-  }
+:root {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  cursor: default;
+  font-size: 0.625rem;
+  line-height: 1.4;
+}
 
-  button,
-  a {
-    text-decoration: none;
-    cursor: pointer;
-  }
+body {
+  font-family: "-apple-system", "BlinkMacSystemFont", "San Francisco",
+    "Helvetica Neue", "Helvetica", "Ubuntu", "Roboto", "Noto", "Segoe UI",
+    "Arial", sans-serif;
+  font-size: 1.6rem;
+  margin: 0;
+  font-weight: 400;
+  height: 100%;
+}
 
-  a:focus {
+button,
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:focus {
+  outline: none;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+input,
+textarea,
+select,
+button {
+  font-family: "-apple-system", "BlinkMacSystemFont", "San Francisco",
+    "Helvetica Neue", "Helvetica", "Ubuntu", "Roboto", "Noto", "Segoe UI",
+    "Arial", sans-serif;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+button,
+input,
+select,
+textarea {
+  color: inherit;
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace;
+}
+
+fieldset,
+button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+audio:not([controls]) {
+  display: none;
+}
+
+details {
+  display: block;
+}
+
+input {
+  &:focus,
+  &:active {
     outline: none;
   }
 
-  audio,
-  canvas,
-  iframe,
-  img,
-  svg,
-  video {
-    vertical-align: middle;
+  &[type="number"] {
+    width: auto;
   }
+}
 
-  input,
-  textarea,
-  select,
-  button {
-    font-family: "-apple-system", "BlinkMacSystemFont", "San Francisco",
-      "Helvetica Neue", "Helvetica", "Ubuntu", "Roboto", "Noto", "Segoe UI",
-      "Arial", sans-serif;
-  }
+img.Image__Zoom ~ div {
+  background: transparent !important;
+}
 
-  .underline {
-    text-decoration: underline;
-  }
-
-  button,
-  input,
-  select,
-  textarea {
-    color: inherit;
-    font-family: inherit;
-    font-style: inherit;
-    font-weight: inherit;
-  }
-
-  code,
-  kbd,
-  pre,
-  samp {
-    font-family: monospace;
-  }
-
-  fieldset,
-  button {
-    appearance: none;
-    border: none;
-    outline: none;
-    background: transparent;
-  }
-
-  table {
-    border-collapse: separate;
-    border-spacing: 0;
-  }
-
-  audio:not([controls]) {
-    display: none;
-  }
-
-  details {
-    display: block;
-  }
-
-  input {
-    &:focus,
-    &:active {
-      outline: none;
-    }
-
-    &[type="number"] {
-      width: auto;
-    }
-  }
-
-  img.Image__Zoom ~ div {
-    background: transparent !important;
-  }
-
-  .Image__Small{
-    width: 100%;
-    max-width: 680px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 35px;
-    img{
-      width: 100%;
-    }
-  }
-
-  .Image__medium{
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 35px;
-    img{
-      width: 100%;
-    }
-  }
-
-  .Image__large{
-    width: 100%;
-    margin-bottom: 35px;
-    img{
-      width: 100vw;
-      position: relative;
-      left: 50%;
-      right: 50%;
-      margin-left: -50vw;
-      margin-right: -50vw;
-    }
-  }
-
-  .author-alc-section{
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .icon-image{
-    path{
-      fill: var(--primary);
-    }
-  }
-
+.Image__Small{
+  width: 100%;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 35px;
   img{
-    animation-name: image-load-in;
-    animation-duration: 0.8s;
+    width: 100%;
   }
+}
 
-  @keyframes image-load-in {
-    0% {filter: blur(8px); opacity: 0;}
-    100% {filter: blur(0); opacity: 1;}
+.Image__medium{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 35px;
+  img{
+    width: 100%;
   }
+}
+
+.Image__large{
+  width: 100%;
+  margin-bottom: 35px;
+  img{
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+}
+
+.author-alc-section{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.icon-image{
+  path{
+    fill: var(--primary);
+  }
+}
+
+img{
+  -webkit-animation-name: image-load-in;
+          animation-name: image-load-in;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+}
+
+@-webkit-keyframes image-load-in {
+  0% {-webkit-filter: blur(8px);filter: blur(8px); opacity: 0;}
+  100% {-webkit-filter: blur(0);filter: blur(0); opacity: 1;}
+}
+
+@keyframes image-load-in {
+  0% {-webkit-filter: blur(8px);filter: blur(8px); opacity: 0;}
+  100% {-webkit-filter: blur(0);filter: blur(0); opacity: 1;}
+}

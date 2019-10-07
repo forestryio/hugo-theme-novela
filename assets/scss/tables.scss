@@ -5,6 +5,8 @@ table{
     line-height: 1.65;
     color: var(--grey);
     font-family: var(--sanserif);
+    -webkit-transition: var(--color-mode-transition);
+    -o-transition: var(--color-mode-transition);
     transition: var(--color-mode-transition);
     background: var(--card);
     margin: 45px auto 85px;
@@ -70,5 +72,7 @@ thead{
     font-weight: 600;
     color: var(--primary);
     font-family: var(--serif);
+    -webkit-transition: var(--color-mode-transition);
+    -o-transition: var(--color-mode-transition);
     transition: var(--color-mode-transition);
 }

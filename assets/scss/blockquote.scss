@@ -1,4 +1,6 @@
 blockquote{
+    -webkit-transition: var(--color-mode-transition);
+    -o-transition: var(--color-mode-transition);
     transition: var(--color-mode-transition);
     margin: 15px auto 50px;
     color: var(--articleText);

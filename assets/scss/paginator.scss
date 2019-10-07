@@ -3,8 +3,12 @@
     margin: 0;
     margin-top: 95px;
     padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
 
     &:hover{
         cursor: pointer;

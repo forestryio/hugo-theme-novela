@@ -4,6 +4,8 @@ ul{
     color: var(--articleText);
     position: relative;
     padding: 15px 0 30px 30px;
+    -webkit-transition: var(--color-mode-transition);
+    -o-transition: var(--color-mode-transition);
     transition: var(--color-mode-transition);
     margin: 0 auto;
     font-size: 18px;
@@ -89,6 +91,8 @@ ol{
     position: relative;
     padding: 15px 0 30px 30px;
     margin: 0 auto;
+    -webkit-transition: var(--color-mode-transition);
+    -o-transition: var(--color-mode-transition);
     transition: var(--color-mode-transition);
     font-size: 18px;
     width: 100%;
