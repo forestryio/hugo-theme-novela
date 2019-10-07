@@ -37,8 +37,10 @@
     display: -ms-flexbox;
     display: flex;
 
+    /*PHABLET*/
     @media screen and (max-width: $phablet){
         margin-left: 0;
+        flex-direction: column;
     }
 }
 
@@ -89,6 +91,7 @@
 }
 
 .article-hero-subtitle{
+    padding: 10px;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
@@ -98,6 +101,12 @@
     display: flex;
     font-size: 18px;
     color: var(--grey);
+
+    /*PHABLET*/
+    @media screen and (max-width: $phablet){
+        border: 1px solid var(--horizontalRule);
+        border-radius: 5px;
+    }
   
     @media screen and(max-width: $phablet){
         font-size: 14px;
@@ -401,6 +410,7 @@
 }
 
 .article-coauthors-list-item-open{
+    padding: 0;
     a {
         width: 100%;
     }
