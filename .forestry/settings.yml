@@ -4,10 +4,12 @@ auto_deploy: false
 admin_path: 
 webhook_url: 
 sections:
-- type: document
+- type: directory
   path: config/_default/social.yaml
-  label: Social Links
+  label: Config
+  create: all
   match: "**/*"
+  new_doc_ext: ".yaml"
 - type: document
   path: content/_index.md
   label: Home
