@@ -10,6 +10,8 @@ sections:
   create: all
   match: "**/*"
   new_doc_ext: yaml
+  templates:
+  - social-links
 - type: document
   path: content/_index.md
   label: Home
