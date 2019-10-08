@@ -1,13 +1,18 @@
 /*************************ASIDE*************************/
 .aside-container{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin: 0 auto;
     max-width: 1140px;
     z-index: 0;
+    position: -webkit-sticky;
     position: sticky;
     top: 30%;
-    animation-name: progress-fade-in;
-    animation-duration: 0.5s;
+    -webkit-animation-name: progress-fade-in;
+            animation-name: progress-fade-in;
+    -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
   
     /*DESKTOP MEDIUM*/
     @media screen and (max-width: $desktop_medium){
@@ -15,9 +20,19 @@
     }
 }
 
+@-webkit-keyframes progress-fade-in {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
 @keyframes progress-fade-in {
     from {opacity: 0;}
     to {opacity: 1;}
+}
+
+@-webkit-keyframes progress-fade-out {
+    from {opacity: 1;}
+    to {opacity: 0;}
 }
 
 @keyframes progress-fade-out {
@@ -27,22 +42,35 @@
 
 .aside-align{
     position: fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+            transform: translateY(0px);
     top: 0;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 100vh;
     z-index: 3;
   
     opacity: 1;
     visibility: visible;
+    -webkit-transition: opacity 0.4s linear, visibility 0.4s linear;
+    -o-transition: opacity 0.4s linear, visibility 0.4s linear;
     transition: opacity 0.4s linear, visibility 0.4s linear;
 }
 
 .overlap-container{
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     pointer-events: none;
     opacity: 0;
+    -webkit-transition: opacity 0.25s;
+    -o-transition: opacity 0.25s;
     transition: opacity 0.25s;
 }
 
@@ -50,13 +78,21 @@
 .progress-container{
     position: relative;
     outline: none;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 
 .track-line{
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     height: calc(88vh - 40px);
     max-height: 425px;
     width: 1px;

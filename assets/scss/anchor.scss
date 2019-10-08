@@ -1,6 +1,8 @@
 a{
-    transition: var(--color-mode-transition);
-    color: var(--accent);
+  -webkit-transition: var(--color-mode-transition);
+  -o-transition: var(--color-mode-transition);
+  transition: var(--color-mode-transition);
+  color: var(--accent);
 }
 
 a:visited {

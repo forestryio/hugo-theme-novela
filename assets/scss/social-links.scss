@@ -11,9 +11,16 @@
 }
 
 .social-icon-container{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     min-width: 100%;
     position: relative;
     margin-left: 3.2rem;
@@ -30,6 +37,8 @@
   }
 
 .social-icon-container:hover > * {
+    -webkit-transition: fill 0.25s var(--ease-in-out-quad);
+    -o-transition: fill 0.25s var(--ease-in-out-quad);
     transition: fill 0.25s var(--ease-in-out-quad);
 }
 

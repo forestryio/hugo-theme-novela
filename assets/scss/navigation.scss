@@ -2,9 +2,15 @@
 
 .footer-container{
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     padding-bottom: 80px;
     color: var(--grey);
 }
@@ -12,7 +18,10 @@
 /*TABLET*/
 @media screen and (max-width: 735px){
     .footer-container{
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
       padding-bottom: 100px;
     }
 }
@@ -59,16 +68,29 @@
     z-index: 0;
     pointer-events: none;
     background: var(--gradient);
+    -webkit-transition: var(--color-mode-transition);
+    -o-transition: var(--color-mode-transition);
     transition: var(--color-mode-transition);
 }
 
 /************************HEADER************************/
 
 .back-arrow-ico-container{
+    -webkit-transition: 0.2s -webkit-transform var(--ease-out-quad);
+    transition: 0.2s -webkit-transform var(--ease-out-quad);
+    -o-transition: 0.2s transform var(--ease-out-quad);
     transition: 0.2s transform var(--ease-out-quad);
+    transition: 0.2s transform var(--ease-out-quad), 0.2s -webkit-transform var(--ease-out-quad);
     opacity: 0;
     padding-right: 30px;
-    animation: fadein 0.3s linear forwards;
+    -webkit-animation: fadein 0.3s linear forwards;
+            animation: fadein 0.3s linear forwards;
+}
+
+@-webkit-keyframes fadein {
+    to {
+      opacity: 1;
+    }
 }
 
 @keyframes fadein {
@@ -88,8 +110,12 @@
     position: relative;
     z-index: 100;
     padding-top: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
 @media screen and (max-height: 800px) {
@@ -107,8 +133,12 @@
 
 .logo-link{
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .logo-link[class*="data-ally"]:focus::after {
@@ -124,7 +154,9 @@
 }
 
 .logo-link[class*="back-arrow-ico-container"]{
-    transform: translateX(-3px);
+    -webkit-transform: translateX(-3px);
+        -ms-transform: translateX(-3px);
+            transform: translateX(-3px);
 }
 
 .logo-link:hover{
@@ -140,8 +172,12 @@
 
 .nav-controls{
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 /*PHABLET*/
@@ -153,7 +189,9 @@
 
 .tool-tip{
     opacity: 0;
-    transform: translateY(6px);
+    -webkit-transform: translateY(6px);
+        -ms-transform: translateY(6px);
+            transform: translateY(6px);
     position: absolute;
     padding: 4px 13px;
     border-radius: 5px;
@@ -161,14 +199,22 @@
     top: -35px;
     color: var(--primary);
     background-color: var(--tooltip);
-    animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+}
+
+@-webkit-keyframes pan-toolbar {
+    0% {opacity: 0; -webkit-transform: translateY(6px); transform: translateY(6px);}
+    30% {opacity: 1; -webkit-transform: translateY(0); transform: translateY(0);}
+    70% {opacity: 1; -webkit-transform: translateY(0); transform: translateY(0);}
+    100% {opacity: 0; -webkit-transform: translateY(6px); transform: translateY(6px);}
 }
 
 @keyframes pan-toolbar {
-    0% {opacity: 0; transform: translateY(6px);}
-    30% {opacity: 1; transform: translateY(0);}
-    70% {opacity: 1; transform: translateY(0);}
-    100% {opacity: 0; transform: translateY(6px);}
+    0% {opacity: 0; -webkit-transform: translateY(6px); transform: translateY(6px);}
+    30% {opacity: 1; -webkit-transform: translateY(0); transform: translateY(0);}
+    70% {opacity: 1; -webkit-transform: translateY(0); transform: translateY(0);}
+    100% {opacity: 0; -webkit-transform: translateY(6px); transform: translateY(6px);}
 }
 
 .icon-wrapper{
@@ -177,9 +223,17 @@
     border-radius: 5px;
     width: 40px;
     height: 25px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-transition: opacity 0.3s ease;
+    -o-transition: opacity 0.3s ease;
     transition: opacity 0.3s ease;
     margin-left: 30px;
 }
@@ -203,8 +257,12 @@
 /*TABLET*/
 @media screen and (max-width: 735px){
     .icon-wrapper{
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
         display: inline-flex;
-        transform: scale(0.708);
+        -webkit-transform: scale(0.708);
+            -ms-transform: scale(0.708);
+                transform: scale(0.708);
         margin-left: 10px;
     }
     .icon-wrapper:hover{
@@ -221,10 +279,14 @@
     border: 2px solid
       var(--primary);
     background: var(--primary);
-    transform: 1;
+    -webkit-transform: 1;
+        -ms-transform: 1;
+            transform: 1;
+    -webkit-transition: all 0.45s ease;
+    -o-transition: all 0.45s ease;
     transition: all 0.45s ease;
     overflow: hidden;
-    box-shadow: 0 -23px 0 var(--primary),
+    -webkit-box-shadow: 0 -23px 0 var(--primary),
         0 23px 0 var(--primary),
         23px 0 0 var(--primary),
         -23px 0 0 var(--primary),
@@ -232,7 +294,17 @@
         -15px 15px 0 var(--primary),
         15px -15px 0 var(--primary),
         -15px -15px 0 var(--primary);
-    transform: scale(0.6);
+            box-shadow: 0 -23px 0 var(--primary),
+        0 23px 0 var(--primary),
+        23px 0 0 var(--primary),
+        -23px 0 0 var(--primary),
+        15px 15px 0 var(--primary),
+        -15px 15px 0 var(--primary),
+        15px -15px 0 var(--primary),
+        -15px -15px 0 var(--primary);
+    -webkit-transform: scale(0.6);
+        -ms-transform: scale(0.6);
+            transform: scale(0.6);
 }
 
 .moon-or-sun{
@@ -243,7 +315,11 @@
     border: 2px solid
       var(--primary);
     background: var(--primary);
-    transform: 1;
+    -webkit-transform: 1;
+        -ms-transform: 1;
+            transform: 1;
+    -webkit-transition: all 0.45s ease;
+    -o-transition: all 0.45s ease;
     transition: all 0.45s ease;
     overflow: hidden;
 }
@@ -257,69 +333,117 @@
     border-radius: 50%;
     border: 0;
     background: var(--background-color);
-    transform: translate("0, 0");
+    -webkit-transform: translate("0, 0");
+        -ms-transform: translate("0, 0");
+            transform: translate("0, 0");
     opacity: 1;
+    -webkit-transition: var(--color-mode-transition), -webkit-transform 0.45s ease;
+    transition: var(--color-mode-transition), -webkit-transform 0.45s ease;
+    -o-transition: transform 0.45s ease, var(--color-mode-transition);
     transition: transform 0.45s ease, var(--color-mode-transition);
+    transition: transform 0.45s ease, var(--color-mode-transition), -webkit-transform 0.45s ease;
 }
 
 .mask-to-sun-animation{
-    animation-name: mask-to-sun;
-    animation-duration: 0.4s;
+    -webkit-animation-name: mask-to-sun;
+            animation-name: mask-to-sun;
+    -webkit-animation-duration: 0.4s;
+            animation-duration: 0.4s;
 }
 
 .mask-to-moon-animation{
-    animation-name: mask-to-moon;
-    animation-duration: 0.4s;
+    -webkit-animation-name: mask-to-moon;
+            animation-name: mask-to-moon;
+    -webkit-animation-duration: 0.4s;
+            animation-duration: 0.4s;
 }
 
 .to-sun-animation{
-    animation-name: to-sun;
-    animation-duration: 0.4s;
+    -webkit-animation-name: to-sun;
+            animation-name: to-sun;
+    -webkit-animation-duration: 0.4s;
+            animation-duration: 0.4s;
 }
 
 .to-moon-animation{
-    animation-name: to-moon;
-    animation-duration: 0.4s;
+    -webkit-animation-name: to-moon;
+            animation-name: to-moon;
+    -webkit-animation-duration: 0.4s;
+            animation-duration: 0.4s;
 }
 
 .expand-rays{
-    animation-name: expand-rays;
-    animation-duration: 0.5s;
+    -webkit-animation-name: expand-rays;
+            animation-name: expand-rays;
+    -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
 }
 
 .contract-rays{
-    animation-name: contract-rays;
-    animation-duration: 0.5s;
+    -webkit-animation-name: contract-rays;
+            animation-name: contract-rays;
+    -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
+}
+
+@-webkit-keyframes mask-to-sun {
+    from {top: -8px; right: -5px; -webkit-transform: scale(1); transform: scale(1);}
+    to {top: -25px; right: -15px; -webkit-transform: scale(0.5); transform: scale(0.5);}
 }
 
 @keyframes mask-to-sun {
-    from {top: -8px; right: -5px; transform: scale(1);}
-    to {top: -25px; right: -15px; transform: scale(0.5);}
+    from {top: -8px; right: -5px; -webkit-transform: scale(1); transform: scale(1);}
+    to {top: -25px; right: -15px; -webkit-transform: scale(0.5); transform: scale(0.5);}
+}
+
+@-webkit-keyframes mask-to-moon {
+    from {top: -25px; right: -15px; -webkit-transform: scale(0.5); transform: scale(0.5);}
+    to {top: -8px; right: -5px; -webkit-transform: scale(1); transform: scale(1);}
 }
 
 @keyframes mask-to-moon {
-    from {top: -25px; right: -15px; transform: scale(0.5);}
-    to {top: -8px; right: -5px; transform: scale(1);}
+    from {top: -25px; right: -15px; -webkit-transform: scale(0.5); transform: scale(0.5);}
+    to {top: -8px; right: -5px; -webkit-transform: scale(1); transform: scale(1);}
+}
+
+@-webkit-keyframes to-sun {
+    from {-webkit-transform: scale(1);transform: scale(1);}
+    to {-webkit-transform: scale(0.5);transform: scale(0.5);}
 }
 
 @keyframes to-sun {
-    from {transform: scale(1);}
-    to {transform: scale(0.5);}
+    from {-webkit-transform: scale(1);transform: scale(1);}
+    to {-webkit-transform: scale(0.5);transform: scale(0.5);}
+}
+
+@-webkit-keyframes to-moon {
+    from {-webkit-transform: scale(0.5);transform: scale(0.5);}
+    to {-webkit-transform: scale(1);transform: scale(1);}
 }
 
 @keyframes to-moon {
-    from {transform: scale(0.5);}
-    to {transform: scale(1);}
+    from {-webkit-transform: scale(0.5);transform: scale(0.5);}
+    to {-webkit-transform: scale(1);transform: scale(1);}
+}
+
+@-webkit-keyframes expand-rays {
+    from {-webkit-transform: scale(0.1);transform: scale(0.1);}
+    to {-webkit-transform: scale(0.6);transform: scale(0.6);}
 }
 
 @keyframes expand-rays {
-    from {transform: scale(0.1);}
-    to {transform: scale(0.6);}
+    from {-webkit-transform: scale(0.1);transform: scale(0.1);}
+    to {-webkit-transform: scale(0.6);transform: scale(0.6);}
+}
+
+@-webkit-keyframes contract-rays {
+    from {-webkit-transform: scale(0.6);transform: scale(0.6);}
+    to {-webkit-transform: scale(0.1);transform: scale(0.1);}
 }
 
 @keyframes contract-rays {
-    from {transform: scale(0.6);}
-    to {transform: scale(0.1);}
+    from {-webkit-transform: scale(0.6);transform: scale(0.6);}
+    to {-webkit-transform: scale(0.1);transform: scale(0.1);}
 }
 
 
@@ -380,9 +504,15 @@
 .frame{
     position: relative;
     z-index: 1;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 /*TABLET*/

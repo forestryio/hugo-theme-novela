@@ -7,6 +7,8 @@
     z-index: 0;
     pointer-events: none;
     background: var(--gradient);
+    -webkit-transition: var(--color-mode-transition);
+    -o-transition: var(--color-mode-transition);
     transition: var(--color-mode-transition);
 }
 
