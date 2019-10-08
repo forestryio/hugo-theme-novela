@@ -5,6 +5,10 @@ admin_path:
 webhook_url: 
 sections:
 - type: document
+  path: config/_default/social.yaml
+  label: Social Links
+  match: "**/*"
+- type: document
   path: content/_index.md
   label: Home
 - type: directory
