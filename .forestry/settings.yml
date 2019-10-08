@@ -9,7 +9,7 @@ sections:
   label: Config
   create: all
   match: "**/*"
-  new_doc_ext: ".yaml"
+  new_doc_ext: yaml
 - type: document
   path: content/_index.md
   label: Home
