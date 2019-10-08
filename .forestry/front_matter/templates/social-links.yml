@@ -1,4 +1,48 @@
 ---
 label: Social Links
 hide_body: true
-fields: []
+fields:
+- name: social
+  type: select
+  default: ''
+  config:
+    required: false
+    options:
+    - dribbble
+    - facebook
+    - github
+    - instagram
+    - linkedin
+    - medium
+    - patreon
+    - paypal
+    - twitter
+    - unsplash
+    - youtube
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Social-
+- name: social_
+  type: list
+  config:
+    use_select: true
+    min: 
+    max: 
+    source:
+      type: simple
+    options:
+    - dribbble
+    - facebook
+    - github
+    - instagram
+    - linkedin
+    - medium
+    - patreon
+    - paypal
+    - twitter
+    - unsplash
+    - youtube
+  label: Social Media
