@@ -5,13 +5,11 @@ admin_path:
 webhook_url: 
 sections:
 - type: directory
-  path: config/_default/social.yaml
+  path: config/_default
   label: Config
   create: all
   match: "**/*"
   new_doc_ext: yaml
-  templates:
-  - social-links
 - type: document
   path: content/_index.md
   label: Home
