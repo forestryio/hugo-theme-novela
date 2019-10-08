@@ -1,6 +1,13 @@
+# Hugo Novela
+
+A port of [Narrative](https://www.narative.co/)'s Gatsby theme [Novela"](https://www.narative.co/labs/novela/)
+
+## Customization
+
 ### Logo
 
-Add to your projects 
+Add to your projects layout directory your logo's SVG:
+`/layouts/icons/ui/logo.html`
 
 ### Authors
 
@@ -12,9 +19,10 @@ taxonomies:
 ```
 
 #### Creating authors
+Add the following file to your content directory and Front Matter example.
 
-```
-### /content/authors/firstname-lastname/_index.md
+```yaml
+# /content/authors/firstname-lastname/_index.md
 ---
 title: Dennis Brotzky
 bio: |
@@ -36,5 +44,19 @@ social:
 ---
 ```
 
-### Formspree
+#### Assigning authors to posts.
+Simply add the name of the author to the "authors" field:
 
+```yaml
+authors:
+  - Dennis Brotzky
+  - Thiago Costa
+```
+### Newsletter CTA
+
+This theme includes a shortcode for a newsletter callout form that you can add to any page. 
+It uses [formspree.io](//formspree.io/) as proxy to send the actual email. Each month, visitors can send you up to one thousand emails without incurring extra charges. Visit the Formspree site to get get going add your Formspree email to your shortcode like this:
+
+```
+{{< subscribe email="your@email.com" >}}
+```
