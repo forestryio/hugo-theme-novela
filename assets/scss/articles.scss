@@ -366,6 +366,8 @@
         flex-shrink: 0;
     max-width: 100%;
     min-height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 
 .article-title{
