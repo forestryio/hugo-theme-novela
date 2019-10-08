@@ -9,6 +9,10 @@ A port of [Narrative](https://www.narative.co/)'s Gatsby theme [Novela"](https:/
 Add to your projects layout directory your logo's SVG:
 `/layouts/icons/ui/logo.html`
 
+### Socials
+
+In order for the Socials to be surfaced in Forestry, you should copy the theme's `config/_default/social.yaml` to your project.
+
 ### Authors
 
 You should register authors as a taxonomy in your project's `config.yaml``
