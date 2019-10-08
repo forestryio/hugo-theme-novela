@@ -2,8 +2,3 @@ baseURL: "https://example.com"
 languageCode: "en-us"
 title: "Hugo Novela"
 pygmentsstyle: 'monokai'
-paginate: 6
-taxonomies:
-  author: authors
-
-# contentDir: exampleSite/content
