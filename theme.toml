@@ -1,9 +1,10 @@
 name = "Hugo Novela"
 license = "MIT"
-licenselink = "Link to theme's license"
+licenselink = "https://github.com/forestryio/hugo-theme-novela/blob/master/LICENSE"
 description = "A Hugo port of the Novela theme by Narrative"
-homepage = "Website of your theme"
+homepage = "https://hugo-novela-forestry.netlify.com/"
 tags = ["blog"]
+features = ["dark mode", "grid view"]
 min_version = "0.55.0"
 
 [author]
