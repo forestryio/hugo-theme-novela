@@ -26,8 +26,8 @@ fields:
   label: Read Time
   description: The time it takes to read the post (in minutes)
   default: 0
-  required: true
   config:
+    required: true
     min: 
     max: 
     step: 

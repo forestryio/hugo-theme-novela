@@ -13,8 +13,8 @@ fields:
   label: Max Width
   description: The maximum possible width of the hero (in pixels)
   default: '652'
-  required: true
   config:
+    required: true
     min: 
     max: 
     step: 
