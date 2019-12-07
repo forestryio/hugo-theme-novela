@@ -9,7 +9,7 @@ min_version = "0.55.0"
 
 [author]
     name = "The New Dynamic"
-    homepage = "www.thenewdynamic.com"
+    homepage = "https://www.thenewdynamic.com/"
 
 # If porting an existing theme
 [original]
