@@ -4,6 +4,10 @@ A port of [Narrative](https://www.narative.co/)'s Gatsby theme [Novela](https://
 
 ![](images/tn.png)
 
+<a href="https://app.forestry.io/quick-start?repo=forestryio/novela-hugo-starter&engine=hugo&version=0.60.1">
+    <img alt="Import this project into Forestry" src="https://assets.forestry.io/import-to-forestryK.svg" />
+</a>
+
 ## Customization
 
 ### Logo
