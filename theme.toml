@@ -13,6 +13,6 @@ min_version = "0.55.0"
 
 # If porting an existing theme
 [original]
-    author = "Narrative"
+    author = "Narative"
     homepage = "https://www.narative.co/"
     repo = "https://github.com/narative/gatsby-theme-novela"
