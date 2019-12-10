@@ -1,6 +1,6 @@
 # Hugo Novela
 
-A port of [Narrative](https://www.narative.co/)'s Gatsby theme [Novela](https://www.narative.co/labs/novela/)
+A port of [Narative](https://www.narative.co/)'s Gatsby theme [Novela](https://www.narative.co/labs/novela/)
 
 ![](https://raw.githubusercontent.com/forestryio/hugo-theme-novela/master/images/tn.png)
 
