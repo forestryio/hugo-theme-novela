@@ -1,9 +1,10 @@
 ---
-title: Brad Tiller
+title: Hugo Authors
 bio: |
   Written by You. This is where your author bio lives. Share your work, your
   joys and of course, your Twitter handle.
-avatar: /images/brad-tiller.jpg
+avatar: /images/profile-01.jpeg
+featured: true
 social:
   - title: github
     url: https://github.com
