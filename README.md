@@ -13,7 +13,7 @@ A port of [Narative](https://www.narative.co/)'s Gatsby theme [Novela](https://w
 ### Logo
 
 Add to your projects layout directory your logo's SVG:
-`/layouts/icons/ui/logo.html`
+`/layouts/partials/icons/ui/logo.html`
 
 ### Socials
 
