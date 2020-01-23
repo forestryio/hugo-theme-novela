@@ -2,6 +2,8 @@
 
 A port of [Narative](https://www.narative.co/)'s Gatsby theme [Novela](https://www.narative.co/labs/novela/)
 
+**This theme requires Hugo > 0.55.0 and has been tested with Hugo v0.62.2**
+
 ![](https://raw.githubusercontent.com/forestryio/hugo-theme-novela/master/images/tn.png)
 
 <a href="https://app.forestry.io/quick-start?repo=forestryio/novela-hugo-starter&engine=hugo&version=0.60.1">
