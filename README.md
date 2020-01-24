@@ -14,8 +14,11 @@ A port of [Narative](https://www.narative.co/)'s Gatsby theme [Novela](https://w
 
 ### Logo
 
-Add to your projects layout directory your logo's SVG:
-`/layouts/partials/icons/ui/logo.html`
+Override `/themes/novela/layouts/partials/icons/ui/logo.html` with your own file at `/layouts/partials/icons/ui/logo.html`; include your logo in SVG format for desktop and mobile formats. 
+
+Novela supports light and dark mode. To have your logo respond in kind, add `class="change-fill"` to the svg path(s).
+
+
 
 ### Socials
 
