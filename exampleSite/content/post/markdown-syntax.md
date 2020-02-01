@@ -3,7 +3,6 @@ title: Markdown Syntax Guide
 date: 2019-03-11
 hero: "/images/hero-2.jpg"
 excerpt: Sample article showcasing basic Markdown syntax and formatting for HTML elements.
-timeToRead: 10
 authors:
   - Hugo Authors
 
@@ -40,7 +39,7 @@ The blockquote element represents content that is quoted from another source, op
 
 #### Blockquote with attribution
 
-> Don't communicate by sharing memory, share memory by communicating.  
+> Don't communicate by sharing memory, share memory by communicating.
 > — <cite>Rob Pike[^1]</cite>
 
 
@@ -124,4 +123,3 @@ X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
 Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the session.
 
 Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
-
