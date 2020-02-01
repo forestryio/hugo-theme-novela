@@ -37,7 +37,7 @@ of the whole section and append them to our $next slice. */}}
                 {{ if not $index}} id="article-link-bigger"{{ end }}>
                     <div>
                         <div class="image-container">
-                            <img src="{{ $article.Params.hero }}" class="article-image" /> 
+                            <img src="{{ $article.Params.hero }}" class="article-image" />
                         </div>
                         <div>
                             <h2 class="article-title">
@@ -47,7 +47,7 @@ of the whole section and append them to our $next slice. */}}
                                 {{ $article.Params.excerpt }}
                             </p>
                             <div class="article-metadata">
-                                {{ $article.Date | dateFormat "January 1, 2006" }}{{ with $article.Params.timeToRead }} · {{ $article.Params.timeToRead }} min read{{ end }}
+                                {{ $article.Date | dateFormat "January 1, 2006" }} · {{ $article.ReadingTime }} min read
                             </div>
                         </div>
                     </div>

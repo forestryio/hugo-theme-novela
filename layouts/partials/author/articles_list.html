@@ -10,7 +10,7 @@
             <a href="{{ .RelPermalink }}" class="article-link">
               <div class="article-data-outer">
                 <div class="image-container">
-                  <img src="{{ .Params.hero }}" class="article-image" /> 
+                  <img src="{{ .Params.hero }}" class="article-image" />
                 </div>
                 <div class="article-data">
                   <h2 class="article-title">
@@ -20,7 +20,7 @@
                     {{ .Params.excerpt }}
                   </p>
                   <div class="article-metadata">
-                    {{ .Date.Format "January 2, 2006" }}{{ if .Params.timetoread }} • {{ .Params.timetoread }} min read{{ end }}
+                    {{ .Date.Format "January 2, 2006" }} hey • {{ .ReadingTime }} min read
                   </div>
                 </div>
               </div>
