@@ -6,11 +6,11 @@
 
     {{ partial "article/progress" . }}
 
-    <article  id="articleContent" class="post-content">
+    <article  id="articleContent" class="post-content" style="position:relative;">
         {{ .Content }}
     </article>
 
-    
+
     {{ partial "article/next.html" . }}
 </section>
 
