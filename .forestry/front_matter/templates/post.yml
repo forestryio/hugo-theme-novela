@@ -30,3 +30,5 @@ fields:
   type: tag_list
   default: []
   label: Authors
+pages:
+- content/post/i-made-someone-rich-by-allowing-them-to-cryptojack-my-pc.md
