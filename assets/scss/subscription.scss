@@ -13,6 +13,11 @@
     -webkit-box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.05);
             box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.05);
     z-index: 1;
+
+    .subscroiption-text{
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
 
 /*TABLET*/
@@ -20,6 +25,27 @@
     .subscription-container{
         padding: 50px 0 0;
         text-align: center;
+
+        .submitted-input{
+            max-width: calc(100% - 36px);
+        }
+
+        .submit-button{
+            position: relative;
+            width: 100%;
+            left: 0;
+            border-radius: 0;
+            height: 60px;
+            border: none;
+            border-top: 1px solid var(--theme-ui-colors-horizontalRule,rgba(8,8,11,0.15));
+        }
+
+        .submitted-form{
+            .submit-button{
+                border: none !important;
+                border-top: 1px solid var(--theme-ui-colors-horizontalRule,rgba(8,8,11,0.15)) !important;
+            }
+        }
     }
 }
 
@@ -67,7 +93,8 @@
 }
 
 .subscription-text{
-    margin: 0 auto 30px;
+    margin: 0 0 30px;
+    max-width: 680px;
     color: var(--grey);
     line-height: 1.75;
 }
