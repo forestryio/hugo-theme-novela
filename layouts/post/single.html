@@ -8,8 +8,18 @@
 
     <article  id="articleContent" class="post-content" style="position:relative;">
         {{ .Content }}
-    </article>
 
+        <!--Tag widget-->
+        <p style="text-align:right">Tag:
+    {{- with .Params.tags -}}
+    {{- range . -}}
+        <a class="tag-badge" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">
+            #{{ . }} 
+        </a>
+    {{- end -}}
+{{- end -}}
+    </p>
+    </article>
 
     {{ partial "article/next.html" . }}
 </section>
