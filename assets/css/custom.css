@@ -1,0 +1,36 @@
+ol li::before {
+    left: -3rem;
+    top: 0rem;
+    font-weight: 400;
+    position: absolute !important;
+}
+ol li ul li::before {
+    display: inline-block;
+    content: "" !important;
+    left: -3rem;
+    top: .75rem;
+    width: 8px !important;
+    border-radius: 100%;
+    font-size: 2rem;
+  }
+ol li ul li ul li::before {
+    display: inline-block;
+    content: "" !important;
+    left: -3rem;
+    top: .75rem;
+    width: 8px !important;
+    font-size: 2rem;
+    background:#fff;
+    border: 1px solid #000;
+  }
+  .narrow ol li ul li{
+    margin-left: 3rem;
+  }
+  @media screen and (max-width:880px){
+  ol li::before {
+    margin-left: 2rem;
+  }
+  .narrow {
+    margin-left: 0rem;
+  }
+}
