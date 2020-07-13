@@ -1,8 +1,13 @@
+html, body {
+  padding:0;
+  margin:0;
+}
 ol li::before {
-    left: -3rem;
-    top: 0rem;
-    font-weight: 400;
-    position: absolute !important;
+    margin-left: -3rem;
+    left:0rem;
+    width: 2.8rem;
+    top: -.1rem;
+    position: relative;
 }
 ol li ul li::before {
     display: inline-block;
@@ -26,11 +31,28 @@ ol li ul li ul li::before {
   .narrow ol li ul li{
     margin-left: 3rem;
   }
+  .article-hero-image {
+    position: relative;
+  }
+  .aside-container {
+    position: fixed;
+  }
+  .post-content {
+    padding-top: 100px;
+  }
+  .navigation ul li::before {
+    display: none;
+  }
+  .navigation ul li {
+    display: inline;
+    margin-left:10px;
+  }
+.muted{
+  color:var(--grey)
+}
+.social-icon-outer{
+  width: inherit;
+  min-width: inherit;
+}
   @media screen and (max-width:880px){
-  ol li::before {
-    margin-left: 2rem;
-  }
-  .narrow {
-    margin-left: 0rem;
-  }
 }
