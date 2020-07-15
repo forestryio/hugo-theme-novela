@@ -13,23 +13,29 @@ ol li ul li::before {
     display: inline-block;
     content: "" !important;
     left: -3rem;
-    top: .75rem;
+    top: -.3rem;
     width: 8px !important;
     border-radius: 100%;
     font-size: 2rem;
+    margin:0 -15px 0 0;
   }
 ol li ul li ul li::before {
     display: inline-block;
     content: "" !important;
     left: -3rem;
-    top: .75rem;
+    top: -.2rem;
     width: 8px !important;
     font-size: 2rem;
-    background:#fff;
-    border: 1px solid #000;
+    background:var(--background-color);
+    border: 1px solid var(--articleText);
+    margin:0 -15px 0 0;
   }
+  ol li ul li ul li ul li::before {
+    border-radius: 0;
+  }
+
   .narrow ol li ul li{
-    margin-left: 3rem;
+    margin-left: 4.5rem;
   }
   .article-hero-image {
     position: relative;
@@ -73,6 +79,7 @@ kbd > kbd {
   color:var(--accent);
   text-decoration: none !important;
   z-index: 1;
+  transition: var(--color-mode-transition);
 }
 .download:before{
   position:absolute;
@@ -84,7 +91,7 @@ kbd > kbd {
   margin-left:-45px;
   background-color:var(--accent);
   margin-top: 2px;
-  transition: 300ms ease-in-out all;
+  transition: all .2s ease-in-out;
 }
 .separator::before{
   position: absolute;
@@ -108,6 +115,34 @@ kbd > kbd {
   height: 32px;
   margin-top:-2px;
 }
+.bacajuga{
+  font-weight: 600;
+  padding: 15px 25px 11px;
+  margin-bottom: .5rem;
+  position: relative;
+  border:1px solid var(--grey);
+  border-radius: 5px;
+
+}
+.picture{
+  margin: 3rem 0;
+}
+.lazyload{
+  background: #eee url(/images/logo_bw.svg) no-repeat center;
+  background-size: 35%;
+  height: 100%;
+  display: inline-block;
+  border-radius:5px ;
+  overflow: hidden;
+}
+code {
+  background-color: #ddd;
+  color: #000;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 14px;
+
+}
   @media screen and (max-width:880px){
     .download{
       font-size: 13px;
@@ -125,5 +160,8 @@ kbd > kbd {
       width: 28px;
       height: 28px;
       margin-top:-4px;
+    }
+    .picture .lazyload{
+      height: inherit !important;
     }
 }
