@@ -130,7 +130,7 @@ kbd > kbd {
 .lazyload{
   background: #eee url(/images/logo_bw.svg) no-repeat center;
   background-size: 35%;
-  height: 100%;
+  min-height: 300px;
   display: inline-block;
   border-radius:5px ;
   overflow: hidden;
