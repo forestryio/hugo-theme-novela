@@ -161,7 +161,11 @@ code {
       height: 28px;
       margin-top:-4px;
     }
-    .picture .lazyload{
-      height: inherit !important;
-    }
+    .lazyload{
+     background-size: 20%;      
+      min-height: 150px;
+}
+@media screen and (max-width:480px){
+  .lazyload{
+    min-height: 70px;
 }
