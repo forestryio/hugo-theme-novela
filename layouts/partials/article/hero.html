@@ -1,6 +1,13 @@
 <section id="articleHero" class="section narrow">
     <div class="article-hero">
         <header class="article-header">
+            {{- with .Params.series -}}
+    {{- range . -}}
+        <a class="series-badge" href="{{ "/series/" | relLangURL }}{{ . | urlize }}">
+            {{ . }} 
+        </a>
+    {{- end -}}
+{{- end -}}
             <h1 class="article-hero-heading">{{ .Page.Params.Title }}</h1>
             <div class="article-hero-subtitle">
                 <div class="article-meta">

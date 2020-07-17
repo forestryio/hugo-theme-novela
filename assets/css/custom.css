@@ -9,6 +9,9 @@ ol li::before {
     top: -.1rem;
     position: relative;
 }
+ul li::before {
+  border-radius: 3px;
+}
 ol li ul li::before {
     display: inline-block;
     content: "" !important;
@@ -53,12 +56,20 @@ ol li ul li ul li::before {
     display: inline;
     margin-left:10px;
   }
-.muted{
-  color:var(--grey)
-}
+  .navigation ul li a{
+    color: var(--grey);
+    text-decoration: none;
+  }
+  .navigation ul li a:hover{
+    color: var(--primary);
+  }
 .social-icon-outer{
   width: inherit;
   min-width: inherit;
+}
+.series-badge{
+  font-weight: 700;
+  font-size:110%;
 }
 kbd {
   background:var(--background-color);
@@ -144,7 +155,43 @@ code {
   padding: 2px 6px;
   border-radius: 3px;
   font-size: 14px;
+}
 
+.list-arsip ul li::before{
+  display: none;
+}
+.list-arsip li {
+  position: relative;
+  float: left;
+  margin-right: 1rem;
+  background-color: var(--track);
+  display: inline-block;
+  padding: 2px 3px 2px 7px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  opacity: 0.7;
+  border-radius: 5px;
+}
+.list-arsip ul li span{
+  background-color: var(--articleText);
+  color:var(--background-color);
+  padding: 5px 7px 1px;
+  font-size: 12px;
+  position: relative;
+  margin-left: 5px;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 4px;
+}
+.list-arsip li a{
+  text-decoration: none;
+  color:var(--primary)
+}
+.list-arsip li:hover{
+  opacity: 1;
+}
+.article-hero-heading{
+  margin-top: 0px;
 }
   @media screen and (max-width:880px){
     .download{
@@ -179,5 +226,8 @@ code {
   blockquote{
     margin:0 20px 20px;
     font-size: 14px;
+  }
+  .article-header{
+    padding:0;
   }
 }
