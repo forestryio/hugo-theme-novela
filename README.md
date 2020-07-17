@@ -18,8 +18,6 @@ Override `/themes/novela/layouts/partials/icons/ui/logo.html` with your own file
 
 Novela supports light and dark mode. To have your logo respond in kind, add `class="change-fill"` to the svg path(s).
 
-
-
 ### Socials
 
 In order for the Socials to be surfaced in Forestry, you should copy the theme's `config/_default/social.yaml` to your project.
@@ -34,7 +32,11 @@ taxonomies:
 ```
 
 #### Creating authors
-Add the following file to your content directory and Front Matter example.
+
+Authors must be added in `content/authors`.
+Create a folder per author and add an `_index.md` file in it.
+
+Here's an example of the front matter fields supported by default:
 
 ```yaml
 # /content/authors/firstname-lastname/_index.md
@@ -60,7 +62,7 @@ social:
 ```
 
 #### Assigning authors to posts.
-Simply add the name of the author to the "authors" field:
+Ad the name of the author to the "authors" field:
 
 ```yaml
 authors:
