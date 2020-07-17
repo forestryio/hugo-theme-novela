@@ -135,6 +135,9 @@ kbd > kbd {
   border-radius:5px ;
   overflow: hidden;
 }
+blockquote{
+  margin:0 120px 60px;
+}
 code {
   background-color: #ddd;
   color: #000;
@@ -164,8 +167,17 @@ code {
     .lazyload{
      background-size: 20%;      
       min-height: 150px;
+    }
+    blockquote{
+      margin:0 30px 30px;
+    }
 }
 @media screen and (max-width:480px){
   .lazyload{
     min-height: 70px;
+  }
+  blockquote{
+    margin:0 20px 20px;
+    font-size: 14px;
+  }
 }

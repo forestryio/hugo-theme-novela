@@ -23,7 +23,11 @@
             {{ end }}>
               <div class="article-data-outer">
                 <div class="image-container">
-                  <img src="{{ $article.RelPermalink }}/{{ $article.Params.hero }}" class="article-image" />
+                  {{ if $article.Params.hero }}
+                  <img src="{{ $article.Params.hero }}" class="article-image" />
+                  {{ else }}
+                  <img src="/upload/default.jpg" class="article-image" />
+                  {{ end }}
                 </div>
                 <div class="article-data">
                   <h2 class="article-title">
