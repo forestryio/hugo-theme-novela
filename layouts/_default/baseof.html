@@ -21,7 +21,6 @@
 
     {{ $script := resources.Get "js/prism.js" }}
     <script src="{{ $script.RelPermalink }}"></script>
-    {{ template "_internal/google_analytics_async.html" . }}
 </body>
 
 </html>
