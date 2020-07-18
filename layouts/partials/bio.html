@@ -1,4 +1,5 @@
-    <div class="bio-container">
+   {{ $page := . }}
+   <div class="bio-container">
         {{ range site.Taxonomies.authors }}
             {{ with .Page }}
                 {{ if .Params.featured }}
@@ -6,7 +7,17 @@
                         {{ with .Params.avatar }}
                             <div class="bio-avatar">
                                 <div class="bio-avatar-inner">
-                                    <img class="author-avatar" src="{{ . }}" />
+
+                                    {{- $images := . -}}
+                        {{- with $page.Site.GetPage "section" "upload" -}}
+                            {{- with .Resources.GetMatch (strings.TrimPrefix "/upload/" (index $images 0)) -}}
+                                {{- $image := .Resize "40x40" -}}
+    
+                                        <img data-src="{{ $image.RelPermalink }}" src="{{ $image.RelPermalink }}">
+                
+                            {{- end -}}
+                        {{- end -}}
+
                                 </div>
                             </div>
                         {{ end }}
