@@ -193,6 +193,23 @@ code {
 .article-hero-heading{
   margin-top: 0px;
 }
+.article-hero-image img {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+.article-hero-image-single{
+  position: relative;
+  margin:0 auto;
+  box-shadow:0 30px 60px -10px rgba(0,0,0,.2),0 18px 36px -18px rgba(0,0,0,.22);
+  max-width: 944px;
+}
+.article-hero-image-single img{
+  width:100%;
+}
   @media screen and (max-width:880px){
     .download{
       font-size: 13px;

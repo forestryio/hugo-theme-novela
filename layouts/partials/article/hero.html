@@ -1,3 +1,4 @@
+{{ $page := . }}
 <section id="articleHero" class="section narrow">
     <div class="article-hero">
         <header class="article-header">
@@ -17,10 +18,18 @@
                 </div>
             </div>
         </header>
-        {{ with .Page.Params.hero }}
-        <div class="article-hero-image" id="ArticleImage__Hero">
-            <img loading="lazy" src="{{ . }}">
-        </div>
-        {{ end }}
+
+            {{- with $page.Params.hero -}}
+            {{- $images := . -}}
+            {{- with $page.Site.GetPage "section" "upload" -}}
+                {{- with .Resources.GetMatch (strings.TrimPrefix "/upload/" (index $images 0)) -}}
+                    {{- $image := .Resize "944x531" -}}
+                    <div class="article-hero-image-single" id="ArticleImage__Hero">
+                            <img data-src="{{ $image.RelPermalink }}" src="{{ $image.RelPermalink }}" alt="{{ $page.Title }}">
+                    </div>
+                {{- end -}}
+            {{- end -}}
+        {{- end -}}
+
     </div>
 </section>

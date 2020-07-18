@@ -23,11 +23,19 @@
             {{ end }}>
               <div class="article-data-outer">
                 <div class="image-container">
-                  {{ if $article.Params.hero }}
-                  <img loading="lazy" src="{{ $article.Params.hero }}" class="article-image" />
-                  {{ else }}
-                  <img loading="lazy" src="/upload/default.jpg" class="article-image" />
-                  {{ end }}
+
+                  {{- with $article.Params.hero -}}
+            {{- $images := . -}}
+            {{- with $article.Site.GetPage "section" "upload" -}}
+                {{- with .Resources.GetMatch (strings.TrimPrefix "/upload/" (index $images 0)) -}}
+                    {{- $image := .Fit "800x450" -}}
+                    <div class="article-hero-image" id="ArticleImage__Hero">
+                            <img class="article-image" src="{{ $image.RelPermalink }}" alt="{{ $article.Title }}">
+                    </div>
+                {{- end -}}
+            {{- end -}}
+        {{- end -}}
+        
                 </div>
                 <div class="article-data">
                   <h2 class="article-title">

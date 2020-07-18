@@ -10,7 +10,19 @@
             <a href="{{ .RelPermalink }}" class="article-link">
               <div class="article-data-outer">
                 <div class="image-container">
-                  <img src="{{ .Params.hero }}" class="article-image" />
+
+                  {{- with $article.Params.hero -}}
+            {{- $images := . -}}
+            {{- with $article.Site.GetPage "section" "upload" -}}
+                {{- with .Resources.GetMatch (strings.TrimPrefix "/upload/" (index $images 0)) -}}
+                    {{- $image := .Fit "800x450" -}}
+                    <div class="article-hero-image" id="ArticleImage__Hero">
+                            <img class="article-image" src="{{ $image.RelPermalink }}" alt="{{ $article.Title }}">
+                    </div>
+                {{- end -}}
+            {{- end -}}
+        {{- end -}}
+
                 </div>
                 <div class="article-data">
                   <h2 class="article-title">
