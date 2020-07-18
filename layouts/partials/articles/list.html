@@ -24,9 +24,9 @@
               <div class="article-data-outer">
                 <div class="image-container">
                   {{ if $article.Params.hero }}
-                  <img src="{{ $article.Params.hero }}" class="article-image" />
+                  <img loading="lazy" src="{{ $article.Params.hero }}" class="article-image" />
                   {{ else }}
-                  <img src="/upload/default.jpg" class="article-image" />
+                  <img loading="lazy" src="/upload/default.jpg" class="article-image" />
                   {{ end }}
                 </div>
                 <div class="article-data">
