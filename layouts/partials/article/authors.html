@@ -1,11 +1,26 @@
 
+{{ $page := . }}
 {{ $authors := partialCached "func/GetArticleAuthors" . .File.UniqueID }}
 {{ if eq (len $authors) 1 }}
     {{ with $author := index $authors 0 }}
             <a href="{{ .URL }}" class="article-author-link">
                 {{ with .avatar }}
                     <div class="article-author-avatar">
-                        <img src="{{ . }}" />
+
+
+                        {{- with $page.Params.avatar -}}
+                        {{- $images := . -}}
+                        {{- with $page.Site.GetPage "section" "upload" -}}
+                            {{- with .Resources.GetMatch (strings.TrimPrefix "/upload/" (index $images 0)) -}}
+                                {{- $image := .Resize "25x25" -}}
+    
+                                        <img data-src="{{ $image.RelPermalink }}" src="{{ $image.RelPermalink }}">
+                        
+                            {{- end -}}
+                        {{- end -}}
+                    {{- end -}}
+
+
                     </div>
                 {{ end }}
                 {{ with .name }}
