@@ -8,7 +8,6 @@
                     <div class="article-author-avatar">
 
 
-                        {{- with $page.Params.avatar -}}
                         {{- $images := . -}}
                         {{- with $page.Site.GetPage "section" "upload" -}}
                             {{- with .Resources.GetMatch (strings.TrimPrefix "/upload/" (index $images 0)) -}}
@@ -18,8 +17,6 @@
                         
                             {{- end -}}
                         {{- end -}}
-                    {{- end -}}
-
 
                     </div>
                 {{ end }}
