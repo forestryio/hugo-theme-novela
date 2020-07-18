@@ -199,7 +199,7 @@ code {
   left: 50%;
   top: 50%;
   margin-right: -50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-49.95%, -50%);
 }
 .article-hero-image-single{
   position: relative;
@@ -210,6 +210,11 @@ code {
 .article-hero-image-single img{
   width:100%;
 }
+.image-container{transform:translateY(5px);}
+.article-link:hover .image-container,.article-link:focus .image-container{transform:translateY(0px);}
+
+
+
   @media screen and (max-width:880px){
     .download{
       font-size: 13px;
