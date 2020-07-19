@@ -23,9 +23,15 @@
             {{- $images := . -}}
             {{- with $page.Site.GetPage "section" "upload" -}}
                 {{- with .Resources.GetMatch (strings.TrimPrefix "/upload/" (index $images 0)) -}}
-                    {{- $image := .Resize "944x531" -}}
+                    {{- $image1 := .Resize "944x" -}}
+                    {{- $image2 := .Resize "700x" -}}
+                    {{- $image3 := .Resize "300x" -}}
                     <div class="article-hero-image-single" id="ArticleImage__Hero">
-                            <img data-src="{{ $image.RelPermalink }}" src="{{ $image.RelPermalink }}" alt="{{ $page.Title }}">
+                        <picture>
+                                <source media="(min-width:1200px)" srcset="{{ $image1.RelPermalink }}">
+                                    <source media="(min-width:500px)" srcset="{{ $image2.RelPermalink }}">
+                            <img loading="lazy" src="{{ $image3.RelPermalink }}" alt="{{ $page.Title }}">
+                        </picture>
                     </div>
                 {{- end -}}
             {{- end -}}
