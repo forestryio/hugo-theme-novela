@@ -16,7 +16,7 @@ function initAnimation(){
     }
     else{
         moonMask.style.top = "-25px";
-        moonMask.style.right = "-15px";
+        moonMask.style.right = "-11px";
         moonOrSun.style.transform = "scale(0.5)"
         sunRays.style.transform = "scale(0.6)"
     }
