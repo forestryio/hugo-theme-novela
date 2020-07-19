@@ -222,6 +222,22 @@ code {
 .article-title,.article-hero-heading {
   word-wrap: break-word;
 }
+.iklan{
+  background-color: #eee;
+  margin:0 auto;
+  max-width: 944px;
+  margin-bottom: 40px;
+}
+.iklan::before{
+  background: var(--success);
+  content: "Iklan";
+  position: absolute;
+  color: var(--plain);
+  font-size: 12px ;
+  padding: 4px 5px 2px;
+  font-weight: 700;
+  border-radius: 0 0 3px 0;
+}
   @media screen and (max-width:880px){
     .download{
       font-size: 13px;

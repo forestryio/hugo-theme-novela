@@ -18,6 +18,7 @@
         </a>
     {{- end -}}
 {{- end -}}
+
 {{ partial "iklan.html" . }}
 {{ partial "disqus.html" . }}
     </p>
@@ -29,4 +30,5 @@
 
 {{ $script := resources.Get "js/progressBar.js" }}
  <script src="{{ $script.RelPermalink }}"></script>
+
 {{ end }}
