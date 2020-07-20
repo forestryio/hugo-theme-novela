@@ -23,7 +23,7 @@
             {{- $images := . -}}
             {{- with $page.Site.GetPage "section" "upload" -}}
                 {{- with .Resources.GetMatch (strings.TrimPrefix "/upload/" (index $images 0)) -}}
-                    {{- $image1 := .Resize "944x" -}}
+                    {{- $image1 := .Resize "944x q100" -}}
                     {{- $image2 := .Resize "700x" -}}
                     {{- $image3 := .Resize "300x" -}}
                     <div class="article-hero-image-single" id="ArticleImage__Hero">
