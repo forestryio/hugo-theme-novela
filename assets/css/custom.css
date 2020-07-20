@@ -227,6 +227,7 @@ code {
   margin:0 auto;
   max-width: 944px;
   margin-bottom: 40px;
+  max-height: 90px;
 }
 .iklan::before{
   background: var(--success);
@@ -237,6 +238,14 @@ code {
   padding: 4px 5px 2px;
   font-weight: 700;
   border-radius: 0 0 3px 0;
+  z-index:9;
+}
+.code-toolbar pre{
+  padding-top: 2rem !important;
+  padding-bottom: 1rem !important;
+}
+.code-toolbar{
+  font-size:14px;
 }
   @media screen and (max-width:880px){
     .download{
@@ -278,6 +287,9 @@ code {
     }
     .navigation ul{
       padding-left:0;
+    }
+    .iklan{
+      height: inherit;
     }
 }
 @media screen and (max-width:540px){
