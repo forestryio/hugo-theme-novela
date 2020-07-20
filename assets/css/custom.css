@@ -229,7 +229,7 @@ code {
 }
 .code-toolbar pre{
   padding-top: 2rem !important;
-  padding-bottom: 1.5rem !important;
+  padding-bottom: 2.5rem !important;
 }
 .code-toolbar{
   font-size:14px;
@@ -237,10 +237,15 @@ code {
 .footnotes hr {
   border-bottom: 1px solid var(--grey);
   margin: 25px auto;
+  opacity:.3;
 }
   @media screen and (max-width:880px){
     .download{
       font-size: 13px;
+    }
+    .download:hover.download:before{
+      width: 24px;
+      height: 24px;
     }
 .article-title,.article-hero-heading {
   font-size:20px
@@ -255,9 +260,9 @@ code {
       margin-top: 0px;
     }
     .download:hover.download:before{
-      width: 28px;
-      height: 28px;
-      margin-top:-4px;
+      width: 24px;
+      height: 24px;
+      margin-top:3px;
     }
     .lazyload{
      background-size: 20%;      
@@ -283,10 +288,13 @@ code {
       height: inherit;
     }
 }
-@media screen and (max-width:540px){
+@media screen and (max-width:600px){
   .section{
     padding:2.1rem;
   }
+  .article-hero-image img {
+    transform: translate(-50.1%, -50%);
+}
 }
 @media screen and (max-width:480px){
   .lazyload{
@@ -295,5 +303,14 @@ code {
   blockquote{
     margin:0 20px 20px;
     font-size: 14px;
+  }
+  .download{
+    font-size: 10px;
+  }
+ .download:before{
+    margin-top: 5px;
+  }
+  .separator::before{
+    margin-top: 5px;
   }
 }
