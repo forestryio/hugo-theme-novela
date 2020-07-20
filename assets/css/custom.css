@@ -223,25 +223,13 @@ code {
   word-wrap: break-word;
 }
 .iklan{
-  background-color: #eee;
   margin:0 auto;
   max-width: 944px;
   margin-bottom: 40px;
-  min-height: 90px;
-}
-.iklan::before{
-  background: var(--success);
-  content: "Awas ada iklan guys";
-  position: absolute;
-  color: var(--plain);
-  font-size: 12px ;
-  padding: 4px 5px 2px;
-  font-weight: 700;
-  border-radius: 0 0 3px 0;
 }
 .code-toolbar pre{
   padding-top: 2rem !important;
-  padding-bottom: 1rem !important;
+  padding-bottom: 1.5rem !important;
 }
 .code-toolbar{
   font-size:14px;
