@@ -210,7 +210,7 @@ code {
 .article-hero-image-single img{
   width:100%;
 }
-.image-container{transform:translateY(5px);}
+.image-container{transform:translateY(0px);}
 .article-link:hover .image-container,.article-link:focus .image-container{transform:translateY(0px);}
 
 .icon-wrapper{
