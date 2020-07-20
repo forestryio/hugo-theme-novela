@@ -42,10 +42,16 @@ of the whole section and append them to our $next slice. */}}
             {{- $images := . -}}
             {{- with $article.Site.GetPage "section" "upload" -}}
                 {{- with .Resources.GetMatch (strings.TrimPrefix "/upload/" (index $images 0)) -}}
-                    {{- $image := .Fit "700x350" -}}
-                    <div class="article-hero-image" id="ArticleImage__Hero">
-                            <img class="article-image" src="{{ $image.RelPermalink }}" alt="{{ $article.Title }}">
-                    </div>
+                {{- $image1 := .Resize "621x q100" -}}
+                {{- $image2 := .Resize "500x" -}}
+                {{- $image3 := .Resize "291x" -}}
+                <div class="article-hero-image" id="ArticleImage__Hero">
+                        <img class="article-image" srcset="
+                        {{ $image3.RelPermalink }} 375w,
+                        {{ $image2.RelPermalink }} 700w,
+                        {{ $image1.RelPermalink }} 1366w,  
+                        " src="{{ $image1.RelPermalink }}" alt="{{ $article.Title }}">
+                </div>
                 {{- end -}}
             {{- end -}}
         {{- end -}}
