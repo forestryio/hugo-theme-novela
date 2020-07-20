@@ -234,6 +234,10 @@ code {
 .code-toolbar{
   font-size:14px;
 }
+.footnotes hr {
+  border-bottom: 1px solid var(--grey);
+  margin: 25px auto;
+}
   @media screen and (max-width:880px){
     .download{
       font-size: 13px;
