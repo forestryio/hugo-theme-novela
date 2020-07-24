@@ -295,6 +295,12 @@ code {
   .article-hero-image img {
     transform: translate(-50.1%, -50%);
 }
+.navigation {
+  text-align: center;
+  display: inline-block;
+  overflow: auto;
+  width: 100%;
+}
 }
 @media screen and (max-width:480px){
   .lazyload{
