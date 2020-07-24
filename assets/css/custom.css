@@ -296,7 +296,6 @@ code {
     transform: translate(-50.1%, -50%);
 }
 .navigation {
-  text-align: center;
   display: inline-block;
   overflow: auto;
   width: 100%;
