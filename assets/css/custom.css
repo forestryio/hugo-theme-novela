@@ -331,6 +331,9 @@ h1, h2, h3, h4, h5, h6{
     .highlight pre {
       padding: 25px;
   }
+  h1, h2, h3, h4, h5, h6{
+    margin:0 auto 25px;
+  }
 }
 @media screen and (max-width:600px){
   .section{
