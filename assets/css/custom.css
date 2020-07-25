@@ -285,9 +285,6 @@ pre code span {
       width: 24px;
       height: 24px;
     }
-    .nav-controls {
-      right: 31px;
-    }
 .article-title,.article-hero-heading {
   font-size:20px
 }
@@ -386,6 +383,11 @@ pre code span {
   }
   .footer-next-heading::after {
     width: 21.8%;
+}
+.nav-controls {
+  left: 55px;
+  position: absolute;
+  top: 61px;
 }
 }
 @media screen and (max-width:375px){
