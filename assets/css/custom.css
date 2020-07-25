@@ -363,6 +363,11 @@ pre code span {
   text-align: center;
   border-radius: 0;
 }
+.nav-controls {
+  left: 55px;
+  position: absolute;
+  top: 61px;
+}
 }
 @media screen and (max-width:480px){
   .lazyload{
@@ -383,11 +388,6 @@ pre code span {
   }
   .footer-next-heading::after {
     width: 21.8%;
-}
-.nav-controls {
-  left: 55px;
-  position: absolute;
-  top: 61px;
 }
 }
 @media screen and (max-width:375px){
