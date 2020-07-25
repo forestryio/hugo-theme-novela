@@ -151,9 +151,12 @@ blockquote{
 }
 code {
   background-color: #ddd;
-  color: #000;
+  color: #080808;
   padding: 2px 6px;
   border-radius: 3px;
+    
+}
+p > code,li code {
   font-size: 14px;
 }
 
@@ -229,7 +232,7 @@ code {
 }
 .code-toolbar pre{
   padding-top: 2rem !important;
-  padding-bottom: 2.5rem !important;
+  padding-bottom: 1.5rem !important;
 }
 .code-toolbar{
   font-size:14px;
