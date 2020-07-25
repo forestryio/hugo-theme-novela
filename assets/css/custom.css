@@ -334,7 +334,17 @@ pre code span {
 }
 @media screen and (max-width:600px){
   .section{
-    padding:2.1rem;
+    padding:1rem;
+  }
+  .article-header{
+    margin:30px auto;
+  }
+  .post-content{
+    padding-top: 30px;
+  }
+  .narrow p{
+    padding:0 1rem;
+    font-size:15px;
   }
   .article-hero-image img {
     transform: translate(-50.1%, -50%);
