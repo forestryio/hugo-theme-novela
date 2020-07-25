@@ -25,9 +25,6 @@
     </article>
     {{ partial "article/next.html" . }}
 </section>
-{{ $script := resources.Get "js/prism.min.js" }}
-<script src="{{ $script.RelPermalink }}"></script>
-
 {{ $script := resources.Get "js/progressBar.js" }}
  <script src="{{ $script.RelPermalink }}"></script>
 

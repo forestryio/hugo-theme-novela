@@ -156,10 +156,27 @@ code {
   border-radius: 3px;
     
 }
-p > code,li code {
+p code,li code {
   font-size: 14px;
 }
+pre code{
+  background-color: transparent;
+  color: inherit;
+}
 
+.highlight pre {
+  padding: 20px 35px;
+  overflow: auto;
+  width: 100%;
+  max-width: 944px;
+  margin: 0 auto 35px;
+  border-radius:5px;
+  color:#e6db74;
+  font-size: 12px;
+}
+pre code span {
+  background: transparent !important;
+}
 .list-arsip ul li::before{
   display: none;
 }
@@ -229,13 +246,6 @@ p > code,li code {
   margin:0 auto;
   max-width: 944px;
   margin-bottom: 40px;
-}
-.code-toolbar pre{
-  padding-top: 2rem !important;
-  padding-bottom: 1.5rem !important;
-}
-.code-toolbar{
-  font-size:14px;
 }
 .footnotes hr {
   border-bottom: 1px solid var(--grey);
