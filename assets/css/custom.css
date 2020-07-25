@@ -339,12 +339,18 @@ h1, h2, h3, h4, h5, h6{
   .article-header{
     margin:30px auto;
   }
+  .article-title{
+    margin:10px 0 0;
+  }
   .post-content{
     padding-top: 30px;
   }
   .narrow p{
     padding:0 1rem;
     font-size:15px;
+  }
+  ol li,ul li, ol li::before{
+    font-size:15px
   }
   .article-hero-image img {
     transform: translate(-50.1%, -50%);
