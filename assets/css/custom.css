@@ -277,6 +277,9 @@ pre code span {
   background: none;
   padding-top:0
 }
+h1, h2, h3, h4, h5, h6{
+  margin:0 auto 35px;
+}
   @media screen and (max-width:880px){
     .download{
       font-size: 13px;
@@ -286,7 +289,7 @@ pre code span {
       height: 24px;
     }
 .article-title,.article-hero-heading {
-  font-size:20px
+  font-size:25px
 }
     .separator::before{
       height: 20px;
