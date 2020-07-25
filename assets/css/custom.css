@@ -59,6 +59,7 @@ ol li ul li ul li::before {
   .navigation ul li a{
     color: var(--grey);
     text-decoration: none;
+    font-size: 16px;
   }
   .navigation ul li a:hover{
     color: var(--primary);
@@ -165,13 +166,12 @@ pre code{
 }
 
 .highlight pre {
-  padding: 20px 35px;
+  padding: 45px;
   overflow: auto;
   width: 100%;
-  max-width: 944px;
+  max-width: 790px;
   margin: 0 auto 35px;
-  border-radius:5px;
-  color:#e6db74;
+  border-radius: 5px;
   font-size: 12px;
 }
 pre code span {
@@ -233,12 +233,6 @@ pre code span {
 .image-container{transform:translateY(0px);}
 .article-link:hover .image-container,.article-link:focus .image-container{transform:translateY(0px);}
 
-.icon-wrapper{
-  transform: scale(1.1);
-}
-.nav-controls {
-  right: 31px;
-}
 .article-title,.article-hero-heading {
   word-wrap: break-word;
 }
@@ -252,6 +246,37 @@ pre code span {
   margin: 25px auto;
   opacity:.3;
 }
+.author-social{
+  width: auto;
+}
+.social-icon-image{
+  width: 32px;
+  height: 32px;
+}
+.social-icon-container a{
+  margin: inherit;
+}
+.titlepage h1 {
+  font-size: 42px;
+  max-width: 944px;
+  color: var(--background-color);
+}
+.titlepage {
+  background: var(--articleText);
+  padding: 10px 0;
+  max-width: 1220px;
+  margin: 35px auto;
+}
+.titlepage {
+  background: var(--articleText);
+  padding: 10px 0;
+  max-width: 100%;
+  margin: 35px auto;
+}
+.author-alc,.footer-gradient,.articles-gradient{
+  background: none;
+  padding-top:0
+}
   @media screen and (max-width:880px){
     .download{
       font-size: 13px;
@@ -259,6 +284,9 @@ pre code span {
     .download:hover.download:before{
       width: 24px;
       height: 24px;
+    }
+    .nav-controls {
+      right: 31px;
     }
 .article-title,.article-hero-heading {
   font-size:20px
@@ -300,6 +328,9 @@ pre code span {
     .iklan{
       height: inherit;
     }
+    .highlight pre {
+      padding: 25px;
+  }
 }
 @media screen and (max-width:600px){
   .section{
@@ -312,6 +343,18 @@ pre code span {
   display: inline-block;
   overflow: auto;
   width: 100%;
+}
+.icon-wrapper{
+  transform: scale(1.1);
+}
+.titlepage h1{
+  font-size:21px;
+  text-align: center;
+}
+.titlepage{
+  padding:1px 10px 10px;
+  text-align: center;
+  border-radius: 0;
 }
 }
 @media screen and (max-width:480px){
@@ -331,4 +374,12 @@ pre code span {
   .separator::before{
     margin-top: 5px;
   }
+  .footer-next-heading::after {
+    width: 21.8%;
+}
+}
+@media screen and (max-width:375px){
+  .footer-next-heading::after {
+    width: 0;
+}
 }
