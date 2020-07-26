@@ -15,4 +15,8 @@
       {{- safeHTML (printf "<meta property='forestry_instant_preview_id' content='%s'>" .) -}}
     {{ end -}}
     {{ template "_internal/google_analytics_async.html" . }}
+{{ if or .Page.Params.math .Site.Params.math }}
+<!-- MathJax -->
+{{ partial "math.html" . }}
+{{ end }}
 </head>
