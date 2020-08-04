@@ -4,7 +4,28 @@
       {{ partial "icons/ui/logo.html" . }}
       <span class="header-hidden">Navigate back to the homepage</span>
     </a>
+    <div class="search" id="search-hide" style="left:-100px;width:0px">
+      <form method="GET" action="/search">
+        <input type="search" name="q" placeholder="Ketik kata kunci disini..."> 
+        </form>
+        </div>
     <div class="nav-controls">
+      <button class="search-toggle" onclick="searchToggle()"><svg class="icon-image" width="24" height="24" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+        <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+      </svg></button>
+      <script>
+        function searchToggle() {
+          var x = document.getElementById("search-hide");
+          if (x.style.left === "-100px" && x.style.width === "0px") {
+            x.style.left = "0px";
+            x.style.width = "100%";
+          } else {
+            x.style.left = "-100px";
+            x.style.width= "0px";
+          }
+        }
+        </script>
       <button id="copyButton" class="icon-wrapper">
         {{ partial "icons/ui/link.html" . }}
         <div id="toolTip" class="tool-tip " >
