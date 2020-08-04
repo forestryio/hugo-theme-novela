@@ -48,7 +48,11 @@
                     {{ $article.Params.title }}
                   </h2>
                   <p class="article-excerpt">
+                    {{ if $article.Params.excerpt }}
+                    {{ $article.Params.excerpt }}
+                    {{ else }}
                     {{ $article.Summary }}
+                    {{ end }}
                   </p>
                   <div class="article-metadata">
                     {{ $article.Date.Format "January 2, 2006" }} • {{ $article.ReadingTime }} min read
