@@ -26,6 +26,7 @@
     {{ partial "article/next.html" . }}
 </section>
 {{ $script := resources.Get "js/progressBar.js" }}
- <script src="{{ $script.RelPermalink }}"></script>
+{{ $minjs := $script | resources.Minify }}
+ <script src="{{ $minjs.RelPermalink }}"></script>
 
 {{ end }}
