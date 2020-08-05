@@ -1,37 +1,38 @@
 <Section class="section">
   <div class="nav-container">
-    <a class="logo-link" href="/">
+    <a class="logo-link" href="/" title="{{ .Site.Title }}">
       {{ partial "icons/ui/logo.html" . }}
       <span class="header-hidden">Navigate back to the homepage</span>
     </a>
-    <div class="search" id="search-hide" style="left:-100px;width:0px;visibility:hidden">
+    <div class="search" id="search-hide" style="left:-100px;width:100px;visibility:hidden">
       <form method="GET" action="/search">
+        <label for="q" hidden>Search here</label>
         <input type="search" name="q" placeholder="Ketik kata kunci disini..." required> 
         </form>
         </div>
     <div class="nav-controls">
 
-      <button class="close-search" id="close" onclick="closeToggle()">
+      <button class="close-search" id="close" onclick="closeToggle()" name="Close Search Bar" type="button">
       <svg class="icon-image" width="24" height="24" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/>
         <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/>
       </svg>
       </button>
 
-      <button class="search-toggle" id="search-toggle" onclick="searchToggle()"><svg class="icon-image" width="24" height="24" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <button class="search-toggle" id="search-toggle" onclick="searchToggle()" name="Toggle Search Bar"><svg class="icon-image" width="24" height="24" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
         <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
       </svg></button>
 
-      <button id="copyButton" class="icon-wrapper">
+      <button id="copyButton" class="icon-wrapper" name="Copy URL" type="button">
         {{ partial "icons/ui/link.html" . }}
         <div id="toolTip" class="tool-tip " >
             copied
         </div>
-        <input id="copyText" style="opacity: 0;" type="text" class="tool-tip " />
+        <input id="copyText" style="opacity: 0;" type="hidden" class="tool-tip " />
       </button>
 
-      <button id="themeColorButton" class="icon-wrapper"> 
+      <button id="themeColorButton" class="icon-wrapper" name="Switch Color Mode" type="button"> 
         <div id="sunRays" class="sun-rays"></div>
         <div id="moonOrSun" class="moon-or-sun"></div>
         <div id="moonMask" class="moon-mask"></div>
