@@ -11,7 +11,7 @@
                         {{- $images := . -}}
                         {{- with $page.Site.GetPage "section" "upload" -}}
                             {{- with .Resources.GetMatch (strings.TrimPrefix "/upload/" (index $images 0)) -}}
-                                {{- $image := .Resize "25x25" -}}
+                                {{- $image := .Resize "45x45" -}}
     
                                         <img data-src="{{ $image.RelPermalink }}" src="{{ $image.RelPermalink }}">
                         
