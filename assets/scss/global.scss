@@ -209,6 +209,7 @@ img.Image__Zoom ~ div {
 }
 
 img{
+  width: 100%;
   -webkit-animation-name: image-load-in;
           animation-name: image-load-in;
   -webkit-animation-duration: 0.8s;
