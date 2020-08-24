@@ -36,6 +36,8 @@
                 {{- end -}}
             {{- end -}}
         {{- end -}}
-
     </div>
+    {{ if $page.Params.imgattr}}
+    <p class="img-attribution"><a href="{{ $page.Params.imgattrlink }}" title="{{ $page.Params.imgattr }}">{{ $page.Params.imgattr }}</a></p>
+    {{ end }}
 </section>
