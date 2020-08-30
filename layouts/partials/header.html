@@ -40,19 +40,3 @@
     </div>
 </div>
 </Section>
-
-{{ $script := resources.Get "js/searchToggle.js" }}
-{{ $minjs := $script | resources.Minify }}
-<script async src="{{ $minjs.RelPermalink }}"></script>
-
-{{ $script := resources.Get "js/toggleLogos.js" }}
-{{ $minjs := $script | resources.Minify }}
-<script async src="{{ $minjs.RelPermalink }}"></script>
-
-{{ $script := resources.Get "js/toggleColors.js" }}
-{{ $minjs := $script | resources.Minify }}
-<script async src="{{ $minjs.RelPermalink }}"></script>
-
-{{ $script := resources.Get "js/copyUrl.js" }}
-{{ $minjs := $script | resources.Minify }}
-<script async src="{{ $minjs.RelPermalink }}"></script>
