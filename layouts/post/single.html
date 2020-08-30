@@ -18,11 +18,10 @@
         </a>
     {{- end -}}
 {{- end -}}
-
-{{ partial "iklan.html" . }}
-{{ partial "disqus.html" . }}
     </p>
     </article>
+    {{ partial "iklan.html" . }}
+    {{ partial "disqus.html" . }}
     {{ partial "article/next.html" . }}
 </section>
 {{ $script := resources.Get "js/progressBar.js" }}
