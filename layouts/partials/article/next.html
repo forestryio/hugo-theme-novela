@@ -46,7 +46,7 @@ of the whole section and append them to our $next slice. */}}
                 {{- $image2 := .Resize "500x" -}}
                 {{- $image3 := .Resize "291x" -}}
                 <div class="article-hero-image" id="ArticleImage__Hero">
-                        <img class="article-image" srcset="
+                        <img loading="lazy" class="article-image" srcset="
                         {{ $image3.RelPermalink }} 375w,
                         {{ $image2.RelPermalink }} 700w,
                         {{ $image1.RelPermalink }} 1366w,  

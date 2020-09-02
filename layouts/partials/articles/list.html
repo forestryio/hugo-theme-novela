@@ -32,7 +32,7 @@
                     {{- $image2 := .Resize "500x q90" -}}
                     {{- $image3 := .Resize "375x" -}}
                     <div class="article-hero-image" id="ArticleImage__Hero">
-                            <img class="article-image" srcset="
+                            <img loading="lazy" class="article-image" srcset="
                             {{ $image3.RelPermalink }} 375w,
                             {{ $image2.RelPermalink }} 800w,
                             {{ $image1.RelPermalink }} 1366w,  
