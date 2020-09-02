@@ -27,6 +27,7 @@
                     {{- $image2 := .Resize "700x" -}}
                     {{- $image3 := .Resize "300x" -}}
                     <div class="article-hero-image-single" id="ArticleImage__Hero">
+                    {{ partial "sharebutton/index.html" . }}
                         <picture>
                                 <source media="(min-width:1200px)" srcset="{{ $image1.RelPermalink }}">
                                     <source media="(min-width:500px)" srcset="{{ $image2.RelPermalink }}">
