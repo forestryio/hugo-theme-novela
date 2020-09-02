@@ -1,22 +1,32 @@
 <div class="comment-section" style="width: 100%;max-width:680px;margin:0 auto 100px">
 <div id="hyvor-talk-view"></div>
 <script type="text/javascript">
+  var palette = null;
+  if (localStorage.getItem("isLight") === 'true'){
+    palette = {
+        accent: "#6166DC",
+    }
+}
+else{
+  palette = {
+    accent: "#E9DAAC",
+    accentText: "#08080B",
+    footerHeader: "#0d0d0d",
+    footerHeaderText: "#ffffff",
+    box: "#000000",
+    boxText: "#ffffff",
+    boxLightText: "#aaaaaa",
+    backgroundText: "#ffffff",
+  }
+}
+
     var HYVOR_TALK_WEBSITE = 1842; // DO NOT CHANGE THIS
     var HYVOR_TALK_CONFIG = {
         url: false,
         id: false,
         loadMode: "scroll",
-        palette: {
-          accent: "var(--accent)",
-          accentText: "var(--background-color)",
-          footerHeader: "var(--background-color)",
-          footerHeaderText: "var(--grey)",
-          box: "var(--background-color)",
-          boxText: "var(--articleText)",
-          boxLightText: "var(--grey)",
-          backgroundText: "var(--articleText)",
-      }
-    };
+        palette: palette,
+    }
 </script>
 <script async type="text/javascript" src="//talk.hyvor.com/web-api/embed"></script>
 </div>
