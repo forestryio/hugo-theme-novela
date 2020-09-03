@@ -2,12 +2,7 @@
 <div id="hyvor-talk-view"></div>
 <script type="text/javascript">
   var palette = null;
-  if (localStorage.getItem("isLight") === 'true'){
-    palette = {
-        accent: "#6166DC",
-    }
-}
-else{
+if(localStorage.getItem("isLight") === 'false'){
   palette = {
     accent: "#E9DAAC",
     accentText: "#08080B",
@@ -17,6 +12,12 @@ else{
     boxText: "#ffffff",
     boxLightText: "#aaaaaa",
     backgroundText: "#ffffff",
+  }
+}
+
+else if (localStorage.getItem("isLight") === 'true'){
+  palette = {
+      accent: "#6166DC",
   }
 }
 
