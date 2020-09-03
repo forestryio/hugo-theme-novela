@@ -4,6 +4,8 @@ progressBar = document.getElementById("progressBar");
 
 scrollProgress = document.getElementById("progressIndicator");
 
+trackLine = document.getElementById("trackLine");
+
 if (document.getElementById("subscriptionSection")){
     articleSubscription = document.getElementById("subscriptionSection").offsetHeight;
 }
@@ -18,9 +20,11 @@ else{
     articleNext = 0;
 }
 
+
+
 footerSection = 150;
 
-bottomOffset = ((articleSubscription + articleNext + footerSection + 250) / document.body.scrollHeight) * 100 ;
+bottomOffset = ((articleSubscription + articleNext + footerSection + 350) / document.body.scrollHeight) * 100 ;
 bottomOffset += bottomOffset * 1.1;
 
 
@@ -35,12 +39,20 @@ function updateProgress(){
         progressBar.style.animationName = "progress-fade-out";
         setTimeout(function(){
             progressBar.style.opacity = "0";
-        }, 500);
+        }, 0); //delay
     }
     else{
         progressBar.style.animationName = "progress-fade-in";
         setTimeout(function(){
             progressBar.style.opacity = "1";
-        }, 500);
+        }, 0); //delay
+    }
+    if(percentScrolled > 1 ){
+        progressBar.style.top = "8%";
+        trackLine.style.maxHeight = "88vh";
+    }
+    if(percentScrolled < 3){
+        progressBar.style.top = "23%";
+        trackLine.style.maxHeight = "70vh";
     }
 }
