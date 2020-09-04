@@ -9,12 +9,10 @@
         {{ .Content }}
 
         <!--Tag widget-->
-        <p style="text-align:right">Tag:
+        <p style="text-align:right">
     {{- with .Params.tags -}}
     {{- range . -}}
-        <a class="tag-badge" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">
-            #{{ . }} 
-        </a>
+        <a class="tag-badge" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
     {{- end -}}
 {{- end -}}
     </p>
