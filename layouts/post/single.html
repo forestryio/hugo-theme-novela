@@ -1,4 +1,5 @@
 {{ define "main" }}
+{{ $article := . }}
 <section class="section narrow">
 
     {{ partial "article/hero.html" . }}
@@ -6,6 +7,36 @@
     {{ partial "article/progress" . }}
 
     <article  id="articleContent" class="post-content" style="position:relative;">
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "{{ .Permalink }}"
+              },
+              "author": {
+                "@type": "Person",
+                {{- with $article.Params.authors -}}
+                {{ $name := . }}
+                "name": "{{ strings.TrimPrefix "[" (index $name 0)  }}"
+                {{- end -}}
+              },
+              "headline": "{{ $article.Title }}",
+              {{- with $article.Params.hero -}}
+              {{- $images := . -}}
+              {{- with $article.Site.GetPage "section" "upload" -}}
+              {{- with .Resources.GetMatch (strings.TrimPrefix "/upload/" (index $images 0)) -}}                      
+               "image": {
+                "@type": "ImageObject","url": "{{ .Permalink }}",
+                "height": 768,
+                "width": 1366},
+              {{- end -}}
+              {{- end -}}
+              {{- end -}}
+              "datePublished": "{{ $article.Date.Format "2006-01-02" }}",
+            }
+            </script>
         {{ .Content }}
 
         <!--Tag widget-->
