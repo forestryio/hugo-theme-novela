@@ -59,6 +59,6 @@
 </section>
 {{ $script := resources.Get "js/progressBar.js" }}
 {{ $minjs := $script | resources.Minify }}
- <script async src="{{ $minjs.RelPermalink }}"></script>
+ <script inline async src="{{ $minjs.RelPermalink }}"></script>
 
 {{ end }}
