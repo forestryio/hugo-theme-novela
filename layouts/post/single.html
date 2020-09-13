@@ -5,6 +5,13 @@
     {{ partial "article/hero.html" . }}
 
     {{ partial "article/progress" . }}
+    
+    <!--{{ if .Params.TOC }}
+    <aside class="TOC">
+    <h4>Daftar Isi</h4>
+    {{ .TableOfContents }}
+    {{ end }}
+    </aside>-->
 
     <article  id="articleContent" class="post-content" style="position:relative;">
         <script type="application/ld+json">
