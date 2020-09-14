@@ -34,7 +34,7 @@ of the whole section and append them to our $next slice. */}}
         <div class="post-row">
             {{ range $index, $article := $next }}
                 <a href="{{ $article.RelPermalink }}" class="article-link"
-                {{ if not $index}} id="article-link-bigger"{{ end }}>
+                {{ if not $index}} id="article-link-bigger"{{ end }} title="{{ $article.Title }}">
                     <div>
                         <div class="image-container">
                            

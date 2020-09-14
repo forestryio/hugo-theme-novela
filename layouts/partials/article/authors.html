@@ -3,7 +3,8 @@
 {{ $authors := partialCached "func/GetArticleAuthors" . .File.UniqueID }}
 {{ if eq (len $authors) 1 }}
     {{ with $author := index $authors 0 }}
-            <a href="{{ .URL }}" class="article-author-link">
+    {{ $penulis := . }}
+            <a href="{{ .URL }}" title="{{ with .name }}{{ . }}{{ end }}" class="article-author-link">
                 {{ with .avatar }}
                     <div class="article-author-avatar">
 
@@ -13,7 +14,7 @@
                             {{- with .Resources.GetMatch (strings.TrimPrefix "/upload/" (index $images 0)) -}}
                                 {{- $image := .Resize "45x45" -}}
     
-                                        <img data-src="{{ $image.RelPermalink }}" src="{{ $image.RelPermalink }}">
+                                        <img data-src="{{ $image.RelPermalink }}" alt="{{ with $penulis.name }}{{ . }}{{ end }}" src="{{ $image.RelPermalink }}">
                         
                             {{- end -}}
                         {{- end -}}

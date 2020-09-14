@@ -54,7 +54,7 @@
         </svg></span> 
     {{- with .Params.tags -}}
     {{- range . -}}
-        <a class="tag-badge" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+        <a class="tag-badge" title="{{ . }}" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
     {{- end -}}
 {{- end -}}
     </p>

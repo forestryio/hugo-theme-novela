@@ -2,7 +2,7 @@
 <ul>
     {{ with .Site.Menus.main }}
         {{ range . }}
-            <li><a class="muted" href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
+            <li><a class="muted" href="{{ .URL | relLangURL }}" title="{{ .Name }}">{{ .Name }}</a></li>
         {{ end }}
     {{ end }}
     </ul>
