@@ -68,7 +68,6 @@
             {{ end }}
         </ul>
     </div>
-{{ end }}
-
 {{ $script := resources.Get "js/collapseAuthors.js" }}
-<script src="{{ $script.RelPermalink }}"></script>
+<script inline src="{{ $script.RelPermalink }}"></script>
+{{ end }}
