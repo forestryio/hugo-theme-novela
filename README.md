@@ -6,7 +6,7 @@ A port of [Narative](https://www.narative.co/)'s Gatsby theme [Novela](https://w
 
 ![](https://raw.githubusercontent.com/forestryio/hugo-theme-novela/master/images/tn.png)
 
-The easiest way to get started is to import this theme in Forestry CMS in a single click:
+The easiest way to get started is to [import this theme in Forestry CMS](https://app.forestry.io/quick-start?repo=forestryio/novela-hugo-starter&engine=hugo&version=0.75.1) in a single click
 
 <a href="https://app.forestry.io/quick-start?repo=forestryio/novela-hugo-starter&engine=hugo&version=0.75.1">
     <img alt="Import this project into Forestry" src="https://assets.forestry.io/import-to-forestryK.svg" />
@@ -14,9 +14,9 @@ The easiest way to get started is to import this theme in Forestry CMS in a sing
 
 ## Install from the command line
 
-This theme uses [Hugo modules](https://gohugo.io/hugo-modules/use-modules/).
+If you don't want to use the [starter](htps://github.com/forestryio/novela-hugo-starter), you can start from scratch and just install this theme from the command line.
 
-Create a new Hugo site and initialize your project as a module:
+Create a new Hugo site and initialize your project as a [Hugo module](https://gohugo.io/hugo-modules/use-modules/):
 
 ```
 hugo new site my-awesome-blog
@@ -24,8 +24,7 @@ cd my-awesome-blog
 hugo mod init
 ```
 
-Edit your `config.toml` to add theme settings:
-
+Edit your `config.toml` to add the theme settings:
 
 ```toml
 # Novela settings
@@ -52,6 +51,8 @@ Create your first draft post and preview it locally:
 hugo new post/my-first-post.md
 hugo server -D
 ```
+
+You're good to go!
 
 ## Customization
 
