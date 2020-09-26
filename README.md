@@ -35,7 +35,7 @@ paginate = 6
 [social]
 twitter= "https://twitter.com/forestryio"
 github= "https://github.com/forestryio/novela-hugo-starter"
-linkedin= "https://www.linkedin.com/company/forestry.io"instagram = "#"
+linkedin= "https://www.linkedin.com/company/forestry.io"
 instagram = "#"
 dribbble = "#"
 youtube = "#"
