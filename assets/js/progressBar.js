@@ -1,7 +1,6 @@
 window.addEventListener("scroll", updateProgress);
     
 progressBar = document.getElementById("progressBar");
-
 scrollProgress = document.getElementById("progressIndicator");
 
 if (document.getElementById("subscriptionSection")){
@@ -25,11 +24,8 @@ bottomOffset += bottomOffset * 1.1;
 
 
 function updateProgress(){
-    let percentScrolled = ((window.pageYOffset / document.body.scrollHeight) * (100 + bottomOffset));
-
-    let transformation = "translateY(" + percentScrolled + "%)";
-    scrollProgress.style.webkitTransform = (transformation);
-
+    let percentScrolled = (window.pageYOffset / document.body.scrollHeight) * (100 + bottomOffset);
+    scrollProgress.style.transform = "translateY(" + percentScrolled + "%)";
 
     if (percentScrolled > 100){
         progressBar.style.animationName = "progress-fade-out";
