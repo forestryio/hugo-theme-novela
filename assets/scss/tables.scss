@@ -43,9 +43,14 @@ table{
 
 td{
     border-top: 1px solid var(--horizontalRule);
+    border-right: 1px solid var(--horizontalRule);
     padding: 15px 30px;
     font-size: 16px;
     background: var(--card);
+
+    &:last-child {
+        border-right: none;
+    }
 }
 
 /*DESKTOP*/
@@ -75,4 +80,28 @@ thead{
     -webkit-transition: var(--color-mode-transition);
     -o-transition: var(--color-mode-transition);
     transition: var(--color-mode-transition);
+}
+
+th{
+    border-right: 1px solid var(--horizontalRule);
+    padding: 15px 30px;
+
+    &:last-child {
+        border-right: none;
+    }
+}
+
+
+/*DESKTOP*/
+@media screen and (max-width: 1070px){
+    th{
+        padding: 14px 20px;
+    }
+}
+
+/*TABLET*/
+@media screen and (max-width: 735px){
+    th{
+        font-size: 14px;
+    }
 }
