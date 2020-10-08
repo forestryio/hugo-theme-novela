@@ -12,7 +12,7 @@
         </header>
         {{ with .Page.Params.hero }}
         <div class="article-hero-image" id="ArticleImage__Hero">
-            <img src="{{ . }}">
+            <img src="{{ $.Site.BaseURL }}{{ . }}">
         </div>
         {{ end }}
     </div>
