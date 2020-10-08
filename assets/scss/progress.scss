@@ -4,10 +4,10 @@
     display: -ms-flexbox;
     display: flex;
     margin: 0 auto;
-    max-width: 1140px;
+    max-width: 20px;
     z-index: 0;
-    position: -webkit-sticky;
-    position: sticky;
+    position: -webkit-fixed;
+    position: fixed;
     top: 30%;
     -webkit-animation-name: progress-fade-in;
             animation-name: progress-fade-in;
