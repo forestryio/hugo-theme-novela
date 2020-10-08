@@ -14,5 +14,7 @@
       {{- safeHTML (printf "<meta property='forestry_instant_preview_id' content='%s'>" .) -}}
     {{ end -}}
     <div id="fb-root"></div>
+    {{ if .Site.Params.share.facebook }}
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0" nonce="1ugZD9PZ"></script>
+    {{ end }}
 </head>

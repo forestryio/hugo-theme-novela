@@ -9,9 +9,11 @@
                     • {{ .ReadingTime }} min read
                 </div>
             </div>
+            {{ if .Site.Params.share.facebook }}
             <div class="fb-share-button" data-href="{{ .Page.Permalink }}" data-layout="button_count" data-size="large">
                 <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ .Page.Permalink }}&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
             </div>
+            {{ end }}
         </header>
         {{ with .Page.Params.hero }}
         <div class="article-hero-image" id="ArticleImage__Hero">
