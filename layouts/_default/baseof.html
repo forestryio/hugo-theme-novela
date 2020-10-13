@@ -36,6 +36,7 @@
 {{ $minjs := $script | resources.Minify }}
 <script inline async src="{{ $minjs.RelPermalink }}"></script>
 
+{{ template "_internal/google_analytics_async.html" . }}
 </body>
 
 </html>

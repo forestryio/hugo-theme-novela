@@ -23,7 +23,6 @@
     {{ with .Params.forestry_instant_preview_id }}
       {{- safeHTML (printf "<meta property='forestry_instant_preview_id' content='%s'>" .) -}}
     {{ end -}}
-    <script async defer data-domain="syahrulfadli.com" src="https://plausible.io/js/plausible.js"></script>
 {{ if or .Page.Params.math .Site.Params.math }}
 {{ partial "math.html" . }}
 {{ end }}
