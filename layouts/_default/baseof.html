@@ -36,7 +36,6 @@
 {{ $minjs := $script | resources.Minify }}
 <script inline async src="{{ $minjs.RelPermalink }}"></script>
 
-{{ partial "gtag.html" . }}
 </body>
 
 </html>
