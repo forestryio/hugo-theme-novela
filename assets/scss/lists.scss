@@ -63,7 +63,7 @@ ul li > *{
     display: inline;
 }
 
-ul li::before{
+ul > li::before{
     width: 3rem;
     display: inline-block;
     position: absolute;
@@ -79,7 +79,7 @@ ul li::before{
 
 /*TABLET*/
 @media screen and (max-width: 735px){
-    ul li::before{
+    ul > li::before{
         left: 0;
     }
 }
@@ -148,7 +148,7 @@ ol li > *{
     display: inline;
 }
 
-ol li::before {
+ol > li::before {
     width: 3rem;
     display: inline-block;
     position: absolute;
@@ -163,7 +163,7 @@ ol li::before {
 }
 
 @media screen and (max-width: 735px){
-    ol li::before{
+    ol > li::before{
         left: 0;
     }
 }
