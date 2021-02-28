@@ -62,6 +62,19 @@ Override `/themes/novela/layouts/partials/icons/ui/logo.html` with your own file
 
 Novela supports light and dark mode. To have your logo respond in kind, add `class="change-fill"` to the svg path(s).
 
+### Stylesheets
+
+Override `/themes/novela/layouts/partials/head/extra_styles.html` with your own files at `/layouts/partials/head/extra_styles.html`; include a relative link to your local stylesheet.
+
+For example, here is how to include a CSS file located at `/assets/css/main.css`:
+
+#### **`/layouts/partials/head/extra_styles.html`**
+
+```html
+{{ $extraCss := resources.Get "css/main.css" }}
+<link rel="stylesheet" href="{{$extraCss.RelPermalink}}">
+```
+
 ### Socials
 
 In order for the Socials to be surfaced in Forestry, you should copy the theme's `config/_default/social.yaml` to your project.
