@@ -8,6 +8,7 @@ blockquote{
     font-style: italic;
     cite{
     float: right;
+    font-family: var(--sanserif);
     font-style: normal;
     color: var(--grey);
     }
@@ -19,14 +20,13 @@ blockquote{
 
 blockquote > p {
   font-family: var(--serif);
-  max-width: 880px !important;
-  padding-right: 100px;
+  max-width: 880px;
+  padding-right: 0px;
   padding-bottom: 0;
   width: 100%;
   margin: 0 auto;
   font-size: 21px;
   line-height: 1.32;
-  font-weight: bold;
 }
 
 @media screen and (max-width: 735px) {
