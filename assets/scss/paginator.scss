@@ -11,7 +11,7 @@
             justify-content: flex-start;
 
     &:hover{
-        cursor: pointer;
+        //cursor: pointer;
     }
 
     a:hover{
@@ -23,11 +23,12 @@
         width: auto;
         height: auto;
         padding: 0;
+        font-weight:bold;
 
         .page-link{
             display: block;
             color: var(--grey);
-            min-width: 6rem;
+            margin:0 10px;
         }
 
         .page-next, .page-prev{
@@ -43,6 +44,9 @@
     .active{
         .page-link{
             color: var(--primary);
+            text-decoration:none;
+            cursor:not-allowed;
+            border-bottom:2px solid var(--primary);
         }
     }
 }
