@@ -16,8 +16,9 @@
       }
       </script>
   
-    {{ $style := resources.Get "scss/global.scss" | toCSS | minify | fingerprint }}
-    <link inline rel="stylesheet" href="{{ $style.RelPermalink }}" media="all">
+  {{ $styles := resources.Get "scss/global.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+	<link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
+
     <link inline href="https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" media="all"> 
     {{ partial "seo/print.html" . }}
     {{ with .Params.forestry_instant_preview_id }}
