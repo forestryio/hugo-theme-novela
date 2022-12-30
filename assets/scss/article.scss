@@ -6,7 +6,6 @@
           content: "";
           width: 100%;
           height: 20px;
-          background: var(--primary);
           position: absolute;
           left: 0;
           top: 0;
@@ -41,6 +40,7 @@
     /*PHABLET*/
     @media screen and (max-width: $phablet){
         margin-left: 0;
+        align-items: flex-start;
         flex-direction: column;
     }
 }
@@ -92,7 +92,6 @@
 }
 
 .article-hero-subtitle{
-    padding: 10px;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
@@ -105,12 +104,12 @@
 
     /*PHABLET*/
     @media screen and (max-width: $phablet){
-        border: 1px solid var(--horizontalRule);
-        border-radius: 5px;
+        //border: 1px solid var(--horizontalRule);
+        //border-radius: 5px;
     }
   
     @media screen and(max-width: $phablet){
-        font-size: 14px;
+        font-size: 17px;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
             -ms-flex-direction: column;
@@ -130,8 +129,8 @@
 
         strong {
             display: block;
-            font-weight: 500;
-            margin-bottom: 5px;
+            //font-weight: 500;
+            //margin-bottom: 5px;
         }
     }
 }
@@ -220,7 +219,7 @@
   
     /*PHABLET*/
     @media screen and (max-width: $phablet){
-        display: none;
+        //display: none;
     }
 }
 
@@ -451,6 +450,12 @@
 
 .post-content{
     padding: 160px 0 35px;
+    @media screen and(max-width: $phablet) {
+        h1,h2,h3,h4,h5,h6 {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
 }
 
 /**************************************ARTICLE NEXT**************************************/
