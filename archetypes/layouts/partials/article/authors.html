@@ -1,0 +1,73 @@
+
+{{ $page := . }}
+{{ $authors := partialCached "func/GetArticleAuthors" . .File.UniqueID }}
+{{ if eq (len $authors) 1 }}
+    {{ with $author := index $authors 0 }}
+    {{ $penulis := . }}
+            <a href="{{ .URL }}" title="{{ with .name }}{{ . }}{{ end }}" class="article-author-link">
+                {{ with .avatar }}
+                    <div class="article-author-avatar">
+
+
+                        {{- $images := . -}}
+                        {{- with $page.Site.GetPage "section" "upload" -}}
+                            {{- with .Resources.GetMatch (strings.TrimPrefix "/upload/" (index $images 0)) -}}
+                                {{- $image := .Resize "45x45" -}}
+    
+                                        <img data-src="{{ $image.RelPermalink }}" alt="{{ with $penulis.name }}{{ . }}{{ end }}" src="{{ $image.RelPermalink }}">
+                        
+                            {{- end -}}
+                        {{- end -}}
+
+                    </div>
+                {{ end }}
+                {{ with .name }}
+                <strong>{{ . }}</strong>
+                {{ end }}
+                <span class="hide-on-mobile">,&nbsp;</span>
+            </a>
+    {{ end }}
+{{ else }}
+    <div class="article-coauthors-container">
+        {{ $avatarsWidth:= mul (len $authors) 15 }}
+        <span id="collapsedCoauthors" class="article-coauthors-collapsed">
+            <div class="article-coauthors-list" style="width: {{ $avatarsWidth }}px;">
+                {{ range $index, $author := $authors }}
+                    {{ with .avatar }}
+                        <div class="article-coauthors-avatar" style="left: {{ mul $index 15 }}px;">
+                            <img src="{{ . }}" />
+                        </div>
+                    {{ end }}
+                {{ end }}
+            </div>
+            <strong class="article-coauthors-name-container">
+                {{ range $index, $author := $authors }}
+                    {{ .firstname }}{{ if ne (add $index 1) (len $authors) }},{{ end }}
+                {{ end }}
+            </strong>
+            <div class="article-coauthors-icon-container">
+                {{ partial "icons/ui/toggle-open.html" . }}
+            </div>
+        </span>
+
+        <ul id="uncollapsedCoauthors" class="article-coauthors-list-open hidden">
+            <div id="uncollapsedAction" class="article-icon-open-container">
+                {{ partial "icons/ui/toggle-closed.html" . }}
+            </div>
+            {{ range $index, $author := $authors }}
+                <li class="article-coauthors-list-item-open">
+                    <a href="{{ .URL }}" class="article-author-link">
+                        {{ with $author.avatar }}
+                            <div class="article-coauthor-avatar-open">
+                                <img src="{{ . }}" />
+                            </div>
+                        {{ end }}
+                        <strong class="article-author-name-open">{{ .name }}</strong>
+                    </a>
+                </li>
+            {{ end }}
+        </ul>
+    </div>
+{{ $script := resources.Get "js/collapseAuthors.js" }}
+<script inline src="{{ $script.RelPermalink }}"></script>
+{{ end }}

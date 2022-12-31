@@ -1,0 +1,76 @@
+{{/*
+    Prints the next 2 articles in the same section or, if less or 2 found, the first (and potentially second) of the section.
+
+    @author @regisphilibert @mountainbug95
+
+    @context Type Page (.)
+
+    @access public
+
+*/}}
+
+{{/* declaring next empty slice */}}
+{{ $next := slice }}
+{{/* Checking if current article has a PrevInSection (Prev as we are ordering dsc here.) */}}
+{{ with .PrevInSection }}
+    {{ $next = $next | append . }}
+    {{/* Checking for that "next" article own "next" to fill the "second next" */}}
+    {{ with .PrevInSection }}
+        {{ $next = $next | append . }}
+    {{ end }}
+{{ end }}
+{{/* If the number of found "next article" is less than two we need to find the first and potentially second article
+of the whole section and append them to our $next slice. */}}
+{{ $diff := sub 2 (len $next) }}
+{{ if $diff }}
+    {{/* We use that diff number (if > 0) to grab the first x number of articles */}}
+    {{ $articles := partialCached "func/GetArticles" . "articles"}}
+    {{ $next = $next | append (first $diff $articles) }}
+{{ end }}
+<section id="articleNext" class="section nartrow">
+    <h3 class="footer-next-heading"><span>More articles from {{ .Site.Title }}</span></h3>
+    <div class="footer-spacer"></div>
+    <div class="next-articles-grid" numberOfArticles={numberOfArticles}>
+        <div class="post-row">
+            {{ range $index, $article := $next }}
+                <a href="{{ $article.RelPermalink }}" class="article-link"
+                {{ if not $index}} id="article-link-bigger"{{ end }} title="{{ $article.Title }}">
+                    <div>
+                        <div class="image-container">
+                           
+                            {{- with $article.Params.hero -}}
+            {{- $images := . -}}
+            {{- with $article.Site.GetPage "section" "upload" -}}
+                {{- with .Resources.GetMatch (strings.TrimPrefix "/upload/" (index $images 0)) -}}
+                {{- $image1 := .Resize "621x q100" -}}
+                {{- $image2 := .Resize "500x" -}}
+                {{- $image3 := .Resize "291x" -}}
+                <div class="article-hero-image" id="ArticleImage__Hero">
+                        <img loading="lazy" class="article-image" srcset="
+                        {{ $image3.RelPermalink }} 375w,
+                        {{ $image2.RelPermalink }} 700w,
+                        {{ $image1.RelPermalink }} 1366w,  
+                        " src="{{ $image1.RelPermalink }}" alt="{{ $article.Title }}">
+                </div>
+                {{- end -}}
+            {{- end -}}
+        {{- end -}}
+
+                        </div>
+                        <div>
+                            <h2 class="article-title">
+                                {{ $article.Params.title }}
+                            </h2>
+                            <p class="article-excerpt">
+                                {{ $article.Params.excerpt }}
+                            </p>
+                            <div class="article-metadata">
+                                {{ $article.Date | dateFormat "January 2, 2006" }} · {{ $article.ReadingTime }} min read
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            {{ end }}
+        </div>
+    </div>
+</section>

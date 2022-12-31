@@ -1,0 +1,22 @@
+{{/* 
+	Retrieve SEO object from a page and returns it as a json string
+	
+	@author The New Dynamic
+	
+	@access public
+
+	@context Page 
+
+	@return SEO object as a json string
+
+	@example - Go Template
+	 	To store
+	 	{{ $seo := partial "seo/get" . | transform.Unmarshal }}
+		To print (for debug purposes)
+	 	<code>
+			{{ partial "seo/get" . | transform.Remarshal "yaml" }}
+		</code>
+ */}}
+{{- with .Scratch.Get "seo" -}}
+	{{- . | jsonify -}}
+{{- end -}}

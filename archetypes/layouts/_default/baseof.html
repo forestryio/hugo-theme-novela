@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html dir='ltr' lang='id'>
+
+{{ partial "head/head.html" . }}
+
+<body class="line-numbers">
+
+    <div class="layout-styled">
+
+        {{ partial "header.html" . }}
+
+        {{ block "main" . }}
+        
+        {{ end }}
+        
+        {{ partial "footer.html" . }}
+
+    </div>
+
+{{ $script := resources.Get "js/initColors.js" }}
+<script inline async src="{{ $script.RelPermalink }}"></script>
+
+{{ $script := resources.Get "js/searchToggle.js" }}
+{{ $minjs := $script | resources.Minify }}
+<script inline async src="{{ $minjs.RelPermalink }}"></script>
+
+{{ $script := resources.Get "js/toggleLogos.js" }}
+{{ $minjs := $script | resources.Minify }}
+<script async src="{{ $minjs.RelPermalink }}"></script>
+
+{{ $script := resources.Get "js/toggleColors.js" }}
+{{ $minjs := $script | resources.Minify }}
+<script inline async src="{{ $minjs.RelPermalink }}"></script>
+
+{{ $script := resources.Get "js/copyUrl.js" }}
+{{ $minjs := $script | resources.Minify }}
+<script inline async src="{{ $minjs.RelPermalink }}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<section class="section nartrow">
+    <div id="articlesList" class="articles-list-container show-details">
+        {{ $posts := partialCached "func/GetArticles" . "articles" }}
+        {{ $paginator := .Paginate $posts }}
+        {{ $biggerFirst := true }}
+        {{ $biggerPlaced := false }}
+        {{ range $index, $article := $paginator.Pages }}
+            {{ $counter := mod $index 2 }}
+            {{ if not $counter }}
+                <div class="post-row">
+            {{ end }}
+            <a href="{{ $article.RelPermalink }}" class="article-link"
+            {{ if and (eq ($biggerFirst) true) (eq ($biggerPlaced) false) }}
+              {{ if eq $counter 0 }}
+                id="article-link-bigger"
+                {{ $biggerPlaced = true }}
+              {{ end }}
+            {{ else if and (not $biggerFirst) (not $biggerPlaced) }}
+              {{ if ne $counter 0 }}
+                id="article-link-bigger"
+                {{ $biggerPlaced = true }}
+              {{ end }}
+            {{ end }}>
+              <div class="article-data-outer">
+
+                <script type="application/ld+json">
+                  {
+                    "@context": "https://schema.org",
+                    "@type": "BlogPosting",
+                    "mainEntityOfPage": {
+                      "@type": "WebPage",
+                      "@id": "{{ .Permalink }}"
+                    },
+                    "author": {
+                      "@type": "Person",
+                      {{- with $article.Params.authors -}}
+                      {{ $name := . }}
+                      "name": "{{ strings.TrimPrefix "[" (index $name 0)  }}"
+                      {{- end -}}
+                    },
+                    "headline": "{{ $article.Title }}",
+                    {{- with $article.Params.hero -}}
+                    {{- $images := . -}}
+                    {{- with $article.Site.GetPage "section" "upload" -}}
+                    {{- with .Resources.GetMatch (strings.TrimPrefix "/upload/" (index $images 0)) -}}                      
+                     "image": {
+                      "@type": "ImageObject","url": "{{ .Permalink }}",
+                      "height": 768,
+                      "width": 1366},
+                    {{- end -}}
+                    {{- end -}}
+                    {{- end -}}
+                    "datePublished": "{{ $article.Date.Format "2006-01-02" }}",
+                  }
+                  </script>
+
+                <div class="image-container">
+
+                  {{- with $article.Params.hero -}}
+            {{- $images := . -}}
+            {{- with $article.Site.GetPage "section" "upload" -}}
+                {{- with .Resources.GetMatch (strings.TrimPrefix "/upload/" (index $images 0)) -}}
+                    {{- $image1 := .Resize "667x q100" -}}
+                    {{- $image2 := .Resize "500x q90" -}}
+                    {{- $image3 := .Resize "375x" -}}
+                    <div class="article-hero-image" id="ArticleImage__Hero">
+                            <img loading="lazy" class="article-image" srcset="
+                            {{ $image3.RelPermalink }} 375w,
+                            {{ $image2.RelPermalink }} 800w,
+                            {{ $image1.RelPermalink }} 1366w,  
+                            " src="{{ $image1.RelPermalink }}" alt="{{ $article.Title }}">
+                    </div>
+                {{- end -}}
+            {{- end -}}
+        {{- end -}}
+        
+                </div>
+                <div class="article-data">
+                  <h2 class="article-title">
+                    {{ $article.Params.title }}
+                  </h2>
+                  <p class="article-excerpt">
+                    {{ if $article.Params.excerpt }}
+                    {{ $article.Params.excerpt }}
+                    {{ else }}
+                    {{ $article.Summary }}
+                    {{ end }}
+                  </p>
+                  <div class="article-metadata">
+                    {{ $article.Date.Format "January 2, 2006" }} • {{ $article.ReadingTime }} min read
+                  </div>
+                </div>
+              </div>
+            </a>
+            {{ $counter := mod (add $index 1) 2 }}
+            {{ $len := (where .Pages "Type" "posts") }}
+            {{ if or (eq $counter 0) (eq (add $index 1) $len) }}
+                </div>
+                {{ $biggerPlaced = false }}
+                {{ if $biggerFirst }}
+                  {{ $biggerFirst = false }}
+                {{ else }}
+                  {{ $biggerFirst = true }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+    </div>
+    {{ partial "paginator/paginator.html" . }}
+</section>

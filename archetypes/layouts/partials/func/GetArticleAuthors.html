@@ -1,0 +1,39 @@
+{{/*
+  GetArticle Authors
+  Retrieve the authors assigned to a given article
+
+  @author @regisphilibert
+
+  @context Page (.) The article in quest
+
+  @access public
+
+  @return Slice
+          - String (.name)
+          - String (.URL)
+          - String (.name)
+          - String (.firstname)
+
+  @example - Go Template
+    {{ $authors := partialCached "func/GetArticleAuthors" . .File.UniqueID }}
+*/}}
+{{ $authors := slice }}
+{{ with .Params.authors  }}
+  {{ range $name := . }}
+    {{ with site.GetPage (printf "/%s/%s" "authors" ($name | urlize)) }}
+      {{ $firstname := "" }}
+      {{ $name := "" }}
+      {{ $avatar := false }}
+      {{ with .Title }}
+        {{ $name = . }}
+        {{ $firstname = index (split . " ") 0 }}
+      {{ end }}
+      {{ with .Params.avatar }}
+        {{ $avatar = . }}
+      {{ end }}
+      {{ $authors = $authors | append (dict "URL" .RelPermalink "name" $name "firstname" $firstname "avatar" $avatar) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ return $authors }}

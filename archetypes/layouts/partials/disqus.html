@@ -1,0 +1,33 @@
+<div class="comment-section" id="komentar" style="width: 100%;max-width:680px;margin:0 auto 70px">
+<div id="hyvor-talk-view"></div>
+<script type="text/javascript">
+  var palette = null;
+if(localStorage.getItem("isLight") === 'false'){
+  palette = {
+    accent: "#E9DAAC",
+    accentText: "#08080B",
+    footerHeader: "#0d0d0d",
+    footerHeaderText: "#ffffff",
+    box: "#000000",
+    boxText: "#ffffff",
+    boxLightText: "#aaaaaa",
+    backgroundText: "#ffffff",
+  }
+}
+
+else{
+  palette = {
+      accent: "#6166DC",
+  }
+}
+
+    var HYVOR_TALK_WEBSITE = 1842; // DO NOT CHANGE THIS
+    var HYVOR_TALK_CONFIG = {
+        url: false,
+        id: false,
+        loadMode: "scroll",
+        palette: palette,
+    }
+</script>
+<script inline async defer type="text/javascript" src="https://talk.hyvor.com/web-api/embed"></script>
+</div>

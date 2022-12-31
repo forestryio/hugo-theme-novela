@@ -1,0 +1,71 @@
+{{ define "main" }}
+{{ $article := . }}
+<section class="section narrow">
+
+    {{ partial "article/hero.html" . }}
+
+    {{ partial "article/progress" . }}
+    
+    <!--{{ if .Params.TOC }}
+    <aside class="TOC">
+    <h4>Daftar Isi</h4>
+    {{ .TableOfContents }}
+    {{ end }}
+    </aside>-->
+
+    <article  id="articleContent" class="post-content" style="position:relative;">
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "{{ .Permalink }}"
+              },
+              "author": {
+                "@type": "Person",
+                {{- with $article.Params.authors -}}
+                {{ $name := . }}
+                "name": "{{ strings.TrimPrefix "[" (index $name 0)  }}"
+                {{- end -}}
+              },
+              "headline": "{{ $article.Title }}",
+              {{- with $article.Params.hero -}}
+              {{- $images := . -}}
+              {{- with $article.Site.GetPage "section" "upload" -}}
+              {{- with .Resources.GetMatch (strings.TrimPrefix "/upload/" (index $images 0)) -}}                      
+               "image": {
+                "@type": "ImageObject","url": "{{ .Permalink }}",
+                "height": 768,
+                "width": 1366},
+              {{- end -}}
+              {{- end -}}
+              {{- end -}}
+              "datePublished": "{{ $article.Date.Format "2006-01-02" }}",
+            }
+            </script>
+        {{ .Content }}
+
+        <!--Tag widget-->
+        <p><span style="margin-right: 10px; color:var(--grey)"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-tags" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M3 2v4.586l7 7L14.586 9l-7-7H3zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586V2z"/>
+          <path fill-rule="evenodd" d="M5.5 5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+          <path d="M1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1v5.086z"/>
+        </svg></span> 
+    {{- with .Params.tags -}}
+    {{- range . -}}
+        <a class="tag-badge" title="{{ . }}" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+    {{- end -}}
+{{- end -}}
+    </p>
+    </article>
+    {{ partial "breadcrumb.html" . }}
+    <!-- {{ partial "iklan.html" . }} -->
+    {{ partial "disqus.html" . }}
+    {{ partial "article/next.html" . }}
+</section>
+{{ $script := resources.Get "js/progressBar.js" }}
+{{ $minjs := $script | resources.Minify }}
+ <script inline async src="{{ $minjs.RelPermalink }}"></script>
+
+{{ end }}

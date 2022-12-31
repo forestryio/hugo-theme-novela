@@ -1,0 +1,45 @@
+{{ $page := . }}
+<section id="articleHero" class="section narrow">
+    <div class="article-hero">
+        <header class="article-header">
+            {{- with .Params.series -}}
+    {{- range . -}}
+        <a class="series-badge" href="{{ "/series/" | relLangURL }}{{ . | urlize }}">
+            {{ . }} 
+        </a>
+    {{- end -}}
+{{- end -}}
+            <h1 class="article-hero-heading">{{ .Page.Params.Title }}</h1>
+            <div class="article-hero-subtitle">
+                <div class="article-meta">
+                    {{ partial "article/authors.html" . }}
+                    <span class="post-date">{{ .Page.Date.Format "January 2, 2006" }}
+                    • {{ .ReadingTime }} min read
+                    </span>
+                </div>
+            </div>
+        </header>
+
+        <div class="article-hero-image-single" id="ArticleImage__Hero">
+            {{ partial "sharebutton/index.html" . }}
+            {{- with $page.Params.hero -}}
+            {{- $images := . -}}
+            {{- with $page.Site.GetPage "section" "upload" -}}
+                {{- with .Resources.GetMatch (strings.TrimPrefix "/upload/" (index $images 0)) -}}
+                    {{- $image1 := .Resize "944x q100" -}}
+                    {{- $image2 := .Resize "700x" -}}
+                    {{- $image3 := .Resize "300x" -}}
+                        <picture>
+                                <source media="(min-width:1200px)" srcset="{{ $image1.RelPermalink }}">
+                                    <source media="(min-width:500px)" srcset="{{ $image2.RelPermalink }}">
+                            <img loading="lazy" src="{{ $image3.RelPermalink }}" alt="{{ $page.Title }}">
+                        </picture>
+                {{- end -}}
+            {{- end -}}
+        {{- end -}}
+        </div>
+    </div>
+    {{ if $page.Params.imgattr}}
+    <p class="img-attribution"><a href="{{ $page.Params.imgattrlink }}" title="{{ $page.Params.imgattr }}">{{ $page.Params.imgattr }}</a></p>
+    {{ end }}
+</section>

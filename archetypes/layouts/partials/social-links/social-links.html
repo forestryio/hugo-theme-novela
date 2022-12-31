@@ -1,0 +1,11 @@
+<div class="social-icon-outer">
+    <div class="social-icon-container">
+        {{ range $index, $component := .Site.Social }}
+            {{ with $component }}
+                {{ $path := print "icons/social/" $index }}
+                <a href="{{ . }}">{{ partial $path $ }}</a>
+                <span class="hidden">{{ $component }}</span>
+            {{ end }}
+        {{ end }}
+    </div>
+</div>

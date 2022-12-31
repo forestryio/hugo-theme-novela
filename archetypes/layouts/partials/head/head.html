@@ -15,9 +15,7 @@
         "logo": "{{- .Site.BaseURL -}}/images/favicon.svg"
       }
       </script>
-      
-
-
+  
   {{ $styles := resources.Get "scss/global.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
 	<link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
 
@@ -33,4 +31,5 @@
 {{ partial "gtag.html" . }}
 
 <!-- TEMPorary -->
+<script data-ad-client="ca-pub-4600693753886251" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>

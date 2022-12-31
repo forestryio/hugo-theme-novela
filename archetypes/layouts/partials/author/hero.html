@@ -1,0 +1,25 @@
+{{ $page := . }}
+<section class="section narrow">
+    <div class="author-hero">
+        {{ with .Params.avatar }}
+            <div class="author-hero-image">
+                
+                {{- $images := . -}}
+                        {{- with $page.Site.GetPage "section" "upload" -}}
+                            {{- with .Resources.GetMatch (strings.TrimPrefix "/upload/" (index $images 0)) -}}
+                                {{- $image := .Resize "160x" -}}
+    
+                                        <img data-src="{{ $image.RelPermalink }}" src="{{ $image.RelPermalink }}">
+                
+                            {{- end -}}
+                        {{- end -}}
+
+            </div>
+        {{ end }}
+        <h1 class="author-heading">{{ .Title }}</h1>
+        <p class="author-subheading">{{ .Params.bio }}</p>
+        <div class="author-social">
+            {{ partial "author/social_links.html" . }}
+        </div>
+    </div>
+</section>
