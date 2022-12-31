@@ -18,7 +18,7 @@
       
 
 
-  {{ $styles := resources.Get "scss/global.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+  {{ $styles := resources.Get "css/output.css" | resources.Minify | resources.Fingerprint }}
 	<link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
 
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
