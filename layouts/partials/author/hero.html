@@ -1,24 +1,24 @@
 {{ $page := . }}
-<section class="section narrow">
-    <div class="author-hero">
+<section class="section narrow py-10 md:p-12">
+    <div class="author-hero text-center w-full">
         {{ with .Params.avatar }}
-            <div class="author-hero-image">
+            <div class="author-hero-image mx-auto w-[160px] p-1 border border-gray-400 rounded-full shadow-xl">
                 
                 {{- $images := . -}}
                         {{- with $page.Site.GetPage "section" "upload" -}}
                             {{- with .Resources.GetMatch (strings.TrimPrefix "/upload/" (index $images 0)) -}}
                                 {{- $image := .Resize "160x" -}}
     
-                                        <img data-src="{{ $image.RelPermalink }}" src="{{ $image.RelPermalink }}">
+                                        <img class="w-full rounded-full" data-src="{{ $image.RelPermalink }}" src="{{ $image.RelPermalink }}">
                 
                             {{- end -}}
                         {{- end -}}
 
             </div>
         {{ end }}
-        <h1 class="author-heading">{{ .Title }}</h1>
-        <p class="author-subheading">{{ .Params.bio }}</p>
-        <div class="author-social">
+        <h1 class="author-heading text-3xl md:mt-6 md:text-4xl font-bold font-serif">{{ .Title }}</h1>
+        <p class="author-subheading text-lg text-gray-500 py-6 md:max-w-[450px] mx-auto">{{ .Params.bio }}</p>
+        <div class="author-social inline text-center">
             {{ partial "author/social_links.html" . }}
         </div>
     </div>

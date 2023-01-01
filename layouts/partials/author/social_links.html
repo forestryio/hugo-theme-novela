@@ -1,8 +1,8 @@
-<div class="social-icon-outer authors-sio">
-    <div class="social-icon-container">
+<div class="social-icon-outer w-fit mx-auto">
+    <div class="social-icon-container flex flex-row gap-10 mx-auto">
         {{ range $component := .Params.social }}
             {{ $path := print "icons/social/" .title }}
-            <a href="{{ .url }}" title="{{ .title }} author">{{ partial $path $ }}</a>
+            <a class="text-4xl" href="{{ .url }}" title="{{ .title }} author">{{ partial $path $ }}</a>
             <span class="hidden">{{ .url }}</span>
         {{ end }}
     </div>

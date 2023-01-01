@@ -2,3 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .card {
+        @apply bg-slate-700;
+    }
+    #bigger-link {
+        @apply md:col-span-3;
+    }
+}

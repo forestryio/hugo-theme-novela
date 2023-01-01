@@ -7,17 +7,17 @@
         {{ range $index, $article := $paginator.Pages }}
             {{ $counter := mod $index 2 }}
             {{ if not $counter }}
-                <div class="post-row">
+                <div class="post-row grid grid-cols-1 md:grid-cols-5 gap-6">
             {{ end }}
-            <a href="{{ $article.RelPermalink }}" class="article-link"
+            <a href="{{ $article.RelPermalink }}" class="article-link md:col-span-2 mb-5 md:mb-10 group "
             {{ if and (eq ($biggerFirst) true) (eq ($biggerPlaced) false) }}
               {{ if eq $counter 0 }}
-                id="article-link-bigger"
+                id="bigger-link"
                 {{ $biggerPlaced = true }}
               {{ end }}
             {{ else if and (not $biggerFirst) (not $biggerPlaced) }}
               {{ if ne $counter 0 }}
-                id="article-link-bigger"
+                id="bigger-link"
                 {{ $biggerPlaced = true }}
               {{ end }}
             {{ end }}>
@@ -54,7 +54,7 @@
                   }
                   </script>
 
-                <div class="image-container">
+                <div class="image-container overflow-hidden shadow-2xl shadow-zinc-600/70 group-hover:shadow-zinc-600  transition-all duration-300">
 
                   {{- with $article.Params.hero -}}
             {{- $images := . -}}
@@ -63,8 +63,16 @@
                     {{- $image1 := .Resize "667x q100" -}}
                     {{- $image2 := .Resize "500x q90" -}}
                     {{- $image3 := .Resize "375x" -}}
-                    <div class="article-hero-image" id="ArticleImage__Hero">
-                            <img loading="lazy" class="article-image" srcset="
+                    <div class="article-hero-image h-[196px] md:h-[280px] relative overflow-hidden" id="ArticleImage__Hero">
+                            <img loading="lazy" class="article-image absolute  w-full left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2                            
+                            {{ if and ($biggerPlaced) (not $biggerFirst) }}
+                            scale-100
+                            {{ else if and ($biggerPlaced) (ne $counter 0) }}
+                            scale-[1.4]
+                            {{ else if and (not $biggerFirst) (not $biggerPlaced) }}
+                            scale-[1.4]
+                            {{ end }}
+                            " srcset="
                             {{ $image3.RelPermalink }} 375w,
                             {{ $image2.RelPermalink }} 800w,
                             {{ $image1.RelPermalink }} 1366w,  
@@ -75,18 +83,18 @@
         {{- end -}}
         
                 </div>
-                <div class="article-data">
-                  <h2 class="article-title">
+                <div class="article-data py-3 md:py-6">
+                  <h2 class="article-title font-serif font-bold text-xl md:text-2xl">
                     {{ $article.Params.title }}
                   </h2>
-                  <p class="article-excerpt">
+                  <p class="article-excerpt prose prose-sm md:prose-base py-3 prose-gray dark:prose-invert">
                     {{ if $article.Params.excerpt }}
                     {{ $article.Params.excerpt }}
                     {{ else }}
                     {{ $article.Summary }}
                     {{ end }}
                   </p>
-                  <div class="article-metadata">
+                  <div class="article-metadata text-sm md:text-base text-gray-400 font-bold">
                     {{ $article.Date.Format "January 2, 2006" }} • {{ $article.ReadingTime }} min read
                   </div>
                 </div>

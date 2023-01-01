@@ -11,7 +11,7 @@
 {{- end -}}
             <h1 class="article-hero-heading">{{ .Page.Params.Title }}</h1>
             <div class="article-hero-subtitle">
-                <div class="article-meta">
+                <div class="flex">
                     {{ partial "article/authors.html" . }}
                     <span class="post-date">{{ .Page.Date.Format "January 2, 2006" }}
                     • {{ .ReadingTime }} min read

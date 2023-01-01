@@ -1,0 +1,59 @@
+
+{{ define "main" }}
+<div class="titlepage my-10 md:my-12 md:px-12">
+<h1 class="border-b-2">Menampilkan artikel dengan tag "{{ .Title }}"</h1>
+</div>
+<section class="section  md:mt-12 md:px-12" >
+    <div id="articlesList" class="articles-list-container show-details author-alc">
+      {{ $articles := .Pages }}
+      {{ $paginator := .Paginate .Pages }}
+        <div class="post-row-alt grid grid-cols-1 md:grid-cols-2 gap-6">
+          {{ $scratch := newScratch }}
+          {{ $scratch.Set "numPages" (len $paginator.Pages) }}
+          {{ range $index, $article := $paginator.Pages }}
+            {{ $counter := mod $index 2 }}
+              <a href="{{ .RelPermalink }}" class="article-link">
+                <div class="article-data-outer">
+                  <div class="image-container">
+                    
+                    {{- with $article.Params.hero -}}
+            {{- $images := . -}}
+            {{- with $article.Site.GetPage "section" "upload" -}}
+                {{- with .Resources.GetMatch (strings.TrimPrefix "/upload/" (index $images 0)) -}}
+                    {{- $image := .Fit "800x450" -}}
+                    <div class="article-hero-image h-[196px] md:h-[280px] relative overflow-hidden" id="ArticleImage__Hero">
+                            <img class="article-image absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" src="{{ $image.RelPermalink }}" alt="{{ $article.Title }}">
+                    </div>
+                {{- end -}}
+            {{- end -}}
+        {{- end -}}
+
+                  </div>
+                  <div class="article-data py-3 md:py-6">
+                    <h2 class="article-title font-serif font-bold text-xl md:text-2xl">
+                      {{ .Params.title }}
+                    </h2>
+                    <p class="article-excerpt prose prose-sm md:prose-base py-3 prose-gray dark:prose-invert">
+                      {{ .Params.excerpt }}
+                    </p>
+                    <div class="article-metadata text-sm md:text-base text-gray-400 font-bold">
+                      {{ .Date.Format "January 2, 2006" }} • {{ .ReadingTime }} min read
+                    </div>
+                  </div>
+                </div>
+              </a>
+              {{ if eq ($scratch.Get "numPages") (add $index 1) }}
+                <a href="{{ .RelPermalink }}" style="opacity: 0;" class="article-link">
+                </a>
+              {{ end }}
+          {{ end }}
+        </div>
+    </div>
+    {{ partial "paginator/paginator.html" . }}
+  </section>
+  
+  {{ $script := resources.Get "js/toggleBorder.js" }}
+  <script src="{{ $script.RelPermalink }}"></script>
+  
+
+{{ end }}

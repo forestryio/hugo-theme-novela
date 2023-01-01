@@ -1,20 +1,20 @@
 {{ $pag := $.Paginator }}
 {{ if gt $pag.TotalPages 1 }}
 <nav aria-label="Page navigation">
-    <ul class="pagination">
+    <ul class="pagination flex flex-row gap-3 font-bold text-lg text-gray-500 dark:text-gray-400">
         {{ if $pag.HasPrev }}
-        <li class="page-item"><a href="{{ $pag.Prev.URL }}" rel="prev" class="page-link page-prev">Prev</a></li>
+        <li class="page-item hover:text-black hover:border-black dark:hover:border-white dark:hover:text-white hover:border-b-2"><a href="{{ $pag.Prev.URL }}" rel="prev" class="page-link page-prev">Prev</a></li>
         {{ end }}
         {{ range $pag.Pagers }}
         {{ if eq . $pag }}
-        <li class="page-item active"><a href="{{ .URL }}" class="page-link">{{ .PageNumber }}</a></li>
+        <li class="page-item active text-black border-black dark:border-white dark:text-white border-b-2"><a href="{{ .URL }}" class="page-link">{{ .PageNumber }}</a></li>
         {{ else }}
-        <li class="page-item"><a href="{{ .URL }}" class="page-link">{{ .PageNumber }}</a></li>
+        <li class="page-item hover:text-black hover:border-black dark:hover:border-white dark:hover:text-white hover:border-b-2"><a href="{{ .URL }}" class="page-link">{{ .PageNumber }}</a></li>
         {{ end }}
         {{ end }}
 
         {{ if $pag.HasNext }}
-        <li class="page-item"><a href="{{ $pag.Next.URL }}" rel="next" class="page-link page-next">Next</a></li>
+        <li class="page-item hover:text-black hover:border-black dark:hover:border-white dark:hover:text-white hover:border-b-2"><a href="{{ $pag.Next.URL }}" rel="next" class="page-link page-next">Next</a></li>
         {{ end }}
     </ul>
 </nav>

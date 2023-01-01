@@ -3,9 +3,9 @@
 
 {{ partial "head/head.html" . }}
 
-<body id="mainBody" class="line-numbers">
+<body id="mainBody" class="container mx-auto p-5 dark:bg-zinc-900 dark:text-gray-50">
 
-    <div class="layout-styled">
+    <div class="w-full mx-auto">
 
         {{ partial "header.html" . }}
 
@@ -23,10 +23,6 @@
     {{ $script := resources.Get "js/searchToggle.js" }}
     {{ $minjs := $script | resources.Minify }}
     <script inline async src="{{ $minjs.RelPermalink }}"></script>
-    
-    {{ $script := resources.Get "js/toggleLogos.js" }}
-    {{ $minjs := $script | resources.Minify }}
-    <script async src="{{ $minjs.RelPermalink }}"></script>
     
     {{ $script := resources.Get "js/toggleColors.js" }}
     {{ $minjs := $script | resources.Minify }}

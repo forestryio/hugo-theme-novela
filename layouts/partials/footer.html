@@ -1,9 +1,8 @@
 <div class="footer-gradient"></div>
-    <div class="section narrow">
-      <div class="footer-hr"></div>
-      <div class="footer-container">
-        <div class="footer-text">
-          © {{ dateFormat "2006" now }} {{ .Site.Title }}. <a style="color:var(--grey)"rel="license noreferrer" title="This work is licensed under a Creative Commons Attribution 4.0 International License" href="http://creativecommons.org/licenses/by/4.0/" target="_blank"><b>CC BY 4.0</b></a>.
+    <div class="section narrow p-12">
+      <div class="footer-container flex flex-col-reverse md:flex-row gap-3 justify-between items-center">
+        <div class="footer-text ">
+          © {{ dateFormat "2006" now }} {{ .Site.Title }}. <a rel="license noreferrer" title="This work is licensed under a Creative Commons Attribution 4.0 International License" href="http://creativecommons.org/licenses/by/4.0/" target="_blank"><b>CC BY 4.0</b></a>.
         </div>
         {{ partial "social-links/social-links.html" . }}
         {{ partial "navigation.html" . }}

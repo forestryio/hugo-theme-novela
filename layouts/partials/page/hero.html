@@ -1,11 +1,11 @@
 <section id="articleHero" class="section narrow">
   <div class="article-hero">
-      <header class="article-header">
-          <h1 class="article-hero-heading">{{ .Page.Params.Title }}</h1>
+      <header class="article-header mx-auto my-10 md:my-20 md:w-1/2">
+          <h1 class="article-hero-heading font-serif font-bold text-3xl md:text-5xl">{{ .Page.Params.Title }}</h1>
       </header>
       {{ with .Params.hero }}
       <div class="article-hero-image-single" id="ArticleImage__Hero">
-          <img src="{{ . }}">
+          <img class="mx-auto md:w-2/3" src="{{ . }}">
       </div>
       {{ end }}
   </div>

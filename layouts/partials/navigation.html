@@ -1,5 +1,5 @@
 <nav class="navigation">
-<ul>
+<ul class="flex flex-row gap-3">
     {{ with .Site.Menus.main }}
         {{ range . }}
             <li><a class="muted" href="{{ .URL | relLangURL }}" title="{{ .Name }}">{{ .Name }}</a></li>

@@ -27,16 +27,16 @@ of the whole section and append them to our $next slice. */}}
     {{ $articles := partialCached "func/GetArticles" . "articles"}}
     {{ $next = $next | append (first $diff $articles) }}
 {{ end }}
-<section id="articleNext" class="section nartrow">
+<section id="articleNext" class="w-3/4 mx-auto">
     <h3 class="footer-next-heading"><span>More articles from {{ .Site.Title }}</span></h3>
     <div class="footer-spacer"></div>
     <div class="next-articles-grid" numberOfArticles={numberOfArticles}>
-        <div class="post-row">
+        <div class="grid md:grid-cols-5 gap-6">
             {{ range $index, $article := $next }}
-                <a href="{{ $article.RelPermalink }}" class="article-link"
-                {{ if not $index}} id="article-link-bigger"{{ end }} title="{{ $article.Title }}">
-                    <div>
-                        <div class="image-container">
+                <a href="{{ $article.RelPermalink }}" class="article-link col-span-3 md:col-span-2"
+                {{ if not $index}} id="bigger-link"{{ end }} title="{{ $article.Title }}">
+                    <div class="">
+                        <div class="overflow-hidden">
                            
                             {{- with $article.Params.hero -}}
             {{- $images := . -}}
@@ -45,8 +45,8 @@ of the whole section and append them to our $next slice. */}}
                 {{- $image1 := .Resize "621x q100" -}}
                 {{- $image2 := .Resize "500x" -}}
                 {{- $image3 := .Resize "291x" -}}
-                <div class="article-hero-image" id="ArticleImage__Hero">
-                        <img loading="lazy" class="article-image" srcset="
+                <div class="article-hero-image h-56 relative " id="ArticleImage__Hero">
+                        <img loading="lazy" class="{{ if not $index }} absolute w-full left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 {{ else }} absolute scale-150 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2  {{ end }}" srcset="
                         {{ $image3.RelPermalink }} 375w,
                         {{ $image2.RelPermalink }} 700w,
                         {{ $image1.RelPermalink }} 1366w,  
@@ -58,13 +58,13 @@ of the whole section and append them to our $next slice. */}}
 
                         </div>
                         <div>
-                            <h2 class="article-title">
+                            <h2 class="article-title font-serif text-xl md:text-2xl font-bold">
                                 {{ $article.Params.title }}
                             </h2>
                             <p class="article-excerpt">
                                 {{ $article.Params.excerpt }}
                             </p>
-                            <div class="article-metadata">
+                            <div class="article-metadata font-bold text-gray-300">
                                 {{ $article.Date | dateFormat "January 2, 2006" }} · {{ $article.ReadingTime }} min read
                             </div>
                         </div>
